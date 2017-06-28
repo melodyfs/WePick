@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 //import SwiftOpenWeatherMapAPI
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController{
     
     //MARK: - Properties
     
@@ -28,7 +28,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         WeatherAPI.getWeather(fromZipcode: "95050")
-//        currentLocationLabel.text =
+        //print(currentLocationLabel.text)
+    
+//       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }
     
     
@@ -44,6 +46,31 @@ class HomeVC: UIViewController {
     @IBAction func seeSuggestionButtonTapped(_ sender: Any) {
         print("see suggestion button tapped")
     }
+    
+    func updateUI(weather: WeatherData) {
+        DispatchQueue.main.async() {
+            self.currentLocationLabel.text = WeatherData.shared.locationName
+            self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
+            self.currentWeatherDescriptionLabel.text = WeatherData.shared.weatherStateDescription
+            
+        }
+    }
+    
+//    func updateUI(error: NSError) {
+//        DispatchQueue.main.async() {
+//            self.showSimpleAlert(forTitle: "Can't get the weather",
+//                                 message: "The weather service isn't responding.")
+//        }
+//        print("didNotGetWeather error: \(error)")
+//    }
+    
+//    func showSimpleAlert(forTitle title: String, message: String) {
+//        let alert = UIAlertController(
+//            title: title,
+//            message: message,
+//            preferredStyle: .alert
+//        )
+//    }
 }
 
 

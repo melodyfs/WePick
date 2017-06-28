@@ -7,17 +7,23 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<false />
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods-Wear.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<false />
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<false />
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -25,17 +31,17 @@
 		<key>7F56F04C6BC7B1108D5466224E539CF4</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>D68D02215FB5B2FA3DB814DBA9DC9631</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>

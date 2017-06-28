@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63e03e77-f1fc-4904-9983-bfaf31adedb0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wear/API/WeatherData.json" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Wear/Models/WeatherDataStorage.swift" afterPath="$PROJECT_DIR$/Wear/Models/WeatherData.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/melodyyang.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/melodyyang.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Wear.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear.xcodeproj/xcuserdata/melodyyang.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Wear.xcodeproj/xcuserdata/melodyyang.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear.xcworkspace/xcuserdata/melodyyang.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/Wear.xcworkspace/xcuserdata/melodyyang.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear/API/JSONParser.swift" afterPath="$PROJECT_DIR$/Wear/API/JSONParser.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear/API/WeatherAPI.swift" afterPath="$PROJECT_DIR$/Wear/API/WeatherAPI.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wear/ViewControllers/HomeVC.swift" afterPath="$PROJECT_DIR$/Wear/ViewControllers/HomeVC.swift" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JSONParser.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wear/API/JSONParser.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="76" column="15" lean-forward="false" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+              <folding>
+                <marker date="1498678605000" expanded="true" signature="1940:2055" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeatherAPI.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Wear/API/WeatherAPI.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-431">
+              <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+              <folding>
+                <marker date="1498672586000" expanded="true" signature="1458:1573" ph="{...}" />
+                <marker date="1498672586000" expanded="true" signature="1458:2524" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GotoFileConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="ARCHIVE" />
+      <filtered-out-file-type name="ActionScript" />
+      <filtered-out-file-type name="Assembly file" />
+      <filtered-out-file-type name="Asset Catalog Contents" />
+      <filtered-out-file-type name="CSS" />
+      <filtered-out-file-type name="CoffeeScript" />
+      <filtered-out-file-type name="Core Data model" />
+      <filtered-out-file-type name="DTD" />
+      <filtered-out-file-type name="Doxygen file" />
+      <filtered-out-file-type name="ECMAScript 6" />
+      <filtered-out-file-type name="Flow" />
+      <filtered-out-file-type name="GDBCommands" />
+      <filtered-out-file-type name="HTML" />
+      <filtered-out-file-type name="IDEA_MODULE" />
+      <filtered-out-file-type name="IDEA_PROJECT" />
+      <filtered-out-file-type name="IDEA_WORKSPACE" />
+      <filtered-out-file-type name="Images" />
+      <filtered-out-file-type name="JQL" />
+      <filtered-out-file-type name="JSCS" />
+      <filtered-out-file-type name="JSHint" />
+      <filtered-out-file-type name="JSON" />
+      <filtered-out-file-type name="JSON Schema" />
+      <filtered-out-file-type name="JSX Harmony" />
+      <filtered-out-file-type name="JavaScript" />
+      <filtered-out-file-type name="LLDBCommands" />
+      <filtered-out-file-type name="Less" />
+      <filtered-out-file-type name="Literate CoffeeScript" />
+      <filtered-out-file-type name="ModuleMap" />
+      <filtered-out-file-type name="NIB" />
+      <filtered-out-file-type name="Native" />
+      <filtered-out-file-type name="ObjectiveC" />
+      <filtered-out-file-type name="PATCH" />
+      <filtered-out-file-type name="PLAIN_TEXT" />
+      <filtered-out-file-type name="Podfile" />
+      <filtered-out-file-type name="RNG Compact" />
+      <filtered-out-file-type name="RegExp" />
+      <filtered-out-file-type name="SCSS" />
+      <filtered-out-file-type name="Sass" />
+      <filtered-out-file-type name="Scratch" />
+      <filtered-out-file-type name="SourceMap" />
+      <filtered-out-file-type name="Storyboard" />
+      <filtered-out-file-type name="Strings" />
+      <filtered-out-file-type name="Stylus" />
+      <filtered-out-file-type name="Swift" />
+      <filtered-out-file-type name="TypeScript" />
+      <filtered-out-file-type name="TypeScript JSX" />
+      <filtered-out-file-type name="UNKNOWN" />
+      <filtered-out-file-type name="XCodeProject" />
+      <filtered-out-file-type name="XCodeProjectFiles" />
+      <filtered-out-file-type name="XHTML" />
+      <filtered-out-file-type name="XIB" />
+      <filtered-out-file-type name="XML" />
+      <filtered-out-file-type name="Xcode Assets" />
+      <filtered-out-file-type name="XcodeWorkspace" />
+      <filtered-out-file-type name="YAML" />
+      <filtered-out-file-type name="YouTrack" />
+      <filtered-out-file-type name="plist" />
+      <filtered-out-file-type name="xcdatamodel" />
+      <filtered-out-file-type name="xconfig" />
+    </file-type-list>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Wear/API/WeatherAPI.swift" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="19" />
+    <option name="y" value="23" />
+    <option name="width" value="1400" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Cidr.FilesView" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Products" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Cidr.FilesView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Storyboards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="API" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Wear">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Wear" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Wear" TARGET_NAME="Wear" CONFIG_NAME="Debug" SCHEME_NAME="Wear" RUN_TARGET_PROJECT_NAME="Wear" RUN_TARGET_NAME="Wear" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Wear" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63e03e77-f1fc-4904-9983-bfaf31adedb0" name="Default" comment="" />
+      <created>1498636793565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498636793565</updated>
+      <workItem from="1498636796743" duration="183000" />
+      <workItem from="1498680964778" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="190000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="19" y="23" width="1400" height="773" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Wear/API/JSONParser.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="72" column="15" lean-forward="false" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+          <folding>
+            <marker date="1498678605000" expanded="true" signature="1940:2055" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wear/API/WeatherAPI.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <marker date="1498672586000" expanded="true" signature="1458:1573" ph="{...}" />
+            <marker date="1498672586000" expanded="true" signature="1458:2524" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wear.xcodeproj/project.xcworkspace/contents.xcworkspacedata">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wear/API/JSONParser.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="76" column="15" lean-forward="false" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+          <folding>
+            <marker date="1498678605000" expanded="true" signature="1940:2055" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wear/API/WeatherAPI.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-431">
+          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <marker date="1498672586000" expanded="true" signature="1458:1573" ph="{...}" />
+            <marker date="1498672586000" expanded="true" signature="1458:2524" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
