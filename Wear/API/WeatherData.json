@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": -121.95,
+        "lat": 37.35
+    },
+    
+    "weather": [
+                {
+                "id": 800,
+                "main": "Clear",
+                "description": "clear sky",
+                "icon": "02d"
+                }
+                ],
+    "base": "stations",
+    "main": {
+        "temp": 293.76,
+        "pressure": 1015,
+        "humidity": 53,
+        "temp_min": 288.15,
+        "temp_max": 299.15
+    },
+    "visibility": 16093,
+    "wind": {
+        "speed": 3.6,
+        "deg": 330
+    },
+    "clouds": {
+        "all": 5
+    },
+    "dt": 1498593360,
+    "sys": {
+        "type": 1,
+        "id": 480,
+        "message": 0.0044,
+        "country": "US",
+        "sunrise": 1498567780,
+        "sunset": 1498620752
+    },
+    "id": 0,
+    "name": "Santa Clara",
+    "cod": 200
+}
