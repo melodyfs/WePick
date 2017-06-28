@@ -13,7 +13,7 @@ import Foundation
 
 class JSONParser {
     
-    class func parse(data: Data ) {
+    class func parse(data: Data, completion: Completion) {
         
         guard let weatherData = getJSON(from: data) else {
           return

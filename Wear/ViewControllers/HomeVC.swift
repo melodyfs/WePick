@@ -27,7 +27,10 @@ class HomeVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WeatherAPI.getWeather(fromZipcode: "95050")
+        WeatherAPI.getWeather(fromZipcode: "95050", completion: { data in
+            
+        })
+        
         //print(currentLocationLabel.text)
     
 //       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))

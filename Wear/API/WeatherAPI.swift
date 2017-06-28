@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias Completion = (WeatherData) -> Void
+
 class WeatherAPI {
     
     fileprivate static let BaseURL = "http://api.openweathermap.org/data/2.5/weather?zip="
@@ -15,7 +17,8 @@ class WeatherAPI {
     fileprivate static let imageURL = "http://openweathermap.org/img/w/"
     
     
-    class func getWeather(fromZipcode zip: String) {
+    
+    class func getWeather(fromZipcode zip: String, completion: @escaping Completion) {
         
         let session = URLSession.shared
         
@@ -38,7 +41,7 @@ class WeatherAPI {
                     return
                 }
                 
-                JSONParser.parse(data: data!)
+                JSONParser.parse(data: data!, completion: completion)
             }
             
             task.resume()
