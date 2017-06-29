@@ -22,13 +22,15 @@ class HomeVC: UIViewController{
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
     
+    @IBOutlet weak var currentWeatherState: UILabel!
     
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WeatherAPI.getWeather(fromZipcode: "95050")
-        //print(currentLocationLabel.text)
+        WeatherAPI.getWeather(fromZipcode: "95050", completion: { data in
+            return self.updateUI(weather: data)
+        })
     
 //       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }
@@ -52,7 +54,7 @@ class HomeVC: UIViewController{
             self.currentLocationLabel.text = WeatherData.shared.locationName
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.weatherStateDescription
-            
+            self.currentWeatherState.text = WeatherData.shared.description
         }
     }
     

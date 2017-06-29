@@ -13,7 +13,8 @@ import Foundation
 
 class JSONParser {
     
-    class func parse(data: Data ) {
+    //reading data from WeatherAPI
+    class func parse(data: Data, completion: Completion) {
         
         guard let weatherData = getJSON(from: data) else {
           return
@@ -26,11 +27,10 @@ class JSONParser {
         let locationName = getLocation(from: weatherData)
         
         //call shared instance and pass data to save to it
-        WeatherData.shared.set(description: description, andState: weatherState, andTemperature: temperature, withLocation: locationName)
-        
-        WeatherData.shared.printSettings()
-        
+        WeatherData.shared.set(description: description, andState: weatherState, andTemperature:Int(temperature), withLocation: locationName)
+
         //pass the data to UI
+        completion(WeatherData.shared)
     }
     
     //Check if the the data is JSON
