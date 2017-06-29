@@ -10,37 +10,39 @@ import Foundation
 
 class Clothes {
     
-    enum Head {
-        case hat
-        case cap
+    enum Head: String {
+        case hat = "hat"
+        case cap = "cap"
         
     }
     
-    enum UpperBody {
-        case longSleeveShirt
-        case tShirt
-        case jacket
-        case rainCoat
+    enum UpperBody: String {
+        case longSleeveShirt = "long Sleeve Shirt"
+        case tShirt = "t Shirt"
+        case jacket = "jacket"
+        case rainCoat = "rain coat "
         
     }
     
-    enum LowerBody {
-        case pants
-        case shorts
+    enum LowerBody: String {
+        case pants = "pants"
+        case shorts = "shorts"
         
     }
     
-    enum Shoes {
-        case sneakers
-        case boots
-        case sandals
-        case rainBoots
+    enum Shoes: String {
+        case sneakers = "snaakers"
+        case boots = "boots"
+        case sandals = "sandals"
+        case rainBoots = "rain boots"
     
     }
     
-    enum Accessories {
-        case umbrella
+    enum Accessories: String {
+        case umbrella = "umbrella"
         
     }
+    
+
     
 }

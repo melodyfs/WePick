@@ -25,9 +25,10 @@ class JSONParser {
         let weatherState = getWeatherState(from: weatherData)
         let temperature = getTemperature(from: weatherData)
         let locationName = getLocation(from: weatherData)
+        let icon = getIcon(from: weatherData)
         
         //call shared instance and pass data to save to it
-        WeatherData.shared.set(description: description, andState: weatherState, andTemperature:Int(temperature), withLocation: locationName)
+        WeatherData.shared.set(description: description, andState: weatherState, andTemperature:Int(temperature), withLocation: locationName, plusIcon: icon)
 
         //pass the data to UI
         completion(WeatherData.shared)
@@ -78,7 +79,7 @@ class JSONParser {
     private class func getTemperature(from json: [String: Any]) -> Double {
         if let array = json["main"] as? [String: Any] {
             if let temp = array["temp"] as? Double {
-                return 5/9 * (temp - 273.0) + 32.0
+                return 9/5 * (temp) - 459.67
             }
         }
         return 0
@@ -87,6 +88,17 @@ class JSONParser {
     private class func getLocation(from json: [String: Any]) -> String {
         if let location = json["name"] as? String {
             return location
+        }
+        return ""
+    }
+    
+    private class func getIcon(from json: [String: Any]) -> String {
+        if let array = json["weather"] as? [Any] {
+            if let arrDict = array[0] as? [String: Any] {
+                if let icon = arrDict["icon"] as? String {
+                    return icon
+                }
+             }
         }
         return ""
     }
