@@ -17,7 +17,7 @@ class WeatherData {
     
     static var shared = WeatherData()
     
-    //save the data in shared
+    //save the data in shared instance
     func set(description: String, andState state: String, andTemperature temp: Double, withLocation location: String) {
         self.description = description
         self.temperature = temp

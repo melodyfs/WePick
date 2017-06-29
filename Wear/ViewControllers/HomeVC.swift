@@ -28,10 +28,8 @@ class HomeVC: UIViewController{
         super.viewDidLoad()
         
         WeatherAPI.getWeather(fromZipcode: "95050", completion: { data in
-            
+            return self.updateUI(weather: data)
         })
-        
-        //print(currentLocationLabel.text)
     
 //       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }

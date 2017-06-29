@@ -8,6 +8,7 @@
 
 import Foundation
 
+//The closure has the type WeatherData and returns nothing
 typealias Completion = (WeatherData) -> Void
 
 class WeatherAPI {
@@ -16,8 +17,7 @@ class WeatherAPI {
     fileprivate static let key = "45ca707f502b31f8464232fb3f89b3b0"
     fileprivate static let imageURL = "http://openweathermap.org/img/w/"
     
-    
-    
+    //passing closure with data of weather. The data will only be called once the request is completed
     class func getWeather(fromZipcode zip: String, completion: @escaping Completion) {
         
         let session = URLSession.shared
@@ -40,7 +40,7 @@ class WeatherAPI {
                     print("data couldn't be downloaded")
                     return
                 }
-                
+                //completion closure is passed
                 JSONParser.parse(data: data!, completion: completion)
             }
             
