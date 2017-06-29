@@ -22,6 +22,7 @@ class HomeVC: UIViewController{
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
     
+    @IBOutlet weak var currentWeatherState: UILabel!
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -53,7 +54,7 @@ class HomeVC: UIViewController{
             self.currentLocationLabel.text = WeatherData.shared.locationName
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.weatherStateDescription
-            
+            self.currentWeatherState.text = WeatherData.shared.description
         }
     }
     

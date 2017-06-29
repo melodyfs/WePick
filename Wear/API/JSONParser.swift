@@ -27,7 +27,7 @@ class JSONParser {
         let locationName = getLocation(from: weatherData)
         
         //call shared instance and pass data to save to it
-        WeatherData.shared.set(description: description, andState: weatherState, andTemperature: temperature, withLocation: locationName)
+        WeatherData.shared.set(description: description, andState: weatherState, andTemperature:Int(temperature), withLocation: locationName)
 
         //pass the data to UI
         completion(WeatherData.shared)

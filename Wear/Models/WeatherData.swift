@@ -13,12 +13,12 @@ class WeatherData {
     var locationName: String = ""
     var description: String = ""
     var weatherStateDescription: String = ""
-    var temperature: Double = 0.0
+    var temperature: Int = 0
     
     static var shared = WeatherData()
     
     //save the data in shared instance
-    func set(description: String, andState state: String, andTemperature temp: Double, withLocation location: String) {
+    func set(description: String, andState state: String, andTemperature temp: Int, withLocation location: String) {
         self.description = description
         self.temperature = temp
         self.weatherStateDescription = state
