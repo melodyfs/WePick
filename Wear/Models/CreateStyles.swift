@@ -73,11 +73,27 @@ class CreateStyles {
             print("Style yet to be created")
         }
         
-        let cat = Head.cap.rawValue
+    
 
     }
     
-    //call the create style func in enum based on weather description
+    func createStyle(type: StyleFromTemp) {
+        switch type {
+        case .below60:
+            print("\(Head.hat), \(UpperBody.longSleeveShirt), \(LowerBody.pants), \(Shoes.sneakers), \(UpperBody.jacket)")
+        case .from64To70:
+            print("\(Head.cap), \(UpperBody.tShirt), \(LowerBody.pants), \(Shoes.boots), \(Accessories.umbrella)")
+        case .above70:
+            print("\(Head.hat), \(UpperBody.tShirt), \(LowerBody.shorts), \(Shoes.sandals)")
+        default:
+            print("Style yet to be created")
+        }
+        
+        
+        
+    }
+    
+    //call the createStyle func in enum based on weather description
     class func getStyle(description: String) {
         let description = WeatherData.shared.description
         let style = CreateStyles()
@@ -99,7 +115,22 @@ class CreateStyles {
     }
     
     //call the create style func based on temperature
-    class func getStyleFromTemp() {
+    class func getStyleFromTemp(temp: Int) {
+        let temp = WeatherData.shared.temperature
+        let style = CreateStyles()
+        
+        if temp < 60 {
+            style.createStyle(type:.below60)
+        }
+        
+        if temp > 60 && temp < 70 {
+            style.createStyle(type: .from64To70)
+        }
+        
+        if temp > 70 {
+            style.createStyle(type: .above70)
+            
+        }
         
         
     }

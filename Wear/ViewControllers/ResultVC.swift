@@ -38,5 +38,6 @@ class ResultVC: UIViewController {
         super.viewDidLoad()
         
         CreateStyles.getStyle(description: WeatherData.shared.description)
+        CreateStyles.getStyleFromTemp(temp: WeatherData.shared.temperature)
     }
 }
