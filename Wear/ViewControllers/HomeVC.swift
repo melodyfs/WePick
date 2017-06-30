@@ -24,11 +24,14 @@ class HomeVC: UIViewController{
     
     @IBOutlet weak var currentWeatherState: UILabel!
     
+    @IBOutlet weak var weatherIcon: UILabel!
+    
+    
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WeatherAPI.getWeather(fromZipcode: "95050", completion: { data in
+        WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
             return self.updateUI(weather: data)
         })
     
@@ -55,6 +58,7 @@ class HomeVC: UIViewController{
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.weatherStateDescription
             self.currentWeatherState.text = WeatherData.shared.description
+            self.weatherIcon.text = WeatherData.shared.icon
         }
     }
     

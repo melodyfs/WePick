@@ -20,7 +20,7 @@ class ResultVC: UIViewController {
     
     //MARK: - Public Methods
     
-    
+            
     
     //MARK: - Private Methods
     
@@ -33,9 +33,10 @@ class ResultVC: UIViewController {
     }
     
     
-    
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CreateStyles.getStyle(description: WeatherData.shared.description)
     }
 }
