@@ -20,28 +20,11 @@ class ResultVC: UIViewController {
     
     //MARK: - Public Methods
     
-    class func getStyle(description: WeatherData) {
-        let description = WeatherData.shared.description
-        
-        if description.range(of: "Mist") != nil {
-            print("Mist style")
-        }
-        
-        if description.range(of: "rain") != nil {
-            print("rain style")
-        }
-        
-        if description.range(of: "Clear Sky") != nil {
-            print("Clear sky style")
-        }
-        
-    }
-    
+            
     
     //MARK: - Private Methods
     
     
-    //read the string in weather description and decide which style to recommend
     
     //MARK: - Actions
     
@@ -53,5 +36,7 @@ class ResultVC: UIViewController {
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CreateStyles.getStyle(description: WeatherData.shared.description)
     }
 }
