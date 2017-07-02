@@ -37,7 +37,7 @@ class ResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CreateStyles.getStyle(description: WeatherData.shared.description)
-        CreateStyles.getStyleFromTemp(temp: WeatherData.shared.temperature)
+//        CreateStyles.getStyle(description: WeatherData.shared.description)
+//        CreateStyles.getStyleFromTemp(temp: WeatherData.shared.temperature)
     }
 }

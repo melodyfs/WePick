@@ -8,20 +8,20 @@
 
 import Foundation
 
-enum ThunderstormDescription {
-    case ThunderstormWithLightRain
-    case ThunderstormWithRain
-    case ThunderstormWithHeavyRain
-    case LightThunderstorm
-    case Thunderstorm
-    case HeavyThunderstorm
-    case RaggesdThunderstorm
-    case ThunderstormWithLightDrizzle
-    case ThunderstormWithDrizzle
-    case ThunderstormWithHeavyDrizzle
+enum ThunderstormDescription: String {
+    case thunderstormWithLightRain
+    case thunderstormWithRain
+    case thunderstormWithHeavyRain
+    case lightThunderstorm
+    case thunderstorm
+    case heavyThunderstorm
+    case raggesdThunderstorm
+    case thunderstormWithLightDrizzle
+    case thunderstormWithDrizzle
+    case thunderstormWithHeavyDrizzle
 }
 
-enum DrizzleDescription {
+enum DrizzleDescription: String {
     case lightIntensityDrizzle
     case drizzle
     case heavyIntensityDrizzle
@@ -34,7 +34,7 @@ enum DrizzleDescription {
     
 }
 
-enum RainDescription {
+enum RainDescription: String {
     case lightRain
     case moderateRain
     case heavyIntensityRain
@@ -52,7 +52,7 @@ enum RainDescription {
     
 }
 
-enum SnowDescription {
+enum SnowDescription: String {
     case snow
     case heavySnow
     case sleet
@@ -66,7 +66,7 @@ enum SnowDescription {
     
 }
 
-enum AtmosphereDescription {
+enum AtmosphereDescription: String {
     case mist
     case smoke
     case haze
@@ -80,7 +80,7 @@ enum AtmosphereDescription {
     
 }
 
-enum CloudsDescription {
+enum CloudsDescription: String {
     case fewClouds
     case scatteredClouds
     case brokenClouds
@@ -88,7 +88,7 @@ enum CloudsDescription {
     
 }
 
-enum ExtremeDescription {
+enum ExtremeDescription: String {
     case tropicalStorm
     case hurricane
     case cold
@@ -98,7 +98,7 @@ enum ExtremeDescription {
     
 }
 
-enum AdditionalDescription {
+enum AdditionalDescription: String {
     case calm
     case lightBreeze
     case gentleBreeze
@@ -114,3 +114,21 @@ enum AdditionalDescription {
     case clearSky
     
 }
+
+//extension ThunderstormDescription : Sequence {
+//    func makeIterator() -> SectionsGenerator {
+//        return SectionsGenerator()
+//    }
+//    
+//    struct SectionsGenerator: IteratorProtocol {
+//        var currentSection = ""
+//        
+//        mutating func next() -> ThunderstormDescription? {
+//            guard let item = ThunderstormDescription(rawValue: currentSection) else {
+//                return nil
+//            }
+//            currentSection += 1
+//            return item
+//        }
+//    }
+//}
