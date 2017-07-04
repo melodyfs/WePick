@@ -11,7 +11,6 @@ import Foundation
 class ClothingItems {
     
     //MARK: - Enums
-    
         
     enum StyleFromTemp {
         case below60
@@ -23,7 +22,8 @@ class ClothingItems {
         case hat = "hat"
         case cap = "cap"
         case knitHat = "knit hat"
-        
+        case sunglasses = "sunglasses"
+
     }
     
     enum UpperBody: String {

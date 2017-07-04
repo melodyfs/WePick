@@ -33,8 +33,9 @@ class HomeVC: UIViewController{
         
         WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
             return self.updateUI(weather: data)
+//            WeatherDataService.compareEnumValues(WeatherData.shared.weatherStateDescription)
         })
-    
+        
 //       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }
     
@@ -56,7 +57,8 @@ class HomeVC: UIViewController{
         DispatchQueue.main.async() {
             self.currentLocationLabel.text = WeatherData.shared.locationName
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
-            self.currentWeatherDescriptionLabel.text = WeatherData.shared.weatherStateDescription
+//            self.currentWeatherDescriptionLabel.text =
+            WeatherDataService.enumValue.compareEnumValues(WeatherData.shared)
             self.currentWeatherState.text = WeatherData.shared.description
             self.weatherIcon.text = WeatherData.shared.icon
         }

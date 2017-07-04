@@ -9,42 +9,42 @@
 import Foundation
 
 enum ThunderstormDescription: String {
-    case thunderstormWithLightRain
-    case thunderstormWithRain
-    case thunderstormWithHeavyRain
-    case lightThunderstorm
-    case thunderstorm
-    case heavyThunderstorm
-    case raggesdThunderstorm
-    case thunderstormWithLightDrizzle
-    case thunderstormWithDrizzle
-    case thunderstormWithHeavyDrizzle
+    case ThunderstormWithLightRain
+    case ThunderstormWithRain
+    case ThunderstormWithHeavyRain
+    case LightThunderstorm
+    case Thunderstorm
+    case HeavyThunderstorm
+    case RaggesdThunderstorm
+    case ThunderstormWithLightDrizzle
+    case ThunderstormWithDrizzle
+    case ThunderstormWithHeavyDrizzle
 }
 
 enum DrizzleDescription: String {
-    case lightIntensityDrizzle
-    case drizzle
-    case heavyIntensityDrizzle
-    case lightIntensityDrizzleRain
-    case drizzleRain
-    case heavyIntensityDrizzleRain
-    case showerRainAndDrizzle
-    case heavyShowerAndDrizzle
-    case showerRainDrizzle
+    case LightIntensityDrizzle
+    case Drizzle
+    case HeavyIntensityDrizzle
+    case LightIntensityDrizzleRain
+    case DrizzleRain
+    case HeavyIntensityDrizzleRain
+    case ShowerRainAndDrizzle
+    case HeavyShowerAndDrizzle
+    case ShowerRainDrizzle
     
 }
 
 enum RainDescription: String {
-    case lightRain
-    case moderateRain
-    case heavyIntensityRain
-    case veryHeavyRain
-    case extremeRain
-    case freezingRain
-    case lightIntensityShowerRain
-    case showerRain
-    case heavyIntensityShowerRain
-    case raggedShowerRain
+    case LightRain
+    case ModerateRain
+    case HeavyIntensityRain
+    case VeryHeavyRain
+    case ExtremeRain
+    case FreezingRain
+    case LightIntensityShowerRain
+    case ShowerRain
+    case HeavyIntensityShowerRain
+    case RaggedShowerRain
     
     //1st ver. general
     case rain
@@ -115,20 +115,3 @@ enum AdditionalDescription: String {
     
 }
 
-//extension ThunderstormDescription : Sequence {
-//    func makeIterator() -> SectionsGenerator {
-//        return SectionsGenerator()
-//    }
-//    
-//    struct SectionsGenerator: IteratorProtocol {
-//        var currentSection = ""
-//        
-//        mutating func next() -> ThunderstormDescription? {
-//            guard let item = ThunderstormDescription(rawValue: currentSection) else {
-//                return nil
-//            }
-//            currentSection += 1
-//            return item
-//        }
-//    }
-//}
