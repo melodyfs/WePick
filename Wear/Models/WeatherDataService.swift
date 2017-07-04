@@ -11,7 +11,16 @@ import Foundation
 class WeatherDataService {
     
     static var enumValue = WeatherDataService()
-
+    
+    var category = ""
+    
+    let thunderstorm = "Thunderstorm"
+    let drizzle = "Drizzle"
+    let rain = "Rain"
+    let snow = "Snow"
+    let clouds = "Clouds"
+    
+    
     func reformatWeatherDescription(_ ds: WeatherData) -> String {
         let ds1 = WeatherData.shared.description.capitalized
         let ds2 = ds1.replacingOccurrences(of: " ", with: "")
@@ -19,19 +28,87 @@ class WeatherDataService {
         return ds2
     }
     
-   func compareEnumValues(_ ds: WeatherData) {
+    func compareEnumValues(_ ds: WeatherData) {
         let dsReformat = reformatWeatherDescription(ds)
-//        var finalDs = ""
-        iterateThunderstormEnum(dsReformat)
-        iterateDrizzleEnum(dsReformat)
-        iterateRainEnum(dsReformat)
-        iterateSnowEnum(dsReformat)
+        
+        if dsReformat.contains(thunderstorm) {
+            iterateThunderstormEnum(dsReformat)
+            category = thunderstorm
+        }
+        
+        if dsReformat.contains(drizzle) {
+            iterateDrizzleEnum(dsReformat)
+            category = drizzle
+        }
+        
+        if dsReformat.contains(rain) {
+            iterateRainEnum(dsReformat)
+            category = rain
+        }
+        
+        if dsReformat.contains(snow) || dsReformat.contains("Sleet") {
+            iterateSnowEnum(dsReformat)
+            category = snow
+        }
+        
+        if dsReformat.contains(clouds) {
+            iterateCloudsEnum(dsReformat)
+            category = clouds
+        }
+        
+    }
+    
+    func getOutfits(weatherCondition condition: WeatherData) {
+        compareEnumValues(condition)
+        
+        let hat = ClothingItems.Head.hat.rawValue
+        let cap = ClothingItems.Head.cap.rawValue
+        let knitHat = ClothingItems.Head.knitHat.rawValue
+        
+        let tShirt = ClothingItems.UpperBody.tShirt.rawValue
+        let jacket = ClothingItems.UpperBody.jacket.rawValue
+        let longSleeveShirt = ClothingItems.UpperBody.longSleeveShirt.rawValue
+        let sweater = ClothingItems.UpperBody.sweater.rawValue
+        
+        let pants = ClothingItems.LowerBody.pants.rawValue
+        
+        let sneakers = ClothingItems.Footwear.sneakers.rawValue
+        let rainBoots = ClothingItems.Footwear.rainBoots.rawValue
+        let boots = ClothingItems.Footwear.boots.rawValue
+
+        
+        var head = hat
+        var upperBody = tShirt
+        var upperAccessory = ""
+        var lowerBody = pants
+        var footwear = sneakers
+        
+        func defaultOutfits() {
+            print(head + upperBody + upperAccessory + lowerBody + footwear)
+        }
+        
+        if category == thunderstorm || category == drizzle {
+            head = cap
+            upperBody = longSleeveShirt
+            upperAccessory = jacket
+            footwear = rainBoots
+        }
+        
+        if category == snow {
+            head = knitHat
+            upperBody = sweater
+            upperAccessory = jacket
+            footwear = boots
+        }
+        
+        defaultOutfits()
+        
     }
     
     private func iterateThunderstormEnum(_ ds: String) {
         for str in iterateEnum(ThunderstormDescription.self) {
             if str.rawValue.contains("Thunderstorm") {
-                print("\(ClothingItems.Head.cap)")
+                break
             }
         }
     }
@@ -39,27 +116,34 @@ class WeatherDataService {
     private func iterateDrizzleEnum(_ ds: String) {
         for str in iterateEnum(DrizzleDescription.self) {
             if str.rawValue.contains("Drizzle") {
-                print("\(ClothingItems.Head.hat)")
+                break
             }
         }
     }
     
     private func iterateRainEnum(_ ds: String) {
-        for str in iterateEnum(RainDescription) {
+        for str in iterateEnum(RainDescription.self) {
             if str.rawValue.contains("Rain") {
-                print("\(ClothingItems.Accessories.umbrella)")
+                break
             }
         }
     }
     
     private func iterateSnowEnum(_ ds: String) {
-        for str in iterateEnum(SnowDescription) {
+        for str in iterateEnum(SnowDescription.self) {
             if str.rawValue.contains("Snow") || str.rawValue.contains("Sleet") {
-                print("\(ClothingItems.Footwear.boots)")
+                break
             }
         }
     }
     
+    private func iterateCloudsEnum(_ ds: String) {
+        for str in iterateEnum(CloudsDescription.self) {
+            if str.rawValue.contains("Clouds") {
+                break
+            }
+        }
+    }
 
     
 //    for str in iterateEnum(DrizzleDescription.self) {
