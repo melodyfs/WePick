@@ -8,39 +8,40 @@
 
 import Foundation
 
-class ClothingItems {
-    
-    //MARK: - Enums
-        
-    enum StyleFromTemp {
-        case below60
-        case from60To70
-        case above70
-    }
+enum ClothingItems {
     
     enum Head: String {
-        case hat = "hat"
-        case cap = "cap"
-        case knitHat = "knit hat"
-        case sunglasses = "sunglasses"
-
+        case none
+        case hat
+        case cap
+        case knitHat
+        case sunglasses
     }
     
-    enum UpperBody: String {
-        case longSleeveShirt = "long Sleeve Shirt"
-        case tShirt = "t Shirt"
-        
+    enum Top: String {
+        case none
+        case longSleeveShirt
+        case shortSleeveShirt
+    }
+    
+    enum TopAcc : String {
+        case none
         case jacket = "jacket"
         case sweater = "sweater"
         case trenchCoat = "trench coat"
         case vest = "vest"
         case blazer = "blazer"
-        
-        case dress = "dress"
-        
+        case coat
     }
     
-    enum LowerBody: String {
+    //feature
+    enum FullBody: String {
+        case dress = "dress"
+    }
+    
+    
+    enum bottom : String {
+        case none
         case pants = "pants"
         case shorts = "shorts"
         case jeans = "jeans"
@@ -50,6 +51,7 @@ class ClothingItems {
     }
     
     enum Footwear: String {
+        case none
         case sneakers = "snaakers"
         case boots = "boots"
         case sandals = "sandals"
@@ -60,6 +62,7 @@ class ClothingItems {
     }
     
     enum Accessories: String {
+        case none
         case umbrella = "umbrella"
         case rainCoat = "rain coat"
         case scarf = "scarf"
@@ -157,10 +160,4 @@ class ClothingItems {
     //
     //
     //    }
-    
-    
-    
-
-
-    
 }

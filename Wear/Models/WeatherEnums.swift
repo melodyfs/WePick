@@ -53,65 +53,65 @@ enum RainDescription: String {
 }
 
 enum SnowDescription: String {
-    case snow
-    case heavySnow
-    case sleet
-    case showerSleet
-    case lightRainAndSnow
-    case rainAndSnow
-    case lightShowerSnow
-    case showerSnow
-    case heavyShowerSnow
-    case lightSnow
+    case Snow
+    case HeavySnow
+    case Sleet
+    case ShowerSleet
+    case LightRainAndSnow
+    case RainAndSnow
+    case LightShowerSnow
+    case ShowerSnow
+    case HeavyShowerSnow
+    case LightSnow
     
 }
 
 enum AtmosphereDescription: String {
-    case mist
-    case smoke
-    case haze
-    case sandAndDustWhirls
-    case fog
-    case sand
-    case dust
-    case volcanicAsh
-    case squalls
-    case tornado
+    case Mist
+    case Smoke
+    case Haze
+    case SandAndDustWhirls
+    case Fog
+    case Sand
+    case Dust
+    case VolcanicAsh
+    case Squalls
+    case Tornado
     
 }
 
 enum CloudsDescription: String {
-    case fewClouds
-    case scatteredClouds
-    case brokenClouds
-    case overcastClouds
+    case FewClouds
+    case ScatteredClouds
+    case BrokenClouds
+    case OvercastClouds
     
 }
 
 enum ExtremeDescription: String {
-    case tropicalStorm
-    case hurricane
-    case cold
-    case hot
-    case windy
-    case hail
+    case TropicalStorm
+    case Hurricane
+    case Cold
+    case Hot
+    case Windy
+    case Hail
     
 }
 
 enum AdditionalDescription: String {
-    case calm
-    case lightBreeze
-    case gentleBreeze
-    case moderateBreexe
-    case freshBreexe
-    case strongCreeze
-    case highWindNearGale
-    case gale
-    case severeGale
-    case storm
-    case violentStorm
+    case Calm
+    case LightBreeze
+    case GentleBreeze
+    case ModerateBreexe
+    case FreshBreexe
+    case StrongCreeze
+    case HighWindNearGale
+    case Gale
+    case SevereGale
+    case Storm
+    case ViolentStorm
     
-    case clearSky
+    case ClearSky
     
 }
 

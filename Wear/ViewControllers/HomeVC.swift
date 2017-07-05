@@ -36,6 +36,8 @@ class HomeVC: UIViewController{
 //            WeatherDataService.compareEnumValues(WeatherData.shared.weatherStateDescription)
         })
         
+        
+        
 //       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }
     
@@ -58,7 +60,8 @@ class HomeVC: UIViewController{
             self.currentLocationLabel.text = WeatherData.shared.locationName
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
 //            self.currentWeatherDescriptionLabel.text =
-            WeatherDataService.enumValue.getOutfits(weatherCondition: WeatherData.shared)
+            Outfits.shared.getClothingCombo(WeatherData.shared)
+            WeatherDataService.shared.getOutfits()
             self.currentWeatherState.text = WeatherData.shared.description
             self.weatherIcon.text = WeatherData.shared.icon
         }
