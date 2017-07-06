@@ -11,8 +11,10 @@ import Foundation
 class Outfits {
     
     static var shared = Outfits()
-    var category: Category = .unknown
+    var category : Category = .unknown
     var categoryAtm = ""
+//    var temp = 0
+    
     
     //default clothing items changed based on weather
     var head = ClothingItems.Head.none
@@ -23,9 +25,9 @@ class Outfits {
     var accessory = ClothingItems.Accessories.none
     
     func forHead() {
+
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain:
             head = ClothingItems.Head.cap
@@ -45,13 +47,12 @@ class Outfits {
         case .unknown:
             head = ClothingItems.Head.none
         }
-
+        
     }
     
     func forTop() {
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain: fallthrough
         case .snow:
@@ -72,13 +73,12 @@ class Outfits {
             top = ClothingItems.Top.shortSleeveShirt
 
         }
-
+        
     }
     
     func forTopAcc() {
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain:
             topAcc = ClothingItems.TopAcc.jacket
@@ -100,20 +100,18 @@ class Outfits {
         case .unknown:
             topAcc = ClothingItems.TopAcc.none
         }
+        
     }
     
     
-    func forBottom() {
+    func forBottom()  {
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain: fallthrough
-        case .snow:
-            bottom = ClothingItems.bottom.pants
+        case .snow: fallthrough
         case .clouds: fallthrough
-        case .mist:
-            bottom = ClothingItems.bottom.pants
+        case .mist: fallthrough
         case .smoke: fallthrough
         case .haze: fallthrough
         case .sandAndDustWhirls: fallthrough
@@ -126,12 +124,12 @@ class Outfits {
         case .unknown:
             bottom = ClothingItems.bottom.pants
         }
+        
     }
     
     func forFootwear() {
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain:
             footwear = ClothingItems.Footwear.rainBoots
@@ -149,14 +147,15 @@ class Outfits {
         case .squalls: fallthrough
         case .tornado: fallthrough
         case .unknown:
-            footwear = ClothingItems.Footwear.none
+            footwear = ClothingItems.Footwear.sneakers
         }
+        
+        
     }
     
     func forAccessory() {
         switch category {
         case .thunderstorm: fallthrough
-        //assign the outfits, each function will have its own function in its; default values
         case .drizzle: fallthrough
         case .rain:
             accessory = ClothingItems.Accessories.umbrella
@@ -175,18 +174,38 @@ class Outfits {
         case .unknown:
             accessory = ClothingItems.Accessories.none
         }
+        
     }
     
+    
     //Default temp: 60~70
-    func getClothingCombo(_ ds: WeatherData) {
+    func getClothingCombo(_ ds: WeatherData)  {
         forHead()
         forTop()
         forTopAcc()
         forBottom()
         forFootwear()
         forAccessory()
+        
+    }
+    
+    func printSetting() {
+        //getClothingCombo()
+        
+        print(head)
+        print(top)
+        print(topAcc)
+        print(bottom)
+        print(footwear)
+        print(accessory)
+        
     }
 
+    
+   
+
+    
+   
     
 }
 

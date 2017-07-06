@@ -29,6 +29,7 @@ enum Category: String {
     
 }
 
+//Checking the category and set the value
 class WeatherDataService {
     
     let thunderstorm = "Thunderstorm"
@@ -54,7 +55,11 @@ class WeatherDataService {
     var categoryAtm = ""
 
     static var shared = WeatherDataService()
-
+//    var temp = WeatherData.shared.temperature
+    
+//    func getTemp(_ t: WeatherData) -> Int {
+//        
+//    }
     
     
     //Changes the category from the saved data to look like the API value
@@ -99,18 +104,20 @@ class WeatherDataService {
         //TODO: - Fill in category later
     }
     
-    
-    func getOutfits() {
+    func getOutfits(_ ds: WeatherData) {
         //First, let's get a generic category
         compareEnumValues(WeatherData.shared)
         
         //Second, pass the generic to the outfit class
         Outfits.shared.category = category
-        
         Outfits.shared.categoryAtm = categoryAtm
+//        Outfits.shared.temp = temp
+        
         print(Outfits.shared.category)
-        print(Outfits.shared.getClothingCombo(WeatherData.shared))
+        
+        
     }
+   
     
     
     private func iterateThunderstormEnum() -> Category {
@@ -240,6 +247,7 @@ class WeatherDataService {
             return next
         }
     }
+    
 }
     
     

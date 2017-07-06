@@ -21,24 +21,22 @@ class HomeVC: UIViewController{
     @IBOutlet weak var currentLocationLabel: UILabel!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
-    
     @IBOutlet weak var currentWeatherState: UILabel!
-    
     @IBOutlet weak var weatherIcon: UILabel!
     
     
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        //First, we make the API call to fetch the weather data
         WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
+            
+            //Once the data download has been complete, we update the UI
             return self.updateUI(weather: data)
-//            WeatherDataService.compareEnumValues(WeatherData.shared.weatherStateDescription)
         })
         
         
-        
-//       weatherImageView.image = UIImage(WeatherAPI.getWeatherImage(fromImgCode: "01d"))
     }
     
     
@@ -59,29 +57,18 @@ class HomeVC: UIViewController{
         DispatchQueue.main.async() {
             self.currentLocationLabel.text = WeatherData.shared.locationName
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
-//            self.currentWeatherDescriptionLabel.text =
-            Outfits.shared.getClothingCombo(WeatherData.shared)
-            WeatherDataService.shared.getOutfits()
-            self.currentWeatherState.text = WeatherData.shared.description
+            self.currentWeatherState.text = WeatherData.shared.weatherStateDescription
+            self.currentWeatherDescriptionLabel.text = WeatherData.shared.description
             self.weatherIcon.text = WeatherData.shared.icon
+            
+            WeatherDataService.shared.getOutfits(WeatherData.shared)
+            Outfits.shared.getClothingCombo(WeatherData.shared)
+            Outfits.shared.printSetting()
+
+
+            
         }
     }
-    
-//    func updateUI(error: NSError) {
-//        DispatchQueue.main.async() {
-//            self.showSimpleAlert(forTitle: "Can't get the weather",
-//                                 message: "The weather service isn't responding.")
-//        }
-//        print("didNotGetWeather error: \(error)")
-//    }
-    
-//    func showSimpleAlert(forTitle title: String, message: String) {
-//        let alert = UIAlertController(
-//            title: title,
-//            message: message,
-//            preferredStyle: .alert
-//        )
-//    }
 }
 
 

@@ -8,43 +8,38 @@
 
 import Foundation
 
-
-
-
 class JSONParser {
     
+    //MARK: - Class Methods
     //reading data from WeatherAPI
     class func parse(data: Data, completion: Completion) {
-        
         guard let weatherData = getJSON(from: data) else {
           return
         }
 
-        let description = "Rain"
-        
-//        let description = getDescription(from: weatherData)
+        let description = "drizzle"    // TODO: - Remove Later
+        //let description = getDescription(from: weatherData)
         let weatherState = getWeatherState(from: weatherData)
-//        let weatherState = "Thunderstorm"
         let temperature = getTemperature(from: weatherData)
         let locationName = getLocation(from: weatherData)
         let icon = getIcon(from: weatherData)
         
-        //call shared instance and pass data to save to it
-        WeatherData.shared.set(description: description, andState: weatherState, andTemperature:Int(temperature), withLocation: locationName, plusIcon: icon)
+        //call shared instance and pass data to save it
+        WeatherData.shared.set(description: description, andState: weatherState, andTemperature: Int(temperature), withLocation: locationName, plusIcon: icon)
 
-        //pass the data to UI
+        //Finally, call the completion handler and pass the data to the UI as a parameter
         completion(WeatherData.shared)
     }
     
+    
+    //MARK: - Private Methods
     //Check if the the data is JSON
     private class func getJSON(from data: Data) -> [String: Any]? {
         do {
-            
             // Try to convert that data into a Swift dictionary
             if let parsedData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 return parsedData
             }
-            
             
         } catch let jsonError as NSError {
             // An error occurred while trying to convert the data into a Swift dictionary.
@@ -54,7 +49,6 @@ class JSONParser {
         return nil
     }
 
-    
     private class func getDescription(from json: [String: Any]) -> String {
         if let array = json["weather"] as? [Any] {
             if let arrDict = array[0] as? [String: Any] {
@@ -104,8 +98,4 @@ class JSONParser {
         }
         return ""
     }
-    
-    
-    
-    
 }

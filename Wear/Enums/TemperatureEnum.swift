@@ -12,5 +12,6 @@ enum Temperature {
     case below60
     case from60To70
     case above70
+    
 
 }
