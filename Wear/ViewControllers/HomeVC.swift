@@ -35,8 +35,6 @@ class HomeVC: UIViewController{
             //Once the data download has been complete, we update the UI
             return self.updateUI(weather: data)
         })
-        
-        
     }
     
     
