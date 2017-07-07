@@ -16,7 +16,7 @@ enum Category: String {
     case snow = "Snow"
     case clouds = "Clouds"
     case mist = "Mist"
-    case smoke = "Smoke"
+    case naturalDisaster = "Smoke"
     case haze = "Haze"
     case sandAndDustWhirls = "SandAndDustWhirls"
     case fog = "Fog"
@@ -26,7 +26,26 @@ enum Category: String {
     case squalls = "Squalls"
     case tornado = "Tornado"
     
+    case TropicalStorm
+    case Hurricane
+    case Cold
+    case Hot
+    case Windy
+    case Hail
     
+    case Calm
+    case LightBreeze
+    case GentleBreeze
+    case ModerateBreexe
+    case FreshBreexe
+    case StrongCreeze
+    case HighWindNearGale
+    case Gale
+    case SevereGale
+    case Storm
+    case ViolentStorm
+    
+    case ClearSky
 }
 
 //Checking the category and set the value
@@ -167,56 +186,16 @@ class WeatherDataService {
     
     private func iterateAtmosphereEnum() -> Category {
         for str in iterateEnum(AtmosphereDescription.self) {
-            if str.rawValue.contains(mist) {
+            if str.rawValue.contains(mist) || str.rawValue.contains(haze) || str.rawValue.contains(fog) {
                 categoryAtm = mist
                 return .mist
             }
             
-            if str.rawValue.contains(smoke) {
+            if str.rawValue.contains(smoke) || str.rawValue.contains(sandAndDustWhirls) || str.rawValue.contains(sand) || str.rawValue.contains(dust) || str.rawValue.contains(volcanicAsh) || str.rawValue.contains(squalls) || str.rawValue.contains(tornado) {
                 categoryAtm = smoke
-                return .smoke
+                return .naturalDisaster
             }
             
-            if str.rawValue.contains(haze) {
-                categoryAtm = haze
-                return .haze
-
-            }
-            
-            if str.rawValue.contains(sandAndDustWhirls) {
-                categoryAtm = sandAndDustWhirls
-                return .sandAndDustWhirls
-            }
-            
-            if str.rawValue.contains(fog) {
-                categoryAtm = fog
-                return .fog
-            }
-            
-            if str.rawValue.contains(sand) {
-                categoryAtm = sand
-                return .sand
-            }
-            
-            if str.rawValue.contains(dust) {
-                categoryAtm = dust
-                return .dust
-            }
-            
-            if str.rawValue.contains(volcanicAsh) {
-                categoryAtm = volcanicAsh
-                return .volcanicAsh
-            }
-            
-            if str.rawValue.contains(squalls) {
-                categoryAtm = squalls
-                return .squalls
-            }
-            
-            if str.rawValue.contains(tornado) {
-                categoryAtm = tornado
-                return .tornado
-            }
         }
         
         return .unknown

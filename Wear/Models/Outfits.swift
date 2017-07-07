@@ -35,16 +35,8 @@ class Outfits {
             head = ClothingItems.Head.knitHat
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado: fallthrough
-        case .unknown:
+        case .naturalDisaster: fallthrough
+        default:
             head = ClothingItems.Head.none
         }
         
@@ -60,16 +52,8 @@ class Outfits {
         case .clouds: fallthrough
         case .mist:
             top = ClothingItems.Top.longSleeveShirt
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado: fallthrough
-        case .unknown:
+        case .naturalDisaster: fallthrough
+        default:
             top = ClothingItems.Top.shortSleeveShirt
 
         }
@@ -87,17 +71,9 @@ class Outfits {
         case .clouds: fallthrough
         case .mist:
             topAcc = ClothingItems.TopAcc.coat
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado:
+        case .naturalDisaster: fallthrough
             topAcc = ClothingItems.TopAcc.trenchCoat
-        case .unknown:
+        default:
             topAcc = ClothingItems.TopAcc.none
         }
         
@@ -112,16 +88,8 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado: fallthrough
-        case .unknown:
+        case .naturalDisaster: fallthrough
+        default:
             bottom = ClothingItems.bottom.pants
         }
         
@@ -137,16 +105,8 @@ class Outfits {
             footwear = ClothingItems.Footwear.boots
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado: fallthrough
-        case .unknown:
+        case .naturalDisaster: fallthrough
+        default:
             footwear = ClothingItems.Footwear.sneakers
         }
         
@@ -162,16 +122,8 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .smoke: fallthrough
-        case .haze: fallthrough
-        case .sandAndDustWhirls: fallthrough
-        case .fog: fallthrough
-        case .sand: fallthrough
-        case .dust: fallthrough
-        case .volcanicAsh: fallthrough
-        case .squalls: fallthrough
-        case .tornado: fallthrough
-        case .unknown:
+        case .naturalDisaster: fallthrough
+        default:
             accessory = ClothingItems.Accessories.none
         }
         
