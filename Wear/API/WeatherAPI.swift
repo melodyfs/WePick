@@ -20,13 +20,14 @@ class WeatherAPI {
     fileprivate static let key = "45ca707f502b31f8464232fb3f89b3b0"
     fileprivate static let imageURL = "http://openweathermap.org/img/w/"
     
-    
     //MARK: - Class Methods
     //passing closure with data of weather. The data will only be called once the request is completed
     class func getWeather(fromZipcode zip: String, completion: @escaping Completion) {
         
         let session = URLSession.shared
         let urlString = URL(string: "\(BaseURL)\(zip),us&APPID=\(key)")
+        
+        print("\(urlString)")
         
         if let url = urlString {
             let request = URLRequest(url: url)
