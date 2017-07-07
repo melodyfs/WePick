@@ -16,7 +16,6 @@ class WeatherData {
     var weatherStateDescription: String = ""
     var temperature: Int = 0
     var icon: String = ""
-    
     static var shared = WeatherData()
     
     //MARK: - Methods
