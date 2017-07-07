@@ -17,11 +17,8 @@ class JSONParser {
           return
         }
 
-<<<<<<< HEAD
+
            // TODO: - Remove Later
-=======
-//        let description = "drizzle"    // TODO: - Remove Later
->>>>>>> parent of d60c3b1... Merge pull request #4 from melodyfs/revert-3-CoreLocation
         let description = getDescription(from: weatherData)
         let weatherState = getWeatherState(from: weatherData)
         let temperature = getTemperature(from: weatherData)
