@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C3F5A691F0EBBBD00C079CB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */; };
 		6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABDA071F0C48A400133DBB /* Outfits.swift */; };
 		6CABDA0A1F0D6ECE00133DBB /* TemperatureEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABDA091F0D6ECE00133DBB /* TemperatureEnum.swift */; };
 		6CB17C181F02D88C0093791F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C171F02D88C0093791F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		4E4FB76890F8944D26D8CDE7 /* Pods-Wear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wear/Pods-Wear.release.xcconfig"; sourceTree = "<group>"; };
+		6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6CABDA071F0C48A400133DBB /* Outfits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Outfits.swift; path = Models/Outfits.swift; sourceTree = "<group>"; };
 		6CABDA091F0D6ECE00133DBB /* TemperatureEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureEnum.swift; path = Enums/TemperatureEnum.swift; sourceTree = "<group>"; };
 		6CB17BFF1F02D7C40093791F /* Wear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C3F5A691F0EBBBD00C079CB /* CoreLocation.framework in Frameworks */,
 				93B9569BB0009BDC9ABFC91F /* Pods_Wear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +73,7 @@
 		3B6580A2E391EF642FD5D5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */,
 				93110D7DAA8F247261B706AE /* Pods_Wear.framework */,
 			);
 			name = Frameworks;
@@ -206,6 +210,7 @@
 				TargetAttributes = {
 					6CB17BFE1F02D7C40093791F = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9JYNRTHSJ3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -409,6 +414,7 @@
 			baseConfigurationReference = ADF61E04CFA322B80F0977B8 /* Pods-Wear.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9JYNRTHSJ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Wear/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Melody-Yang.Wear";
@@ -422,6 +428,7 @@
 			baseConfigurationReference = 4E4FB76890F8944D26D8CDE7 /* Pods-Wear.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9JYNRTHSJ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Wear/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Melody-Yang.Wear";

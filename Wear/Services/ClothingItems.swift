@@ -74,27 +74,6 @@ enum ClothingItems {
     }
     
     //MARK: - Actions
-    
-//    //call the create style func based on temperature
-//    class func getStyleFromTemp(temp: Int) {
-//        let temp = WeatherData.shared.temperature
-//        let style = CreateStyles()
-//        
-//        if temp < 60 {
-//            style.createStyleByTemp(type:.below60)
-//        }
-//        
-//        if temp > 60 && temp < 70 {
-//            style.createStyleByTemp(type: .from60To70)
-//        }
-//        
-//        if temp > 70 {
-//            style.createStyleByTemp(type: .above70)
-//            
-//        }
-//        
-//        
-//    }
-    
+        
 
 }

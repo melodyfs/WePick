@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
-//import SwiftOpenWeatherMapAPI
+import CoreLocation
 
-class HomeVC: UIViewController{
+class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     //MARK: - Properties
-    
-    
+    var locationManager = CLLocationManager()
+
+    var  tempZip = ""
     
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -28,30 +29,72 @@ class HomeVC: UIViewController{
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 200
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
+////        First, we make the API call to fetch the weather data
+    }
     
-        //First, we make the API call to fetch the weather data
-        WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
-            
-            //Once the data download has been complete, we update the UI
-            return self.updateUI(weather: data)
-        })
+    override func viewDidAppear(_ animated: Bool) {
         
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
+            if (error != nil) {
+                print("Reverse geocoder failed with error")
+                return
+            }
+            
+            if (placemarks?.count)! > 0 {
+                var placeMark: CLPlacemark!
+                placeMark = placemarks?[0]
+                let zipcode = placeMark.postalCode ?? ""
+                if self.tempZip != zipcode {
+                    self.tempZip = zipcode
+                    WeatherAPI.getWeather(fromZipcode: zipcode, completion: { data in
+                        //Once the data download has been complete, we update the UI
+                        return self.updateUI(weather: data)
+                    })
+                }
+            }else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    //checking whether user turn on/off the access to location
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                }
+            }
+        }
+    }
+
     
     
     //MARK: - Public Methods
     
     
     
+    
     //MARK: - Private Methods
     
+   
     
     
     //MARK: - Actions
     @IBAction func seeSuggestionButtonTapped(_ sender: Any) {
         print("see suggestion button tapped")
     }
+    
     
     func updateUI(weather: WeatherData) {
         DispatchQueue.main.async() {
@@ -64,8 +107,6 @@ class HomeVC: UIViewController{
             WeatherDataService.shared.getOutfits(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
-
-
             
         }
     }

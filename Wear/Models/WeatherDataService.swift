@@ -22,7 +22,7 @@ enum Category: String {
     case fog = "Fog"
     case sand = "Sand"
     case dust = "Dust"
-    case volcanicAsh = "VolcanicAsh"
+    case naturalDisaster = "VolcanicAsh"
     case squalls = "Squalls"
     case tornado = "Tornado"
     
@@ -191,8 +191,20 @@ class WeatherDataService {
                 return .mist
             }
             
+<<<<<<< HEAD
             if str.rawValue.contains(smoke) || str.rawValue.contains(sandAndDustWhirls) || str.rawValue.contains(sand) || str.rawValue.contains(dust) || str.rawValue.contains(volcanicAsh) || str.rawValue.contains(squalls) || str.rawValue.contains(tornado) {
                 categoryAtm = smoke
+=======
+        
+            if str.rawValue.contains(sand) || str.rawValue.contains(sandAndDustWhirls) || str.rawValue.contains(dust) || str.rawValue.contains(smoke) {
+                categoryAtm = sand
+                return .sand
+            }
+            
+            
+            if str.rawValue.contains(volcanicAsh) || str.rawValue.contains(squalls) || str.rawValue.contains(tornado) {
+                categoryAtm = volcanicAsh
+>>>>>>> parent of d60c3b1... Merge pull request #4 from melodyfs/revert-3-CoreLocation
                 return .naturalDisaster
             }
             
