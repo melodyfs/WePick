@@ -102,9 +102,9 @@ enum AdditionalDescription: String {
     case Calm
     case LightBreeze
     case GentleBreeze
-    case ModerateBreexe
-    case FreshBreexe
-    case StrongCreeze
+    case ModerateBreeze
+    case FreshBreeze
+    case StrongBreeze
     case HighWindNearGale
     case Gale
     case SevereGale

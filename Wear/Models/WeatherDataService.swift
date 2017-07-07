@@ -25,26 +25,26 @@ enum Category: String {
     case squalls = "Squalls"
     case tornado = "Tornado"
     
-    case TropicalStorm
-    case Hurricane
-    case Cold
-    case Hot
-    case Windy
-    case Hail
+    case TropicalStorm = "TropicalStorm"
+    case Hurricane = "Hurricane"
+    case Cold = "Cold"
+    case Hot = "Hot"
+    case Windy = "Windy"
+    case Hail = "Hail"
     
-    case Calm
-    case LightBreeze
-    case GentleBreeze
-    case ModerateBreexe
-    case FreshBreexe
-    case StrongCreeze
-    case HighWindNearGale
-    case Gale
-    case SevereGale
-    case Storm
-    case ViolentStorm
+    case Calm = "Calm"
+    case LightBreeze = "Lightbreeze"
+    case GentleBreeze = "GentleBreeze"
+    case ModerateBreeze = "ModerateBreexe"
+    case FreshBreeze = "FreshBreexe"
+    case StrongBreeze = "StrongCreeze"
+    case HighWindNearGale = "HighWindNearGale"
+    case Gale = "Gale"
+    case SevereGale = "SevereGale"
+    case Storm = "Storm"
+    case ViolentStorm = "ViolentStorm"
     
-    case ClearSky
+    case ClearSky = "ClearSky"
 }
 
 //Checking the category and set the value
@@ -65,6 +65,26 @@ class WeatherDataService {
     let volcanicAsh = "VolcanicAsh"
     let squalls = "Squalls"
     let tornado = "Tornado"
+    let TropicalStorm = "TropicalStorm"
+    let Hurricane = "Hurricane"
+    let Cold = "Cold"
+    let Hot = "Hot"
+    let Windy = "Windy"
+    let Hail = "Hail"
+    
+    let Calm = "Calm"
+    let LightBreeze = "Lightbreeze"
+    let GentleBreeze = "GentleBreeze"
+    let ModerateBreeze = "ModerateBreexe"
+    let FreshBreeze = "FreshBreexe"
+    let StrongBreeze = "StrongCreeze"
+    let HighWindNearGale = "HighWindNearGale"
+    let Gale = "Gale"
+    let SevereGale = "SevereGale"
+    let Storm = "Storm"
+    let ViolentStorm = "ViolentStorm"
+    
+    let ClearSky = "ClearSky"
     
     //For categories that has common enum value strings
     var category: Category = .unknown
@@ -205,6 +225,44 @@ class WeatherDataService {
         }
         
         return .unknown
+    }
+    
+    private func iterateExtremeEnum() -> Category {
+        for str in iterateEnum(ExtremeDescription.self) {
+            if str.rawValue.contains(TropicalStorm) ||  str.rawValue.contains(Hurricane) {
+                return .TropicalStorm
+            }
+            
+            if str.rawValue.contains(Cold) || str.rawValue.contains(Windy) {
+                return .Cold
+            }
+            
+            if str.rawValue.contains(Hot) {
+                return .Hot
+            }
+            
+            if str.rawValue.contains(Hail) {
+                return .Hail
+            }
+        }
+        return .unknown
+    }
+    
+    private func iterateAdditionalEnum() -> Category {
+        for str in iterateEnum(AdditionalDescription.self) {
+            if str.rawValue.contains(Calm) || str.rawValue.contains(LightBreeze) || str.rawValue.contains(GentleBreeze) || str.rawValue.contains(ModerateBreeze) || str.rawValue.contains(FreshBreeze) {
+                return .Calm
+            }
+            
+            if str.rawValue.contains(StrongBreeze) || str.rawValue.contains(HighWindNearGale) || str.rawValue.contains(Gale) || str.rawValue.contains(SevereGale) {
+                return .StrongBreeze
+            }
+            
+            if str.rawValue.contains(Storm) || str.rawValue.contains(ViolentStorm) {
+                return .Storm
+            }
+        }
+       return .unknown
     }
 
      //generic to reduce if statements while checking category

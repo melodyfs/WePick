@@ -27,15 +27,22 @@ class Outfits {
     private func forHead() {
 
         switch category {
+        case .Hot: fallthrough
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain:
             head = ClothingItems.Head.cap
+        case .Cold: fallthrough
+        case .Hail: fallthrough
+        case .StrongBreeze: fallthrough
         case .snow:
             head = ClothingItems.Head.knitHat
         case .clouds: fallthrough
         case .mist: fallthrough
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
+        case .Calm: fallthrough
+        case .Storm: fallthrough
         default:
             head = ClothingItems.Head.none
         }
@@ -47,12 +54,18 @@ class Outfits {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain: fallthrough
-        case .snow:
-            top = ClothingItems.Top.longSleeveShirt
+        case .snow: fallthrough
         case .clouds: fallthrough
+        case .Cold: fallthrough
+        case .Hail: fallthrough
+        case .StrongBreeze: fallthrough
+        case . Storm: fallthrough
         case .mist:
             top = ClothingItems.Top.longSleeveShirt
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
+        case .Hot: fallthrough
+        case .Calm: fallthrough
         default:
             top = ClothingItems.Top.shortSleeveShirt
 
@@ -66,13 +79,19 @@ class Outfits {
         case .drizzle: fallthrough
         case .rain:
             topAcc = ClothingItems.TopAcc.jacket
-        case .snow:
-            topAcc = ClothingItems.TopAcc.coat
+        case .Cold: fallthrough
+        case .snow: fallthrough
+        case .Storm: fallthrough
         case .clouds: fallthrough
         case .mist:
             topAcc = ClothingItems.TopAcc.coat
-        case .naturalDisaster: fallthrough
+        case .sand: fallthrough
+        case .Hail: fallthrough
+        case .StrongBreeze: fallthrough
+        case .naturalDisaster:
             topAcc = ClothingItems.TopAcc.trenchCoat
+        case .Hot: fallthrough
+        case .Calm: fallthrough
         default:
             topAcc = ClothingItems.TopAcc.none
         }
@@ -88,7 +107,14 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist: fallthrough
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
+        case .Cold: fallthrough
+        case .Hot: fallthrough
+        case .Hail: fallthrough
+        case .Calm: fallthrough
+        case .StrongBreeze: fallthrough
+        case .Storm: fallthrough
         default:
             bottom = ClothingItems.bottom.pants
         }
@@ -99,13 +125,19 @@ class Outfits {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
+        case .Storm: fallthrough
         case .rain:
             footwear = ClothingItems.Footwear.rainBoots
-        case .snow:
+        case .snow: fallthrough
+        case .Hail: fallthrough
+        case .StrongBreeze: fallthrough
+        case .Cold:
             footwear = ClothingItems.Footwear.boots
         case .clouds: fallthrough
         case .mist: fallthrough
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
+        case .Calm: fallthrough
         default:
             footwear = ClothingItems.Footwear.sneakers
         }
@@ -117,11 +149,13 @@ class Outfits {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
+        case .Storm: fallthrough
         case .rain:
             accessory = ClothingItems.Accessories.umbrella
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist: fallthrough
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
         default:
             accessory = ClothingItems.Accessories.none
