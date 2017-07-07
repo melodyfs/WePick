@@ -24,7 +24,7 @@ class Outfits {
     var footwear = ClothingItems.Footwear.sneakers
     var accessory = ClothingItems.Accessories.none
     
-    func forHead() {
+    private func forHead() {
 
         switch category {
         case .thunderstorm: fallthrough
@@ -50,7 +50,7 @@ class Outfits {
         
     }
     
-    func forTop() {
+    private func forTop() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -76,7 +76,7 @@ class Outfits {
         
     }
     
-    func forTopAcc() {
+    private func forTopAcc() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -104,7 +104,7 @@ class Outfits {
     }
     
     
-    func forBottom()  {
+    private func forBottom()  {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -127,7 +127,7 @@ class Outfits {
         
     }
     
-    func forFootwear() {
+    private func forFootwear() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -153,7 +153,7 @@ class Outfits {
         
     }
     
-    func forAccessory() {
+    private func forAccessory() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -190,8 +190,6 @@ class Outfits {
     }
     
     func printSetting() {
-        //getClothingCombo()
-        
         print(head)
         print(top)
         print(topAcc)

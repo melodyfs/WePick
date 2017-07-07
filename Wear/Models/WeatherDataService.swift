@@ -22,7 +22,7 @@ enum Category: String {
     case fog = "Fog"
     case sand = "Sand"
     case dust = "Dust"
-    case volcanicAsh = "VolcanicAsh"
+    case naturalDisaster = "VolcanicAsh"
     case squalls = "Squalls"
     case tornado = "Tornado"
     
@@ -167,56 +167,23 @@ class WeatherDataService {
     
     private func iterateAtmosphereEnum() -> Category {
         for str in iterateEnum(AtmosphereDescription.self) {
-            if str.rawValue.contains(mist) {
+            if str.rawValue.contains(mist) || str.rawValue.contains(haze) || str.rawValue.contains(fog) {
                 categoryAtm = mist
                 return .mist
             }
             
-            if str.rawValue.contains(smoke) {
-                categoryAtm = smoke
-                return .smoke
-            }
-            
-            if str.rawValue.contains(haze) {
-                categoryAtm = haze
-                return .haze
-
-            }
-            
-            if str.rawValue.contains(sandAndDustWhirls) {
-                categoryAtm = sandAndDustWhirls
-                return .sandAndDustWhirls
-            }
-            
-            if str.rawValue.contains(fog) {
-                categoryAtm = fog
-                return .fog
-            }
-            
-            if str.rawValue.contains(sand) {
+        
+            if str.rawValue.contains(sand) || str.rawValue.contains(sandAndDustWhirls) || str.rawValue.contains(dust) || str.rawValue.contains(smoke) {
                 categoryAtm = sand
                 return .sand
             }
             
-            if str.rawValue.contains(dust) {
-                categoryAtm = dust
-                return .dust
-            }
             
-            if str.rawValue.contains(volcanicAsh) {
+            if str.rawValue.contains(volcanicAsh) || str.rawValue.contains(squalls) || str.rawValue.contains(tornado) {
                 categoryAtm = volcanicAsh
-                return .volcanicAsh
+                return .naturalDisaster
             }
             
-            if str.rawValue.contains(squalls) {
-                categoryAtm = squalls
-                return .squalls
-            }
-            
-            if str.rawValue.contains(tornado) {
-                categoryAtm = tornado
-                return .tornado
-            }
         }
         
         return .unknown
