@@ -28,7 +28,7 @@ enum ClothingItems {
         case none
         case jacket = "jacket"
         case sweater = "sweater"
-        case trenchCoat = "trench coat"
+        case trenchCoat = "trenchCoat"
         case vest = "vest"
         case blazer = "blazer"
         case coat

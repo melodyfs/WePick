@@ -11,6 +11,15 @@ import UIKit
 
 class ResultVC: UIViewController {
     
+    //MARK: - Properties
+    
+    var headImage = "\(Outfits.shared.head).png"
+    var topImage = "\(Outfits.shared.top).png"
+    var topAccImage = "\(Outfits.shared.topAcc).png"
+    var bottomImage = "\(Outfits.shared.bottom).png"
+    var footweaerImage = "\(Outfits.shared.footwear).png"
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var upperBodyImageView: UIImageView!
@@ -30,6 +39,17 @@ class ResultVC: UIViewController {
     
     @IBAction func doneButton(_ sender: Any) {
         print("Done button tapped")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        headImageView.image = UIImage(named: headImage)
+        upperBodyImageView.image = UIImage(named: topImage)
+        lowerBodyImageView.image = UIImage(named: bottomImage)
+        shoeImageView.image = UIImage(named: footweaerImage)
+        
     }
     
     

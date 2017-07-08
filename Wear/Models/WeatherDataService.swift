@@ -139,6 +139,8 @@ class WeatherDataService {
             category = iterateAtmosphereEnum()
         }
         
+        
+        
         //TODO: - Fill in category later
     }
     
