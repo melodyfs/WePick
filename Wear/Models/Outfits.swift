@@ -116,7 +116,7 @@ class Outfits {
         case .StrongBreeze: fallthrough
         case .Storm: fallthrough
         default:
-            bottom = ClothingItems.bottom.pants
+            bottom = ClothingItems.bottom.jeans
         }
         
     }
