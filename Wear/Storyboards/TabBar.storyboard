@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="9Ul-cG-Bbg"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Camera" id="9Ul-cG-Bbg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUD-SA-k9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="v1c-Q6-D9Y" id="PVl-OJ-hiV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="My Collection" id="GOB-Wl-EgN"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="My Collection" id="GOB-Wl-EgN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvY-ya-Cvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="582" y="-112"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--SelectionTBC-->
         <scene sceneID="f9N-ad-Nnl">
             <objects>
-                <tabBarController id="yng-K1-Dew" sceneMemberID="viewController">
+                <tabBarController id="yng-K1-Dew" customClass="SelectionTBC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="4KY-Mb-brA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

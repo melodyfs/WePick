@@ -39,6 +39,15 @@ class SelectionTBC: UITabBarController {
 
 extension SelectionTBC: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        if viewController.tabBarItem.tag == 1 {
+            print("take photo")
+            
+            return false
+        } else {
+        
         return true
+        
+        }
     }
 }
