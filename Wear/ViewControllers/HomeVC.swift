@@ -102,7 +102,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
             self.currentWeatherState.text = WeatherData.shared.weatherStateDescription
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.description
-            self.weatherIcon.text = WeatherData.shared.icon
+//            self.weatherIcon.text = WeatherData.shared.icon
             
             WeatherDataService.shared.getOutfits(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)

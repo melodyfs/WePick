@@ -77,12 +77,12 @@ class Outfits {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
+        case .cold: fallthrough
+        case .clouds: fallthrough
         case .rain:
             topAcc = ClothingItems.TopAcc.jacket
-        case .cold: fallthrough
         case .snow: fallthrough
         case .storm: fallthrough
-        case .clouds: fallthrough
         case .mist: fallthrough
 //            topAcc = ClothingItems.TopAcc.coat
         case .sand: fallthrough
@@ -126,8 +126,8 @@ class Outfits {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .storm: fallthrough
-        case .rain:
-            footwear = ClothingItems.Footwear.rainBoots
+        case .rain: fallthrough
+//            footwear = ClothingItems.Footwear.rainBoots
         case .snow: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough

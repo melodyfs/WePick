@@ -22,8 +22,9 @@ class ResultVC: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var headImageView: UIImageView!
-    @IBOutlet weak var upperBodyImageView: UIImageView!
-    @IBOutlet weak var lowerBodyImageView: UIImageView!
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var topAccImageView: UIImageView!
+    @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var shoeImageView: UIImageView!
     
     
@@ -46,8 +47,9 @@ class ResultVC: UIViewController {
         super.viewWillAppear(animated)
         
         headImageView.image = UIImage(named: headImage)
-        upperBodyImageView.image = UIImage(named: topImage)
-        lowerBodyImageView.image = UIImage(named: bottomImage)
+        topImageView.image = UIImage(named: topImage)
+        topAccImageView.image = UIImage(named: topAccImage)
+        bottomImageView.image = UIImage(named: bottomImage)
         shoeImageView.image = UIImage(named: footweaerImage)
         
     }
