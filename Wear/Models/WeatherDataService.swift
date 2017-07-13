@@ -25,26 +25,26 @@ enum Category: String {
     case squalls = "Squalls"
     case tornado = "Tornado"
     
-    case TropicalStorm = "TropicalStorm"
-    case Hurricane = "Hurricane"
-    case Cold = "Cold"
-    case Hot = "Hot"
-    case Windy = "Windy"
-    case Hail = "Hail"
+    case tropicalStorm = "TropicalStorm"
+    case hurricane = "Hurricane"
+    case cold = "Cold"
+    case hot = "Hot"
+    case windy = "Windy"
+    case hail = "Hail"
     
-    case Calm = "Calm"
-    case LightBreeze = "Lightbreeze"
-    case GentleBreeze = "GentleBreeze"
-    case ModerateBreeze = "ModerateBreexe"
-    case FreshBreeze = "FreshBreexe"
-    case StrongBreeze = "StrongCreeze"
-    case HighWindNearGale = "HighWindNearGale"
-    case Gale = "Gale"
-    case SevereGale = "SevereGale"
-    case Storm = "Storm"
-    case ViolentStorm = "ViolentStorm"
+    case calm = "Calm"
+    case lightBreeze = "Lightbreeze"
+    case gentleBreeze = "GentleBreeze"
+    case moderateBreeze = "ModerateBreexe"
+    case freshBreeze = "FreshBreexe"
+    case strongBreeze = "StrongCreeze"
+    case highWindNearGale = "HighWindNearGale"
+    case gale = "Gale"
+    case severeGale = "SevereGale"
+    case storm = "Storm"
+    case violentStorm = "ViolentStorm"
     
-    case ClearSky = "ClearSky"
+    case clearSky = "ClearSky"
 }
 
 //Checking the category and set the value
@@ -65,26 +65,26 @@ class WeatherDataService {
     let volcanicAsh = "VolcanicAsh"
     let squalls = "Squalls"
     let tornado = "Tornado"
-    let TropicalStorm = "TropicalStorm"
-    let Hurricane = "Hurricane"
-    let Cold = "Cold"
-    let Hot = "Hot"
-    let Windy = "Windy"
-    let Hail = "Hail"
+    let tropicalStorm = "TropicalStorm"
+    let hurricane = "Hurricane"
+    let cold = "Cold"
+    let hot = "Hot"
+    let windy = "Windy"
+    let hail = "Hail"
     
-    let Calm = "Calm"
-    let LightBreeze = "Lightbreeze"
-    let GentleBreeze = "GentleBreeze"
-    let ModerateBreeze = "ModerateBreexe"
-    let FreshBreeze = "FreshBreexe"
-    let StrongBreeze = "StrongCreeze"
-    let HighWindNearGale = "HighWindNearGale"
-    let Gale = "Gale"
-    let SevereGale = "SevereGale"
-    let Storm = "Storm"
-    let ViolentStorm = "ViolentStorm"
+    let calm = "Calm"
+    let lightBreeze = "Lightbreeze"
+    let gentleBreeze = "GentleBreeze"
+    let moderateBreeze = "ModerateBreexe"
+    let freshBreeze = "FreshBreexe"
+    let strongBreeze = "StrongCreeze"
+    let highWindNearGale = "HighWindNearGale"
+    let gale = "Gale"
+    let severeGale = "SevereGale"
+    let storm = "Storm"
+    let violentStorm = "ViolentStorm"
     
-    let ClearSky = "ClearSky"
+    let clearSky = "ClearSky"
     
     //For categories that has common enum value strings
     var category: Category = .unknown
@@ -231,20 +231,20 @@ class WeatherDataService {
     
     private func iterateExtremeEnum() -> Category {
         for str in iterateEnum(ExtremeDescription.self) {
-            if str.rawValue.contains(TropicalStorm) ||  str.rawValue.contains(Hurricane) {
-                return .TropicalStorm
+            if str.rawValue.contains(tropicalStorm) ||  str.rawValue.contains(hurricane) {
+                return .tropicalStorm
             }
             
-            if str.rawValue.contains(Cold) || str.rawValue.contains(Windy) {
-                return .Cold
+            if str.rawValue.contains(cold) || str.rawValue.contains(windy) {
+                return .cold
             }
             
-            if str.rawValue.contains(Hot) {
-                return .Hot
+            if str.rawValue.contains(hot) {
+                return .hot
             }
             
-            if str.rawValue.contains(Hail) {
-                return .Hail
+            if str.rawValue.contains(hail) {
+                return .hail
             }
         }
         return .unknown
@@ -252,16 +252,16 @@ class WeatherDataService {
     
     private func iterateAdditionalEnum() -> Category {
         for str in iterateEnum(AdditionalDescription.self) {
-            if str.rawValue.contains(Calm) || str.rawValue.contains(LightBreeze) || str.rawValue.contains(GentleBreeze) || str.rawValue.contains(ModerateBreeze) || str.rawValue.contains(FreshBreeze) {
-                return .Calm
+            if str.rawValue.contains(calm) || str.rawValue.contains(lightBreeze) || str.rawValue.contains(gentleBreeze) || str.rawValue.contains(moderateBreeze) || str.rawValue.contains(freshBreeze) {
+                return .calm
             }
             
-            if str.rawValue.contains(StrongBreeze) || str.rawValue.contains(HighWindNearGale) || str.rawValue.contains(Gale) || str.rawValue.contains(SevereGale) {
-                return .StrongBreeze
+            if str.rawValue.contains(strongBreeze) || str.rawValue.contains(highWindNearGale) || str.rawValue.contains(gale) || str.rawValue.contains(severeGale) {
+                return .strongBreeze
             }
             
-            if str.rawValue.contains(Storm) || str.rawValue.contains(ViolentStorm) {
-                return .Storm
+            if str.rawValue.contains(storm) || str.rawValue.contains(violentStorm) {
+                return .storm
             }
         }
        return .unknown
