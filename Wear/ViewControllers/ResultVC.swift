@@ -18,6 +18,7 @@ class ResultVC: UIViewController {
     var topAccImage = "\(Outfits.shared.topAcc).png"
     var bottomImage = "\(Outfits.shared.bottom).png"
     var footweaerImage = "\(Outfits.shared.footwear).png"
+    var accImage = "\(Outfits.shared.accessory).png"
     
     
     //MARK: - Outlets
@@ -26,7 +27,7 @@ class ResultVC: UIViewController {
     @IBOutlet weak var topAccImageView: UIImageView!
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var shoeImageView: UIImageView!
-    
+    @IBOutlet weak var accImageView: UIImageView!
     
     //MARK: - Public Methods
     
@@ -51,7 +52,7 @@ class ResultVC: UIViewController {
         topAccImageView.image = UIImage(named: topAccImage)
         bottomImageView.image = UIImage(named: bottomImage)
         shoeImageView.image = UIImage(named: footweaerImage)
-        
+        accImageView.image = UIImage(named: accImage)
     }
     
     
