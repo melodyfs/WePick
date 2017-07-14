@@ -143,7 +143,7 @@ class WeatherDataService {
             category = iterateExtremeEnum()
         }
         
-        if dsReformat.contains(calm) || dsReformat.contains("breeze") || dsReformat.contains("gale") || dsReformat.contains(storm) || dsReformat.contains(violentStorm) {
+        if dsReformat.contains(calm) || dsReformat.contains(clearSky) || dsReformat.contains("breeze") || dsReformat.contains("gale") || dsReformat.contains(storm) || dsReformat.contains(violentStorm) {
             category = iterateAdditionalEnum()
         }
         
@@ -259,7 +259,7 @@ class WeatherDataService {
     
     private func iterateAdditionalEnum() -> Category {
         for str in iterateEnum(AdditionalDescription.self) {
-            if str.rawValue.contains(calm) || str.rawValue.contains(lightBreeze) || str.rawValue.contains(gentleBreeze) || str.rawValue.contains(moderateBreeze) || str.rawValue.contains(freshBreeze) {
+            if str.rawValue.contains(calm) || str.rawValue.contains(lightBreeze) || str.rawValue.contains(gentleBreeze) || str.rawValue.contains(moderateBreeze) || str.rawValue.contains(freshBreeze) || str.rawValue.contains(clearSky){
                 return .calm
             }
             
