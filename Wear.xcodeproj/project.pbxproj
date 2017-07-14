@@ -19,6 +19,8 @@
 		6CD17A0A1F18239F009153F6 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD17A091F18239F009153F6 /* TabBar.storyboard */; };
 		6CD17A0C1F18253B009153F6 /* SelectionTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD17A0B1F18253B009153F6 /* SelectionTBC.swift */; };
 		6CD17A0E1F1936F9009153F6 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD17A0D1F1936F9009153F6 /* PhotoService.swift */; };
+		6CD17A121F19483D009153F6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD17A111F19483D009153F6 /* CoreData.framework */; };
+		6CD17A151F1949BA009153F6 /* ItemImageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CD17A131F1949BA009153F6 /* ItemImageModel.xcdatamodeld */; };
 		6CFF83951F02E26300255329 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83941F02E26300255329 /* WeatherAPI.swift */; };
 		6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83961F02FDCA00255329 /* JSONParser.swift */; };
 		6CFF839B1F031E3D00255329 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF839A1F031E3D00255329 /* WeatherData.swift */; };
@@ -44,6 +46,8 @@
 		6CD17A091F18239F009153F6 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TabBar.storyboard; path = Storyboards/TabBar.storyboard; sourceTree = "<group>"; };
 		6CD17A0B1F18253B009153F6 /* SelectionTBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionTBC.swift; path = ViewControllers/SelectionTBC.swift; sourceTree = "<group>"; };
 		6CD17A0D1F1936F9009153F6 /* PhotoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoService.swift; path = Services/PhotoService.swift; sourceTree = "<group>"; };
+		6CD17A111F19483D009153F6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6CD17A141F1949BA009153F6 /* ItemImageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemImageModel.xcdatamodel; sourceTree = "<group>"; };
 		6CFF83941F02E26300255329 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPI.swift; path = API/WeatherAPI.swift; sourceTree = "<group>"; };
 		6CFF83961F02FDCA00255329 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = API/JSONParser.swift; sourceTree = "<group>"; };
 		6CFF839A1F031E3D00255329 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = Models/WeatherData.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD17A121F19483D009153F6 /* CoreData.framework in Frameworks */,
 				6C3F5A691F0EBBBD00C079CB /* CoreLocation.framework in Frameworks */,
 				93B9569BB0009BDC9ABFC91F /* Pods_Wear.framework in Frameworks */,
 			);
@@ -79,6 +84,7 @@
 		3B6580A2E391EF642FD5D5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CD17A111F19483D009153F6 /* CoreData.framework */,
 				6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */,
 				93110D7DAA8F247261B706AE /* Pods_Wear.framework */,
 			);
@@ -169,6 +175,7 @@
 		6CFF83911F02DA8500255329 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CD17A131F1949BA009153F6 /* ItemImageModel.xcdatamodeld */,
 				6CFF839A1F031E3D00255329 /* WeatherData.swift */,
 				6CABDA071F0C48A400133DBB /* Outfits.swift */,
 			);
@@ -311,6 +318,7 @@
 			files = (
 				6CFF839B1F031E3D00255329 /* WeatherData.swift in Sources */,
 				6CD17A0C1F18253B009153F6 /* SelectionTBC.swift in Sources */,
+				6CD17A151F1949BA009153F6 /* ItemImageModel.xcdatamodeld in Sources */,
 				6CB17C1C1F02D8A40093791F /* ResultVC.swift in Sources */,
 				6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */,
 				6CABDA0A1F0D6ECE00133DBB /* TemperatureEnum.swift in Sources */,
@@ -471,6 +479,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6CD17A131F1949BA009153F6 /* ItemImageModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6CD17A141F1949BA009153F6 /* ItemImageModel.xcdatamodel */,
+			);
+			currentVersion = 6CD17A141F1949BA009153F6 /* ItemImageModel.xcdatamodel */;
+			name = ItemImageModel.xcdatamodeld;
+			path = Models/ItemImageModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6CB17BF71F02D7C40093791F /* Project object */;
 }
