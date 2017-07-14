@@ -135,10 +135,17 @@ class WeatherDataService {
             category = iterateCloudsEnum()
         }
         
-        if dsReformat.contains(categoryAtm) {
+        if dsReformat.contains(mist) || dsReformat.contains(haze) || dsReformat.contains(fog) || dsReformat.contains("sand") || dsReformat.contains(dust) || dsReformat.contains(smoke) || dsReformat.contains(volcanicAsh) || dsReformat.contains(squalls) || dsReformat.contains(tornado) {
             category = iterateAtmosphereEnum()
         }
         
+        if dsReformat.contains(tropicalStorm) || dsReformat.contains(hurricane) || dsReformat.contains(cold) || dsReformat.contains(windy) || dsReformat.contains(hot) || dsReformat.contains(hail) {
+            category = iterateExtremeEnum()
+        }
+        
+        if dsReformat.contains(calm) || dsReformat.contains(clearSky) || dsReformat.contains("breeze") || dsReformat.contains("gale") || dsReformat.contains(storm) || dsReformat.contains(violentStorm) {
+            category = iterateAdditionalEnum()
+        }
         
         
         //TODO: - Fill in category later
@@ -252,7 +259,7 @@ class WeatherDataService {
     
     private func iterateAdditionalEnum() -> Category {
         for str in iterateEnum(AdditionalDescription.self) {
-            if str.rawValue.contains(calm) || str.rawValue.contains(lightBreeze) || str.rawValue.contains(gentleBreeze) || str.rawValue.contains(moderateBreeze) || str.rawValue.contains(freshBreeze) {
+            if str.rawValue.contains(calm) || str.rawValue.contains(lightBreeze) || str.rawValue.contains(gentleBreeze) || str.rawValue.contains(moderateBreeze) || str.rawValue.contains(freshBreeze) || str.rawValue.contains(clearSky){
                 return .calm
             }
             
