@@ -13,6 +13,7 @@ class ResultVC: UIViewController {
     
     //MARK: - Properties
     
+    
     var headImage = "\(Outfits.shared.head).png"
     var topImage = "\(Outfits.shared.top).png"
     var topAccImage = "\(Outfits.shared.topAcc).png"
@@ -41,6 +42,7 @@ class ResultVC: UIViewController {
     @IBAction func doneButton(_ sender: Any) {
         print("Done button tapped")
         
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

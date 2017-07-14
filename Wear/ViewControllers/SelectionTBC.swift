@@ -10,10 +10,18 @@ import UIKit
 
 class SelectionTBC: UITabBarController {
     
+    //MARK: - Properties
+    
+    let photoHelper = PhotoService()
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoHelper.completionHandler = { image in
+            print("handle image")
+        }
         
         delegate = self as UITabBarControllerDelegate
 
@@ -42,7 +50,7 @@ extension SelectionTBC: UITabBarControllerDelegate {
         
         if viewController.tabBarItem.tag == 1 {
             print("take photo")
-            
+            photoHelper.presentActionSheet(from: self)
             return false
         } else {
         

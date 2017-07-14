@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Weather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,7 @@
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w0M-Om-jgf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="5CK-9b-Uhw"/>
+                    <navigationItem key="navigationItem" title="Weather" id="5CK-9b-Uhw"/>
                     <connections>
                         <outlet property="currentLocationLabel" destination="LOm-Wk-vCx" id="tUf-tB-mLs"/>
                         <outlet property="currentTemperatureLabel" destination="yYZ-py-L07" id="pyY-LN-pEK"/>
@@ -106,7 +106,15 @@
             </objects>
             <point key="canvasLocation" x="1120.8" y="-546.47676161919048"/>
         </scene>
-        <!--We Recommend...-->
+        <!--TabBar-->
+        <scene sceneID="Jq4-YY-lpj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="t7e-vK-zE0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSy-kx-x06" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2449" y="-797"/>
+        </scene>
+        <!--Suggested Outfit-->
         <scene sceneID="eyR-8R-Njc">
             <objects>
                 <viewController id="tIJ-LN-KCI" customClass="ResultVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,8 +184,12 @@
                             <constraint firstItem="K4T-G3-Fwq" firstAttribute="trailing" secondItem="LDq-Qm-KRp" secondAttribute="trailing" constant="-22" id="yjo-Nr-B5E"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="We Recommend..." id="t1O-Ji-URL">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="dro-FB-gyC"/>
+                    <navigationItem key="navigationItem" title="Suggested Outfit" id="t1O-Ji-URL">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="dro-FB-gyC">
+                            <connections>
+                                <segue destination="t7e-vK-zE0" kind="show" id="KyT-nb-2C0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomImageView" destination="K4T-G3-Fwq" id="9Uj-bN-ee7"/>
