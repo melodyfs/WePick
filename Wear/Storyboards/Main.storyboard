@@ -24,9 +24,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-Pf-jww">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="694"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wee-Pf-jww" secondAttribute="height" multiplier="343:603" constant="32" id="Wsm-4v-uDl"/>
+                                    <constraint firstAttribute="width" secondItem="Wee-Pf-jww" secondAttribute="height" multiplier="343:603" constant="-19.762852404643411" id="Wsm-4v-uDl"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOJ-CB-ub6">
@@ -95,7 +95,7 @@
                         <constraints>
                             <constraint firstItem="JOJ-CB-ub6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="284" id="50P-Hv-TlM"/>
                             <constraint firstItem="Dxi-PN-c0Q" firstAttribute="trailing" secondItem="Wee-Pf-jww" secondAttribute="trailing" id="741-b1-MTq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wee-Pf-jww" secondAttribute="bottom" id="HPL-JM-zXC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wee-Pf-jww" secondAttribute="bottom" constant="-91" id="HPL-JM-zXC"/>
                             <constraint firstItem="Dxi-PN-c0Q" firstAttribute="centerX" secondItem="Nvn-Wt-TD6" secondAttribute="centerX" id="NwC-Ea-QOr"/>
                             <constraint firstItem="yYZ-py-L07" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="268" id="PTl-1u-FlC"/>
                             <constraint firstAttribute="trailing" secondItem="JOJ-CB-ub6" secondAttribute="trailing" constant="87" id="R9u-XN-wQC"/>
