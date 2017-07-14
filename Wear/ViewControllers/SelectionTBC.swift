@@ -20,7 +20,7 @@ class SelectionTBC: UITabBarController {
         super.viewDidLoad()
         
         photoHelper.completionHandler = { image in
-            print("handle image")
+            print(image)
         }
         
         delegate = self as UITabBarControllerDelegate
