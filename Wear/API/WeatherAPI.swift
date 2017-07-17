@@ -28,10 +28,7 @@ class WeatherAPI {
         
         let session = URLSession.shared
         let urlString = URL(string: "\(BaseURL)\(zip),us&APPID=\(key)")
-//        let imageUrl = URL(String: "\(imageUrl)\(iconCode)")
-        
-//        print("\(urlString)")
-        
+
         if let url = urlString {
             let request = URLRequest(url: url)
             

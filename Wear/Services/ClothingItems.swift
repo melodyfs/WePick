@@ -16,6 +16,7 @@ enum ClothingItems {
         case cap
         case knitHat
         case sunglasses
+        
     }
     
     enum Top: String {
@@ -29,6 +30,8 @@ enum ClothingItems {
         case jacket = "jacket"
         case sweater = "sweater"
         case trenchCoat = "trenchCoat"
+        case rainCoat
+        
         case vest = "vest"
         case blazer = "blazer"
         case coat
@@ -42,6 +45,7 @@ enum ClothingItems {
     
     enum bottom : String {
         case none
+        //thick pants (for winter/cold)
         case pants = "pants"
         case shorts = "shorts"
         case jeans = "jeans"
@@ -56,6 +60,7 @@ enum ClothingItems {
         case boots = "boots"
         case sandals = "sandals"
         case rainBoots = "rain boots"
+        case snowBoots
         
         case socks = "socks"
     

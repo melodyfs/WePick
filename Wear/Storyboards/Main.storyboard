@@ -210,11 +210,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recommendation" id="t1O-Ji-URL">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="dro-FB-gyC">
-                            <connections>
-                                <segue destination="Kkg-WY-KR5" kind="show" id="TjD-l1-hHM"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="dro-FB-gyC"/>
                     </navigationItem>
                     <connections>
                         <outlet property="AccImageView" destination="PtM-py-1A5" id="Vmi-br-NDo"/>
@@ -228,14 +224,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgG-Wi-DAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1948" y="-541.07946026986508"/>
-        </scene>
-        <!--TabBar-->
-        <scene sceneID="xOo-1Y-xH1">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TabBar" id="Kkg-WY-KR5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U6T-gP-gkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2484" y="-796"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6bE-cO-fhB">

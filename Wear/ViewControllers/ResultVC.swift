@@ -18,6 +18,7 @@ class ResultVC: UIViewController {
     var topAccImage = "\(Outfits.shared.topAcc).png"
     var bottomImage = "\(Outfits.shared.bottom).png"
     var footweaerImage = "\(Outfits.shared.footwear).png"
+    var footAccImage = "\(Outfits.shared.footAcc).png"
     var accImage = "\(Outfits.shared.accessory).png"
     
     
