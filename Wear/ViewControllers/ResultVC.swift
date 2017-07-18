@@ -13,19 +13,28 @@ class ResultVC: UIViewController {
     
     //MARK: - Properties
     
-    var mHeadImage = "\(Outfits.shared.head).png"
-    var mTopImage = "\(Outfits.shared.top).png"
-    var mTopAccImage = "\(Outfits.shared.topAcc).png"
-    var mBottomImage = "\(Outfits.shared.bottom).png"
-    var mFootweaerImage = "\(Outfits.shared.footwear).png"
-    var mFootAccImage = "\(Outfits.shared.footAcc).png"
-    var mAccImage = "\(Outfits.shared.accessory).png"
+    var mHeadImage = "\(Outfits.shared.mHead).png"
+    var mTopImage = "\(Outfits.shared.mTop).png"
+    var mTopAccImage = "\(Outfits.shared.mTopAcc).png"
+    var mBottomImage = "\(Outfits.shared.mBottom).png"
+    var mFootweaerImage = "\(Outfits.shared.mFootwear).png"
+    var mFootAccImage = "\(Outfits.shared.mFootAcc).png"
+    var mAccImage = "\(Outfits.shared.mAccessory).png"
+    
+    var fHeadImage = "\(Outfits.shared.fHead).png"
+    var fTopImage = "\(Outfits.shared.fTop).png"
+    var fTopAccImage = "\(Outfits.shared.fTopAcc).png"
+    var fBottomImage = "\(Outfits.shared.fBottom).png"
+    var fFootweaerImage = "\(Outfits.shared.fFootwear).png"
+    var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
+    var fAccImage = "\(Outfits.shared.fAccessory).png"
+
     
     
     var selectedIndex = 0
     
-    
     //MARK: - Outlets
+    
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var topAccImageView: UIImageView!
@@ -41,6 +50,9 @@ class ResultVC: UIViewController {
     
     //MARK: - Private Methods
     
+    private func setGenderImage(index: Int) {
+       
+    }
     
     
     //MARK: - Actions
@@ -63,23 +75,20 @@ class ResultVC: UIViewController {
             accImageView.image = UIImage(named: mAccImage)
             
             print("Male")
-            
         case 1:
-            headImageView.image = UIImage(named: mHeadImage)
-            topImageView.image = UIImage(named: mTopImage)
-            topAccImageView.image = UIImage(named: mTopAccImage)
-            bottomImageView.image = UIImage(named: mBottomImage)
-            shoeImageView.image = UIImage(named: mFootweaerImage)
-            accImageView.image = UIImage(named: mAccImage)
+//            headImageView.image = UIImage(named: fHeadImage)
+//            topImageView.image = UIImage(named: fTopImage)
+//            topAccImageView.image = UIImage(named: fTopAccImage)
+//            bottomImageView.image = UIImage(named: fBottomImage)
+//            shoeImageView.image = UIImage(named: fFootweaerImage)
+//            accImageView.image = UIImage(named: fAccImage)
+            
+            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+            Outfits.shared.fPrintSetting()
             
             print("Female")
         default:
-            headImageView.image = UIImage(named: mHeadImage)
-            topImageView.image = UIImage(named: mTopImage)
-            topAccImageView.image = UIImage(named: mTopAccImage)
-            bottomImageView.image = UIImage(named: mBottomImage)
-            shoeImageView.image = UIImage(named: mFootweaerImage)
-            accImageView.image = UIImage(named: mAccImage)
+            break
         }
     }
     

@@ -16,29 +16,42 @@ class Outfits {
     
     let temp = WeatherData.shared.temperature
     
-    //default clothing items changed based on weather description
-    var head = ClothingItems.Head.none
-    var top = ClothingItems.Top.shortSleeveShirt
-    var topAcc = ClothingItems.TopAcc.none
-    var bottom = ClothingItems.bottom.pants
-    var footwear = ClothingItems.Footwear.sneakers
-    var footAcc = ClothingItems.Footwear.none
-    var accessory = ClothingItems.Accessories.none
+    //MARK: - Male
     
-    private func forHead() {
+    //default male clothing items changed based on weather description
+    var mHead = MClothingItems.Head.none
+    var mTop = MClothingItems.Top.mShortSleeveShirt
+    var mTopAcc = MClothingItems.TopAcc.none
+    var mBottom = MClothingItems.bottom.mPants
+    var mFootwear = MClothingItems.Footwear.mSneakers
+    var mFootAcc = MClothingItems.Footwear.none
+    var mAccessory = MClothingItems.Accessories.none
+    
+    //default female clothing items changed based on weather description
+    var fHead = FClothingItems.Head.none
+    var fTop = FClothingItems.Top.fShortSleeveShirt
+    var fTopAcc = FClothingItems.TopAcc.none
+    var fBottom = FClothingItems.bottom.fPants
+    var fFootwear = FClothingItems.Footwear.fSneakers
+    var fFootAcc = FClothingItems.Footwear.none
+    var fAccessory = FClothingItems.Accessories.none
+    
+
+    
+    private func mForHead() {
 
         switch category {
         case .hot:
-            head = ClothingItems.Head.hat
+            mHead = MClothingItems.Head.hat
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain:
-            head = ClothingItems.Head.cap
+            mHead = MClothingItems.Head.cap
         case .cold: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .snow:
-            head = ClothingItems.Head.knitHat
+            mHead = MClothingItems.Head.knitHat
         case .clouds: fallthrough
         case .mist: fallthrough
         case .sand: fallthrough
@@ -46,12 +59,14 @@ class Outfits {
         case .calm: fallthrough
         case .storm: fallthrough
         default:
-            head = ClothingItems.Head.none
+            mHead = MClothingItems.Head.none
         }
+        
+        mTempHead()
         
     }
     
-    private func forTop() {
+    private func mForTop() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -63,50 +78,50 @@ class Outfits {
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         case .mist:
-            top = ClothingItems.Top.longSleeveShirt
+            mTop = MClothingItems.Top.mLongSleeveShirt
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .hot: fallthrough
         case .calm: fallthrough
         default:
-            top = ClothingItems.Top.shortSleeveShirt
+            mTop = MClothingItems.Top.mShortSleeveShirt
 
         }
         
-        tempTop()
+        mTempTop()
         
     }
     
-    private func forTopAcc() {
+    private func mForTopAcc() {
         switch category {
         case .thunderstorm: fallthrough
         case .rain:
-            topAcc = ClothingItems.TopAcc.rainCoat
+            mTopAcc = MClothingItems.TopAcc.rainCoat
         case .cold: fallthrough
         case .drizzle: fallthrough
         case .clouds:
-            topAcc = ClothingItems.TopAcc.jacket
+            mTopAcc = MClothingItems.TopAcc.mJacket
         case .snow: fallthrough
         case .storm: fallthrough
         case .mist:
-            topAcc = ClothingItems.TopAcc.coat
+            mTopAcc = MClothingItems.TopAcc.mCoat
         case .sand: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .naturalDisaster:
-            topAcc = ClothingItems.TopAcc.trenchCoat
+            mTopAcc = MClothingItems.TopAcc.mTrenchCoat
         case .hot: fallthrough
         case .calm: fallthrough
         default:
-            topAcc = ClothingItems.TopAcc.none
+            mTopAcc = MClothingItems.TopAcc.none
         }
         
-        tempTopAcc()
+        mTempTopAcc()
         
     }
     
     
-    private func forBottom()  {
+    private func mForBottom()  {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -114,50 +129,50 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist:
-            bottom = ClothingItems.bottom.pants
+            mBottom = MClothingItems.bottom.mPants
         case .sand:
-            bottom = ClothingItems.bottom.shorts
+            mBottom = MClothingItems.bottom.mShorts
         case .naturalDisaster: fallthrough
         case .cold: fallthrough
         case .hot:
-            bottom = ClothingItems.bottom.shorts
+            mBottom = MClothingItems.bottom.mShorts
         case .hail: fallthrough
         case .calm: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         default:
-            bottom = ClothingItems.bottom.jeans
+            mBottom = MClothingItems.bottom.jeans
         }
         
-        tempBottom()
+        mTempBottom()
         
     }
     
-    private func forFootwear() {
+    private func mForFootwear() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .storm: fallthrough
         case .naturalDisaster: fallthrough
         case .rain:
-            footwear = ClothingItems.Footwear.rainBoots
+            mFootwear = MClothingItems.Footwear.mRainBoots
         case .snow:
-            footwear = ClothingItems.Footwear.snowBoots
+            mFootwear = MClothingItems.Footwear.mSnowBoots
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .mist: fallthrough
         case .cold:
-            footwear = ClothingItems.Footwear.boots
+            mFootwear = MClothingItems.Footwear.mBoots
         case .clouds: fallthrough
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            footwear = ClothingItems.Footwear.sneakers
+            mFootwear = MClothingItems.Footwear.mSneakers
         }
         
     }
     
-    private func forFootAcc() {
+    private func mForFootAcc() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
@@ -173,26 +188,26 @@ class Outfits {
         case .naturalDisaster: fallthrough
         case .calm: fallthrough
         default:
-            footwear = ClothingItems.Footwear.socks
+            mFootwear = MClothingItems.Footwear.socks
         }
         
-        tempFootAcc()
+        mTempFootAcc()
     }
     
-    private func forAccessory() {
+    private func mForAccessory() {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .storm: fallthrough
         case .rain:
-            accessory = ClothingItems.Accessories.umbrella
+            mAccessory = MClothingItems.Accessories.umbrella
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist: fallthrough
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         default:
-            accessory = ClothingItems.Accessories.none
+            mAccessory = MClothingItems.Accessories.none
         }
         
     }
@@ -200,105 +215,382 @@ class Outfits {
     
     //Default temp: 60~70
     func getClothingCombo(_ ds: WeatherData)  {
-        forHead()
-        forTop()
-        forTopAcc()
-        forBottom()
-        forFootwear()
-        forAccessory()
+        mForHead()
+        mForTop()
+        mForTopAcc()
+        mForBottom()
+        mForFootwear()
+        mForAccessory()
         
     }
     
     func printSetting() {
-        print(head)
-        print(top)
-        print(topAcc)
-        print(bottom)
-        print(footwear)
-        print(accessory)
+        print(mHead)
+        print(mTop)
+        print(mTopAcc)
+        print(mBottom)
+        print(mFootwear)
+        print(mAccessory)
         
     }
     
-    //MARK: - Temperature
+    //MARK: - Male Temperature
     
-    private func tempHead() {
+    private func mTempHead() {
         switch temp {
         case 0...60:
-            if head != ClothingItems.Head.knitHat {
-                head = ClothingItems.Head.knitHat
+            if mHead != MClothingItems.Head.knitHat {
+                mHead = MClothingItems.Head.knitHat
             }
-        case 61...200:
-            forHead()
-        default:
-            forHead()
+        case 61...200: break
+        default: break
         }
     }
     
     
-   private func tempTop() {
+   private func mTempTop() {
         switch temp {
         case 0...60:
-            if top == ClothingItems.Top.shortSleeveShirt {
-                top = ClothingItems.Top.longSleeveShirt
+            if mTop == MClothingItems.Top.mShortSleeveShirt {
+                mTop = MClothingItems.Top.mLongSleeveShirt
             }
         case 61...70: break
         case 71...200:
-            if top == ClothingItems.Top.longSleeveShirt {
-                top = ClothingItems.Top.shortSleeveShirt
+            if mTop == MClothingItems.Top.mLongSleeveShirt {
+                mTop = MClothingItems.Top.mShortSleeveShirt
             }
         default:
-            forTop()
+            mForTop()
         }
         
     }
     
-   private func tempTopAcc() {
+   private func mTempTopAcc() {
         switch temp {
         case 0...60:
-            if topAcc == ClothingItems.TopAcc.none {
-                topAcc = ClothingItems.TopAcc.coat
+            if mTopAcc == MClothingItems.TopAcc.none {
+                mTopAcc = MClothingItems.TopAcc.mCoat
             }
         case 61...70: break
         case 71...200:
-            if topAcc != ClothingItems.TopAcc.none {
-                topAcc = ClothingItems.TopAcc.none
+            if mTopAcc != MClothingItems.TopAcc.none {
+                mTopAcc = MClothingItems.TopAcc.none
             }
         default:
-            forTopAcc()
+            mForTopAcc()
             
         }
     
     }
     
-   private func tempBottom() {
+   private func mTempBottom() {
         switch temp {
         case 0...60:
-            if bottom != ClothingItems.bottom.pants {
-                bottom = ClothingItems.bottom.pants
+            if mBottom != MClothingItems.bottom.mPants {
+                mBottom = MClothingItems.bottom.mPants
             }
         case 61...70: break
         case 71..<200:
-            if bottom != ClothingItems.bottom.shorts {
-                bottom = ClothingItems.bottom.shorts
+            if mBottom != MClothingItems.bottom.mShorts {
+                mBottom = MClothingItems.bottom.mShorts
             }
         default:
-            forBottom()
+            mForBottom()
         }
     }
     
-   private func tempFootAcc() {
+   private func mTempFootAcc() {
         switch temp {
         case 0...60: break
         case 61...70: break
         case 71..<200:
-            if footAcc != ClothingItems.Footwear.none {
-                footAcc = ClothingItems.Footwear.none
+            if mFootAcc != MClothingItems.Footwear.none {
+                mFootAcc = MClothingItems.Footwear.none
             }
         default:
-            forFootAcc()
+            mForFootAcc()
         }
         
     }
+    
+    //MARK: - Female
+    
+    private func fForHead() {
+        
+        switch category {
+        case .hot:
+            fHead = FClothingItems.Head.hat
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .rain:
+            fHead = FClothingItems.Head.cap
+        case .cold: fallthrough
+        case .hail: fallthrough
+        case .strongBreeze: fallthrough
+        case .snow:
+            fHead = FClothingItems.Head.knitHat
+        case .clouds: fallthrough
+        case .mist: fallthrough
+        case .sand: fallthrough
+        case .naturalDisaster: fallthrough
+        case .calm: fallthrough
+        case .storm: fallthrough
+        default:
+            fHead = FClothingItems.Head.none
+        }
+        
+        fTempHead()
+        
+    }
+    
+    private func fForTop() {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .rain: fallthrough
+        case .snow: fallthrough
+        case .clouds: fallthrough
+        case .cold: fallthrough
+        case .hail: fallthrough
+        case .strongBreeze: fallthrough
+        case .storm: fallthrough
+        case .mist:
+            fTop = FClothingItems.Top.fLongSleeveShirt
+        case .sand: fallthrough
+        case .naturalDisaster: fallthrough
+        case .hot: fallthrough
+        case .calm: fallthrough
+        default:
+            fTop = FClothingItems.Top.fShortSleeveShirt
+            
+        }
+        
+        fTempTop()
+        
+    }
+    
+    private func fForTopAcc() {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .rain:
+            fTopAcc = FClothingItems.TopAcc.fRainCoat
+        case .cold: fallthrough
+        case .drizzle: fallthrough
+        case .clouds:
+            fTopAcc = FClothingItems.TopAcc.fJacket
+        case .snow: fallthrough
+        case .storm: fallthrough
+        case .mist:
+            fTopAcc = FClothingItems.TopAcc.fCoat
+        case .sand: fallthrough
+        case .hail: fallthrough
+        case .strongBreeze: fallthrough
+        case .naturalDisaster:
+            fTopAcc = FClothingItems.TopAcc.fTrenchCoat
+        case .hot: fallthrough
+        case .calm: fallthrough
+        default:
+            fTopAcc = FClothingItems.TopAcc.none
+        }
+        
+        fTempTopAcc()
+        
+    }
+    
+    
+    private func fForBottom()  {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .rain: fallthrough
+        case .snow: fallthrough
+        case .clouds: fallthrough
+        case .mist:
+            fBottom = FClothingItems.bottom.fPants
+        case .sand:
+            fBottom = FClothingItems.bottom.fShorts
+        case .naturalDisaster: fallthrough
+        case .cold: fallthrough
+        case .hot:
+            fBottom = FClothingItems.bottom.fShorts
+        case .hail: fallthrough
+        case .calm: fallthrough
+        case .strongBreeze: fallthrough
+        case .storm: fallthrough
+        default:
+            fBottom = FClothingItems.bottom.jeans
+        }
+        
+        fTempBottom()
+        
+    }
+    
+    private func fForFootwear() {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .storm: fallthrough
+        case .naturalDisaster: fallthrough
+        case .rain:
+            fFootwear = FClothingItems.Footwear.fRainBoots
+        case .snow:
+            fFootwear = FClothingItems.Footwear.fSnowBoots
+        case .hail: fallthrough
+        case .strongBreeze: fallthrough
+        case .mist: fallthrough
+        case .cold:
+            fFootwear = FClothingItems.Footwear.fBoots
+        case .clouds: fallthrough
+        case .sand: fallthrough
+        case .calm: fallthrough
+        default:
+            fFootwear = FClothingItems.Footwear.fSneakers
+        }
+        
+    }
+    
+    private func fForFootAcc() {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .storm: fallthrough
+        case .rain: fallthrough
+        case .snow: fallthrough
+        case .hail: fallthrough
+        case .strongBreeze: fallthrough
+        case .cold: fallthrough
+        case .clouds: fallthrough
+        case .mist: fallthrough
+        case .sand: fallthrough
+        case .naturalDisaster: fallthrough
+        case .calm: fallthrough
+        default:
+            fFootwear = FClothingItems.Footwear.socks
+        }
+        
+        fTempFootAcc()
+    }
+    
+    private func fForAccessory() {
+        switch category {
+        case .thunderstorm: fallthrough
+        case .drizzle: fallthrough
+        case .storm: fallthrough
+        case .rain:
+            fAccessory = FClothingItems.Accessories.umbrella
+        case .snow: fallthrough
+        case .clouds: fallthrough
+        case .mist: fallthrough
+        case .sand: fallthrough
+        case .naturalDisaster: fallthrough
+        default:
+            fAccessory = FClothingItems.Accessories.none
+        }
+        
+    }
+    
+    
+    //Default temp: 60~70
+    func fGetClothingCombo(_ ds: WeatherData)  {
+        fForHead()
+        fForTop()
+        fForTopAcc()
+        fForBottom()
+        fForFootwear()
+        fForAccessory()
+        
+    }
+    
+    func fPrintSetting() {
+        print(fHead)
+        print(fTop)
+        print(fTopAcc)
+        print(fBottom)
+        print(fFootwear)
+        print(fAccessory)
+        
+    }
+    
+    //MARK: - Female Temperature
+    
+    private func fTempHead() {
+        switch temp {
+        case 0...60:
+            if fHead != FClothingItems.Head.knitHat {
+                fHead = FClothingItems.Head.knitHat
+            }
+        case 61...200: break
+        default:
+            fForHead()
+        }
+    }
+    
+    
+    private func fTempTop() {
+        switch temp {
+        case 0...60:
+            if fTop == FClothingItems.Top.fShortSleeveShirt {
+                fTop = FClothingItems.Top.fLongSleeveShirt
+            }
+        case 61...70: break
+        case 71...200:
+            if fTop == FClothingItems.Top.fLongSleeveShirt {
+                fTop = FClothingItems.Top.fShortSleeveShirt
+            }
+        default:
+            fForTop()
+        }
+        
+    }
+    
+    private func fTempTopAcc() {
+        switch temp {
+        case 0...60:
+            if fTopAcc == FClothingItems.TopAcc.none {
+                fTopAcc = FClothingItems.TopAcc.fCoat
+            }
+        case 61...70: break
+        case 71...200:
+            if fTopAcc != FClothingItems.TopAcc.none {
+                fTopAcc = FClothingItems.TopAcc.none
+            }
+        default:
+            fForTopAcc()
+            
+        }
+        
+    }
+    
+    private func fTempBottom() {
+        switch temp {
+        case 0...60:
+            if fBottom != FClothingItems.bottom.fPants {
+                fBottom = FClothingItems.bottom.fPants
+            }
+        case 61...70: break
+        case 71..<200:
+            if fBottom != FClothingItems.bottom.fShorts {
+                fBottom = FClothingItems.bottom.fShorts
+            }
+        default:
+            fForBottom()
+        }
+    }
+    
+    private func fTempFootAcc() {
+        switch temp {
+        case 0...60: break
+        case 61...70: break
+        case 71..<200:
+            if fFootAcc != FClothingItems.Footwear.none {
+                fFootAcc = FClothingItems.Footwear.none
+            }
+        default:
+            fForFootAcc()
+        }
+        
+    }
+
    
 
     

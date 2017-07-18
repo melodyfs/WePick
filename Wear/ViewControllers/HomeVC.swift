@@ -107,6 +107,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             Outfits.shared.getClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
             
+            print("-----")
+            
         }
     }
 }

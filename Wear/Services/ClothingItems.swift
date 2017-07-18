@@ -8,7 +8,9 @@
 
 import Foundation
 
-enum ClothingItems {
+//MARK: - Male
+
+enum MClothingItems {
     
     enum Head: String {
         case none
@@ -21,64 +23,135 @@ enum ClothingItems {
     
     enum Top: String {
         case none
-        case longSleeveShirt
-        case shortSleeveShirt
+        case mLongSleeveShirt
+        case mShortSleeveShirt
     }
     
     enum TopAcc : String {
         case none
-        case jacket = "jacket"
-        case sweater = "sweater"
-        case trenchCoat = "trenchCoat"
+        case mJacket
+        case mSweater
+        case mTrenchCoat
         case rainCoat
         
-        case vest = "vest"
-        case blazer = "blazer"
-        case coat
+        case mVest
+        case mBlazer
+        case mCoat
+    }
+    
+    //feature
+//    enum FullBody: String {
+//        
+//    }
+    
+    
+    enum bottom : String {
+        case none
+        //thick pants (for winter/cold)
+        case mPants
+        case mShorts
+        case jeans
+    
+    }
+    
+    enum Footwear: String {
+        case none
+        case mSneakers
+        case mBoots
+        case mSandals
+        case mRainBoots
+        case mSnowBoots
+        
+        case socks
+    
+    }
+    
+    enum Accessories: String {
+        case none
+        case umbrella
+        case gloves
+        case helmet
+        
+        case mBelt
+   
+    }
+    
+
+}
+
+//MARK: - Female
+
+enum FClothingItems {
+    
+    enum Head: String {
+        case none
+        case hat
+        case cap
+        case knitHat
+        case sunglasses
+        
+    }
+    
+    enum Top: String {
+        case none
+        case fLongSleeveShirt
+        case fShortSleeveShirt
+    }
+    
+    enum TopAcc : String {
+        case none
+        case fJacket
+        case fSweater
+        case fTrenchCoat
+        case fRainCoat
+        
+        case fVest
+        case fBlazer
+        case fCoat
     }
     
     //feature
     enum FullBody: String {
-        case dress = "dress"
+        case dress
     }
     
     
     enum bottom : String {
         case none
         //thick pants (for winter/cold)
-        case pants = "pants"
-        case shorts = "shorts"
-        case jeans = "jeans"
-        case leggings = "leggings"
+        case fPants
+        case fShorts
+        case jeans
+        case fLeggings
         
-        case skirt = "skirt"
+        case skirt
     }
     
     enum Footwear: String {
         case none
-        case sneakers = "snaakers"
-        case boots = "boots"
-        case sandals = "sandals"
-        case rainBoots = "rain boots"
-        case snowBoots
+        case fSneakers
+        case fBoots
+        case fSandals
+        case fRainBoots
+        case fSnowBoots
         
-        case socks = "socks"
-    
+        case socks
+        
     }
     
     enum Accessories: String {
         case none
-        case umbrella = "umbrella"
-        case rainCoat = "rain coat"
-        case scarf = "scarf"
-        case gloves = "gloves"
-        case helmet = "helmet"
+        case umbrella
+        case rainCoat
+        case scarf
+        case gloves
+        case helmet
         
-        case belt = "belt"
-   
+        case fBelt
+        
     }
     
-    //MARK: - Actions
-        
-
+    
 }
+
+

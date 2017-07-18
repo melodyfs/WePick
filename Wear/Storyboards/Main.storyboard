@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                             <constraint firstItem="Dxi-PN-c0Q" firstAttribute="leading" secondItem="Wee-Pf-jww" secondAttribute="leading" constant="-4" id="wiE-lN-E5j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="5CK-9b-Uhw"/>
+                    <navigationItem key="navigationItem" id="5CK-9b-Uhw"/>
                     <connections>
                         <outlet property="currentLocationLabel" destination="LOm-Wk-vCx" id="tUf-tB-mLs"/>
                         <outlet property="currentTemperatureLabel" destination="yYZ-py-L07" id="pyY-LN-pEK"/>
@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="1120.8" y="-546.47676161919048"/>
         </scene>
-        <!--Recommendation-->
+        <!--ResultVC-->
         <scene sceneID="eyR-8R-Njc">
             <objects>
                 <viewController id="tIJ-LN-KCI" customClass="ResultVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
@@ -224,9 +224,7 @@
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="PtM-py-1A5" secondAttribute="bottom" constant="198" id="zEP-HG-PQ1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recommendation" id="t1O-Ji-URL">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="dro-FB-gyC"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="t1O-Ji-URL"/>
                     <connections>
                         <outlet property="AccImageView" destination="PtM-py-1A5" id="Vmi-br-NDo"/>
                         <outlet property="bottomImageView" destination="K4T-G3-Fwq" id="9Uj-bN-ee7"/>
@@ -244,6 +242,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6bE-cO-fhB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awq-gP-Ax1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mL4-sW-IMz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QWh-BQ-1Oy">
@@ -255,7 +254,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="amv-RI-dHw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="awq-gP-Ax1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245.59999999999999" y="-545.57721139430294"/>
         </scene>
