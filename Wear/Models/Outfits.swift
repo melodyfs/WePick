@@ -24,7 +24,7 @@ class Outfits {
     var footwear = ClothingItems.Footwear.sneakers
     var footAcc = ClothingItems.Footwear.none
     var accessory = ClothingItems.Accessories.none
-        
+    
     private func forHead() {
 
         switch category {
@@ -219,12 +219,16 @@ class Outfits {
         
     }
     
+    //MARK: - Temperature
+    
     private func tempHead() {
         switch temp {
         case 0...60:
             if head != ClothingItems.Head.knitHat {
                 head = ClothingItems.Head.knitHat
             }
+        case 61...200:
+            forHead()
         default:
             forHead()
         }
@@ -237,7 +241,8 @@ class Outfits {
             if top == ClothingItems.Top.shortSleeveShirt {
                 top = ClothingItems.Top.longSleeveShirt
             }
-        case 70...200:
+        case 61...70: break
+        case 71...200:
             if top == ClothingItems.Top.longSleeveShirt {
                 top = ClothingItems.Top.shortSleeveShirt
             }
@@ -253,7 +258,8 @@ class Outfits {
             if topAcc == ClothingItems.TopAcc.none {
                 topAcc = ClothingItems.TopAcc.coat
             }
-        case 70...200:
+        case 61...70: break
+        case 71...200:
             if topAcc != ClothingItems.TopAcc.none {
                 topAcc = ClothingItems.TopAcc.none
             }
@@ -270,7 +276,8 @@ class Outfits {
             if bottom != ClothingItems.bottom.pants {
                 bottom = ClothingItems.bottom.pants
             }
-        case 70...200:
+        case 61...70: break
+        case 71..<200:
             if bottom != ClothingItems.bottom.shorts {
                 bottom = ClothingItems.bottom.shorts
             }
@@ -281,7 +288,9 @@ class Outfits {
     
    private func tempFootAcc() {
         switch temp {
-        case 70...200:
+        case 0...60: break
+        case 61...70: break
+        case 71..<200:
             if footAcc != ClothingItems.Footwear.none {
                 footAcc = ClothingItems.Footwear.none
             }

@@ -13,13 +13,16 @@ class ResultVC: UIViewController {
     
     //MARK: - Properties
     
-    var headImage = "\(Outfits.shared.head).png"
-    var topImage = "\(Outfits.shared.top).png"
-    var topAccImage = "\(Outfits.shared.topAcc).png"
-    var bottomImage = "\(Outfits.shared.bottom).png"
-    var footweaerImage = "\(Outfits.shared.footwear).png"
-    var footAccImage = "\(Outfits.shared.footAcc).png"
-    var accImage = "\(Outfits.shared.accessory).png"
+    var mHeadImage = "\(Outfits.shared.head).png"
+    var mTopImage = "\(Outfits.shared.top).png"
+    var mTopAccImage = "\(Outfits.shared.topAcc).png"
+    var mBottomImage = "\(Outfits.shared.bottom).png"
+    var mFootweaerImage = "\(Outfits.shared.footwear).png"
+    var mFootAccImage = "\(Outfits.shared.footAcc).png"
+    var mAccImage = "\(Outfits.shared.accessory).png"
+    
+    
+    var selectedIndex = 0
     
     
     //MARK: - Outlets
@@ -29,6 +32,8 @@ class ResultVC: UIViewController {
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var shoeImageView: UIImageView!
     @IBOutlet weak var accImageView: UIImageView!
+    
+    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
     //MARK: - Public Methods
     
@@ -45,15 +50,52 @@ class ResultVC: UIViewController {
         
     }
     
+    @IBAction func genderSelector(_ sender: Any) {
+        selectedIndex = (sender as AnyObject).selectedSegmentIndex
+        
+        switch selectedIndex {
+        case 0:
+            headImageView.image = UIImage(named: mHeadImage)
+            topImageView.image = UIImage(named: mTopImage)
+            topAccImageView.image = UIImage(named: mTopAccImage)
+            bottomImageView.image = UIImage(named: mBottomImage)
+            shoeImageView.image = UIImage(named: mFootweaerImage)
+            accImageView.image = UIImage(named: mAccImage)
+            
+            print("Male")
+            
+        case 1:
+            headImageView.image = UIImage(named: mHeadImage)
+            topImageView.image = UIImage(named: mTopImage)
+            topAccImageView.image = UIImage(named: mTopAccImage)
+            bottomImageView.image = UIImage(named: mBottomImage)
+            shoeImageView.image = UIImage(named: mFootweaerImage)
+            accImageView.image = UIImage(named: mAccImage)
+            
+            print("Female")
+        default:
+            headImageView.image = UIImage(named: mHeadImage)
+            topImageView.image = UIImage(named: mTopImage)
+            topAccImageView.image = UIImage(named: mTopAccImage)
+            bottomImageView.image = UIImage(named: mBottomImage)
+            shoeImageView.image = UIImage(named: mFootweaerImage)
+            accImageView.image = UIImage(named: mAccImage)
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        headImageView.image = UIImage(named: headImage)
-        topImageView.image = UIImage(named: topImage)
-        topAccImageView.image = UIImage(named: topAccImage)
-        bottomImageView.image = UIImage(named: bottomImage)
-        shoeImageView.image = UIImage(named: footweaerImage)
-        accImageView.image = UIImage(named: accImage)
+         genderSegmentedControl.selectedSegmentIndex = selectedIndex
+
+        
+        headImageView.image = UIImage(named: mHeadImage)
+        topImageView.image = UIImage(named: mTopImage)
+        topAccImageView.image = UIImage(named: mTopAccImage)
+        bottomImageView.image = UIImage(named: mBottomImage)
+        shoeImageView.image = UIImage(named: mFootweaerImage)
+        accImageView.image = UIImage(named: mAccImage)
     }
     
     
@@ -61,7 +103,5 @@ class ResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        CreateStyles.getStyle(description: WeatherData.shared.description)
-//        CreateStyles.getStyleFromTemp(temp: WeatherData.shared.temperature)
     }
 }

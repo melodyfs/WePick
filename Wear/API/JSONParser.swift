@@ -17,11 +17,11 @@ class JSONParser {
           return
         }
 
-        let description = "sand"
-//        let description = getDescription(from: weatherData)s
+//       let description = "hail"
+        let description = getDescription(from: weatherData)
         let weatherState = getWeatherState(from: weatherData)
-//        let temperature = getTemperature(from: weatherData)
-        let temperature = 40
+        let temperature = getTemperature(from: weatherData)
+//        let temperature = 72
         let locationName = getLocation(from: weatherData)
         let icon = getIcon(from: weatherData)
         

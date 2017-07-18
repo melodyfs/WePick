@@ -36,7 +36,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
-////        First, we make the API call to fetch the weather data
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
