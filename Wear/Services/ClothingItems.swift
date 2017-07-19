@@ -24,7 +24,13 @@ enum MClothingItems {
     enum Top: String {
         case none
         case mLongSleeveShirt
+        case mLongSleeveShirt1
         case mShortSleeveShirt
+        case mShortSleeveShirt2
+        
+
+        
+        
     }
     
     enum TopAcc : String {
