@@ -29,10 +29,10 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
+    var mTopArr = Outfits.shared.mTops
     var selectedIndex = 0
-    var mTopCount = 0
-    var mTopStr: [MClothingItems.Top] = []
-    
+    var tapCount = 0
+//    var index = 0
     
     //MARK: - Outlets
     
@@ -42,7 +42,6 @@ class ResultVC: UIViewController {
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var shoeImageView: UIImageView!
     @IBOutlet weak var accImageView: UIImageView!
-    
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
@@ -60,42 +59,30 @@ class ResultVC: UIViewController {
     
     @IBAction func changeTopButtonTapped(_ sender: UIButton, event: UIEvent) {
         let touch: UITouch = event.allTouches!.first!
-        countTop()
+        tapCount += 1
+        
+        print("tapped \(tapCount)")
     
         changeTopButton.addTarget(self, action: #selector(getter: ResultVC.changeTopButton), for: UIControlEvents.touchDownRepeat)
-        
-//        mTopStr.sort(by: >)
         
         //change the top as user clicks on it multiple times
         switch selectedIndex {
         case 0:
-            if touch.tapCount % 1 == 0 {
-                
-                print("\(mTopStr[1])")
+            if tapCount >= mTopArr.count {
+                tapCount = 0
+                print(mTopArr[tapCount])
+            } else {
+                print(mTopArr[tapCount])
             }
-            if touch.tapCount % 2 == 0 {
-                print("\(mTopStr[2])")
-            }
-            
         case 1:
             if touch.tapCount == 1 {
                 
             }
         default: break
+            
         }
-        
-        
-        
         
         print("change top button tapped")
-    }
-    
-    private func countTop() {
-        for str in WeatherDataService.shared.iterateEnum(MClothingItems.Top.self) {
-            mTopCount += 1
-            mTopStr.append(str)
-        }
-        
     }
     
     
@@ -120,8 +107,8 @@ class ResultVC: UIViewController {
             shoeImageView.image = UIImage(named: fFootweaerImage)
             accImageView.image = UIImage(named: fAccImage)
             
-            Outfits.shared.fGetClothingCombo(WeatherData.shared)
-            Outfits.shared.fPrintSetting()
+//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+//            Outfits.shared.fPrintSetting()
             
             print("Female")
             print("-----")
@@ -135,6 +122,8 @@ class ResultVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
         headImageView.image = UIImage(named: mHeadImage)
@@ -144,9 +133,10 @@ class ResultVC: UIViewController {
         shoeImageView.image = UIImage(named: mFootweaerImage)
         accImageView.image = UIImage(named: mAccImage)
         
-        WeatherDataService.shared.getOutfits(WeatherData.shared)
-        Outfits.shared.getClothingCombo(WeatherData.shared)
-        Outfits.shared.printSetting()
+//        WeatherDataService.shared.getOutfits(WeatherData.shared)
+//        Outfits.shared.getClothingCombo(WeatherData.shared)
+//        Outfits.shared.printSetting()
+        
         print("DF")
     }
     

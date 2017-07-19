@@ -10,6 +10,7 @@ import Foundation
 
 //MARK: - Male
 
+
 enum MClothingItems {
     
     enum Head: String {
@@ -25,6 +26,8 @@ enum MClothingItems {
         case none
         case mLongSleeveShirt
         case mLongSleeveShirt1
+        case mLongSleeveShirt2
+        case mLongSleeveShirt3
         case mShortSleeveShirt
         case mShortSleeveShirt2
         

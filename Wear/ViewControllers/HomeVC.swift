@@ -103,6 +103,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             self.currentWeatherState.text = WeatherData.shared.weatherStateDescription
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.description
             
+            Outfits.shared.sortTop()
         }
     }
 }

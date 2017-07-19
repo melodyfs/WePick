@@ -16,7 +16,7 @@ class Outfits {
     
     let temp = WeatherData.shared.temperature
     
-    //MARK: - Male
+    
     
     //default male clothing items changed based on weather description
     var mHead = MClothingItems.Head.none
@@ -26,6 +26,39 @@ class Outfits {
     var mFootwear = MClothingItems.Footwear.mSneakers
     var mFootAcc = MClothingItems.Footwear.none
     var mAccessory = MClothingItems.Accessories.none
+    var mTopCount = 0
+    
+    var mTops: [MClothingItems.Top] = []
+    var mTopAccs: [MClothingItems.TopAcc] = []
+    var mBottoms: [MClothingItems.TopAcc] = []
+    var mFoots: [MClothingItems.Footwear] = []
+ 
+    
+    func sortTop() {
+        countTop()
+        
+        let iToRemove = MClothingItems.Top.none
+        if let i = mTops.index(of: iToRemove) {
+            mTops.remove(at: i)
+        }
+    
+        mTops = mTops.sorted(by: {$0.rawValue < $1.rawValue})
+        
+        
+    }
+    
+    private func sortAlphabeticaly(_ s1: String, _ s2: String) -> Bool {
+        return s1 < s2
+    }
+    
+    private func countTop() {
+        for str in WeatherDataService.shared.iterateEnum(MClothingItems.Top.self) {
+            mTopCount += 1
+            mTops.append(str)
+        }
+        
+    }
+    
     
     //default female clothing items changed based on weather description
     var fHead = FClothingItems.Head.none
@@ -36,7 +69,7 @@ class Outfits {
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
     
-
+        //MARK: - Male
     
     private func mForHead() {
 
