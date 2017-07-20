@@ -159,14 +159,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PtM-py-1A5">
                                 <rect key="frame" x="259" y="376" width="37" height="93"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4T-G3-Fwq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K4T-G3-Fwq">
                                 <rect key="frame" x="121" y="245" width="133" height="276"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="V8c-Aw-EfD" appends="YES" id="Gew-j7-8b1"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-nr-T3S">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-nr-T3S">
                                 <rect key="frame" x="91" y="162" width="193" height="156"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -174,16 +174,6 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5BT-st-gTp" appends="YES" id="XCc-Tk-fWb"/>
-                                </connections>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-pN-H6O">
-                                <rect key="frame" x="120" y="72" width="133" height="50"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YiC-AB-ILu"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="j7F-FU-Jdx" appends="YES" id="ZLZ-gc-N20"/>
                                 </connections>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rTg-Zn-I6r">
@@ -198,15 +188,25 @@
                                 </connections>
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEu-0B-peI">
-                                <rect key="frame" x="176" y="278" width="213" height="243"/>
+                                <rect key="frame" x="79" y="244" width="213" height="243"/>
                                 <gestureRecognizers/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6kw-pN-H6O">
+                                <rect key="frame" x="119" y="85" width="133" height="50"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YiC-AB-ILu"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="j7F-FU-Jdx" appends="YES" id="ZLZ-gc-N20"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eAa-nr-T3S" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="75" id="00R-Jq-yT0"/>
-                            <constraint firstItem="cEu-0B-peI" firstAttribute="top" secondItem="6kw-pN-H6O" secondAttribute="bottom" constant="156" id="05S-BE-nLL"/>
+                            <constraint firstItem="cEu-0B-peI" firstAttribute="top" secondItem="6kw-pN-H6O" secondAttribute="bottom" constant="109" id="05S-BE-nLL"/>
                             <constraint firstItem="rTg-Zn-I6r" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="67" id="0Y5-fO-7at"/>
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="a17-JU-HHg" secondAttribute="bottom" constant="73" id="3kJ-j0-jtl"/>
                             <constraint firstItem="K4T-G3-Fwq" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="105" id="4a7-m9-9CG"/>
@@ -218,7 +218,7 @@
                             <constraint firstItem="PtM-py-1A5" firstAttribute="top" secondItem="cEu-0B-peI" secondAttribute="bottom" constant="-145" id="Bvl-Oi-gVM"/>
                             <constraint firstItem="a17-JU-HHg" firstAttribute="top" secondItem="3Dy-lA-aHb" secondAttribute="bottom" constant="21" id="EHN-mS-ZUD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eAa-nr-T3S" secondAttribute="trailing" constant="75" id="Fpn-iC-ZeD"/>
-                            <constraint firstItem="6kw-pN-H6O" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="111" id="L59-kK-ixs"/>
+                            <constraint firstItem="6kw-pN-H6O" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="103" id="L59-kK-ixs"/>
                             <constraint firstAttribute="trailing" secondItem="u5r-D3-f54" secondAttribute="trailing" id="PeM-gs-bga"/>
                             <constraint firstItem="PtM-py-1A5" firstAttribute="leading" secondItem="K4T-G3-Fwq" secondAttribute="trailing" constant="5" id="QQ0-NM-MiI"/>
                             <constraint firstItem="K4T-G3-Fwq" firstAttribute="top" secondItem="eAa-nr-T3S" secondAttribute="bottom" constant="-73" id="VLF-bc-eXk"/>
@@ -233,11 +233,11 @@
                             <constraint firstItem="LDq-Qm-KRp" firstAttribute="top" secondItem="K4T-G3-Fwq" secondAttribute="bottom" constant="-5" id="doc-MP-LJY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K4T-G3-Fwq" secondAttribute="trailing" constant="105" id="eH5-mq-KV3"/>
                             <constraint firstItem="PtM-py-1A5" firstAttribute="leading" secondItem="K4T-G3-Fwq" secondAttribute="trailing" constant="5" id="eME-CD-r3k"/>
-                            <constraint firstItem="eAa-nr-T3S" firstAttribute="top" secondItem="6kw-pN-H6O" secondAttribute="bottom" constant="40" id="kx2-Oy-FN5"/>
+                            <constraint firstItem="eAa-nr-T3S" firstAttribute="top" secondItem="6kw-pN-H6O" secondAttribute="bottom" constant="27" id="kx2-Oy-FN5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rTg-Zn-I6r" secondAttribute="trailing" constant="67" id="rw6-3S-ofT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6kw-pN-H6O" secondAttribute="trailing" constant="99" id="tql-VB-B4Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6kw-pN-H6O" secondAttribute="trailing" constant="107" id="tql-VB-B4Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a17-JU-HHg" secondAttribute="trailing" constant="81" id="uIk-zZ-caL"/>
-                            <constraint firstItem="6kw-pN-H6O" firstAttribute="top" secondItem="mg3-0n-0Ct" secondAttribute="topMargin" constant="110" id="v0X-9P-Oz6"/>
+                            <constraint firstItem="6kw-pN-H6O" firstAttribute="top" secondItem="mg3-0n-0Ct" secondAttribute="topMargin" constant="85" id="v0X-9P-Oz6"/>
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="cEu-0B-peI" secondAttribute="bottom" constant="146" id="yjq-RX-GhI"/>
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="PtM-py-1A5" secondAttribute="bottom" constant="198" id="zEP-HG-PQ1"/>
                         </constraints>

@@ -33,14 +33,25 @@ class ResultVC: UIViewController {
     var mTopArr = SwitchClothesService.shared.mTops
     var mTopAccArr = SwitchClothesService.shared.mTopAccs
     var mBottomArr = SwitchClothesService.shared.mBottoms
-    var mShoeArr = SwitchClothesService.shared.mFoots
+    var mShoeArr = SwitchClothesService.shared.mShoes
+    
+    var fHeadArr = SwitchClothesService.shared.fHeads
+    var fTopArr = SwitchClothesService.shared.fTops
+    var fTopAccArr = SwitchClothesService.shared.fTopAccs
+    var fBottomArr = SwitchClothesService.shared.fBottoms
+    var fShoeArr = SwitchClothesService.shared.fShoes
     
     var selectedIndex = 0
-    var topTapCount = 0
-    var bottomTapCount = 0
-    var shoeTapCount = 0
-    var headTapCount = 0
-
+    
+    var mTopTapCount = 0
+    var mBottomTapCount = 0
+    var mShoeTapCount = 0
+    var mHeadTapCount = 0
+    
+    var fTopTapCount = 0
+    var fBottomTapCount = 0
+    var fShoeTapCount = 0
+    var fHeadTapCount = 0
     
     //MARK: - Outlets
     
@@ -68,19 +79,33 @@ class ResultVC: UIViewController {
         
         switch selectedIndex {
         case 0:
-            topTapCount += 1
+            mTopTapCount += 1
             print("tapped top")
             
-            if topTapCount >= mTopArr.count {
-                topTapCount = 0
-                print(mTopArr[topTapCount])
+            if mTopTapCount >= mTopArr.count {
+                mTopTapCount = 0
+                mTopImage = "\(mTopArr[mTopTapCount]).png"
+                print(mTopArr[mTopTapCount])
                 
             } else {
-                print(mTopArr[topTapCount])
+                mTopImage = "\(mTopArr[mTopTapCount]).png"
+                print(mTopArr[mTopTapCount])
                 
             }
-        case 1: break
+        case 1:
+            fTopTapCount += 1
+            print("tapped ftop")
             
+            if fTopTapCount >= fTopArr.count {
+                fTopTapCount = 0
+                fTopImage = "\(fTopArr[fTopTapCount]).png"
+                print(fTopArr[fTopTapCount])
+                
+            } else {
+                fTopImage = "\(fTopArr[fTopTapCount]).png"
+                print(fTopArr[fTopTapCount])
+                
+            }
         default: break
             
         }
@@ -91,21 +116,33 @@ class ResultVC: UIViewController {
         
         switch selectedIndex {
         case 0:
-            bottomTapCount += 1
+            mBottomTapCount += 1
             print("tapped bottom)")
             
-            if bottomTapCount >= mBottomArr.count {
-                bottomTapCount = 0
-                print(mBottomArr[bottomTapCount])
+            if mBottomTapCount >= mBottomArr.count {
+                mBottomTapCount = 0
+                mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
+                print(mBottomArr[mBottomTapCount])
                 
             } else {
-                print(mBottomArr[bottomTapCount])
+                mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
+                print(mBottomArr[mBottomTapCount])
                 
             }
-        case 1: break
+        case 1:
+            fBottomTapCount += 1
+            print("tapped fbottom)")
             
+            if fBottomTapCount >= fBottomArr.count {
+                fBottomTapCount = 0
+                fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
+                print(fBottomArr[fBottomTapCount])
+                
+            } else {
+                fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
+                print(fBottomArr[fBottomTapCount])
+            }
         default: break
-            
         }
         
     }
@@ -115,21 +152,34 @@ class ResultVC: UIViewController {
         
         switch selectedIndex {
         case 0:
-            headTapCount += 1
+            mHeadTapCount += 1
             print("tapped head)")
             
-            if headTapCount >= mHeadArr.count {
-                headTapCount = 0
-                print(mHeadArr[headTapCount])
+            if mHeadTapCount >= mHeadArr.count {
+                mHeadTapCount = 0
+                mHeadImage = "\(mHeadArr[mHeadTapCount]).png"
+                print(mHeadArr[mHeadTapCount])
                 
             } else {
-                print(mHeadArr[headTapCount])
+                mHeadImage = "\(mHeadArr[mHeadTapCount]).png"
+                print(mHeadArr[mHeadTapCount])
                 
             }
-        case 1: break
+        case 1:
+            fHeadTapCount += 1
+            print("tapped fhead)")
             
+            if fHeadTapCount >= fHeadArr.count {
+                fHeadTapCount = 0
+                fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
+                print(fHeadArr[fHeadTapCount])
+                
+            } else {
+                fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
+                print(fHeadArr[fHeadTapCount])
+                
+            }
         default: break
-            
         }
         
     }
@@ -138,24 +188,38 @@ class ResultVC: UIViewController {
         
         switch selectedIndex {
         case 0:
-            shoeTapCount += 1
+            mShoeTapCount += 1
             print("tapped shoe)")
             
-            if shoeTapCount >= mShoeArr.count {
-                shoeTapCount = 0
-                print(mShoeArr[shoeTapCount])
+            if mShoeTapCount >= mShoeArr.count {
+                mShoeTapCount = 0
+                mFootweaerImage = "\(mShoeArr[mShoeTapCount]).png"
+                print(mShoeArr[mShoeTapCount])
                 
             } else {
-                print(mShoeArr[shoeTapCount])
+                mFootweaerImage = "\(mShoeArr[mShoeTapCount]).png"
+                print(mShoeArr[mShoeTapCount])
                 
             }
-        case 1: break
+        case 1:
+            fShoeTapCount += 1
+            print("tapped fshoe)")
             
+            if fShoeTapCount >= fShoeArr.count {
+                fShoeTapCount = 0
+                fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
+                print(fShoeArr[fShoeTapCount])
+                
+            } else {
+                fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
+                print(fShoeArr[fShoeTapCount])
+                
+            }
         default: break
-            
         }
         
     }
+    
     @IBAction func genderSelector(_ sender: Any) {
         selectedIndex = (sender as AnyObject).selectedSegmentIndex
         

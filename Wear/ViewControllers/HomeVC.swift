@@ -103,10 +103,17 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             self.currentWeatherState.text = WeatherData.shared.weatherStateDescription
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.description
             
-            SwitchClothesService.shared.sortTop()
-            SwitchClothesService.shared.sortTopAcc()
-            SwitchClothesService.shared.sortBottomAcc()
-            SwitchClothesService.shared.sortFoot()
+            SwitchClothesService.shared.mSortHead()
+            SwitchClothesService.shared.mSortTop()
+            SwitchClothesService.shared.mSortTopAcc()
+            SwitchClothesService.shared.mSortBottomAcc()
+            SwitchClothesService.shared.mSortFoot()
+            
+            SwitchClothesService.shared.fSortHead()
+            SwitchClothesService.shared.fSortTop()
+            SwitchClothesService.shared.fSortTopAcc()
+            SwitchClothesService.shared.fSortBottomAcc()
+            SwitchClothesService.shared.fSortFoot()
         }
     }
 }
