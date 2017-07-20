@@ -80,34 +80,24 @@ class ResultVC: UIViewController {
         switch selectedIndex {
         case 0:
             mTopTapCount += 1
-            print("tapped top")
             
             if mTopTapCount >= mTopArr.count {
                 mTopTapCount = 0
-                mTopImage = "\(mTopArr[mTopTapCount]).png"
-                print(mTopArr[mTopTapCount])
-                
-            } else {
-                mTopImage = "\(mTopArr[mTopTapCount]).png"
-                print(mTopArr[mTopTapCount])
-                
             }
+            
+            mTopImage = "\(mTopArr[mTopTapCount]).png"
+            topImageView.image = UIImage(named: mTopImage)
+
         case 1:
             fTopTapCount += 1
-            print("tapped ftop")
             
             if fTopTapCount >= fTopArr.count {
                 fTopTapCount = 0
-                fTopImage = "\(fTopArr[fTopTapCount]).png"
-                print(fTopArr[fTopTapCount])
-                
-            } else {
-                fTopImage = "\(fTopArr[fTopTapCount]).png"
-                print(fTopArr[fTopTapCount])
-                
             }
-        default: break
             
+            fTopImage = "\(fTopArr[fTopTapCount]).png"
+            topImageView.image = UIImage(named: mTopImage)
+        default: break
         }
         
     }
@@ -117,31 +107,23 @@ class ResultVC: UIViewController {
         switch selectedIndex {
         case 0:
             mBottomTapCount += 1
-            print("tapped bottom)")
             
             if mBottomTapCount >= mBottomArr.count {
                 mBottomTapCount = 0
-                mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
-                print(mBottomArr[mBottomTapCount])
-                
-            } else {
-                mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
-                print(mBottomArr[mBottomTapCount])
-                
             }
+            
+            mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
+            bottomImageView.image = UIImage(named: mBottomImage)
+            
         case 1:
             fBottomTapCount += 1
-            print("tapped fbottom)")
             
             if fBottomTapCount >= fBottomArr.count {
                 fBottomTapCount = 0
-                fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
-                print(fBottomArr[fBottomTapCount])
-                
-            } else {
-                fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
-                print(fBottomArr[fBottomTapCount])
             }
+            fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
+            bottomImageView.image = UIImage(named: mBottomImage)
+            
         default: break
         }
         
@@ -153,32 +135,24 @@ class ResultVC: UIViewController {
         switch selectedIndex {
         case 0:
             mHeadTapCount += 1
-            print("tapped head)")
             
             if mHeadTapCount >= mHeadArr.count {
                 mHeadTapCount = 0
-                mHeadImage = "\(mHeadArr[mHeadTapCount]).png"
-                print(mHeadArr[mHeadTapCount])
-                
-            } else {
-                mHeadImage = "\(mHeadArr[mHeadTapCount]).png"
-                print(mHeadArr[mHeadTapCount])
-                
             }
+            
+            mHeadImage = "\(mHeadArr[mHeadTapCount]).png"
+            headImageView.image = UIImage(named: mHeadImage)
+            
         case 1:
             fHeadTapCount += 1
-            print("tapped fhead)")
             
             if fHeadTapCount >= fHeadArr.count {
                 fHeadTapCount = 0
-                fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
-                print(fHeadArr[fHeadTapCount])
-                
-            } else {
-                fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
-                print(fHeadArr[fHeadTapCount])
-                
             }
+            
+            fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
+            headImageView.image = UIImage(named: mHeadImage)
+            
         default: break
         }
         
@@ -189,32 +163,24 @@ class ResultVC: UIViewController {
         switch selectedIndex {
         case 0:
             mShoeTapCount += 1
-            print("tapped shoe)")
             
             if mShoeTapCount >= mShoeArr.count {
                 mShoeTapCount = 0
-                mFootweaerImage = "\(mShoeArr[mShoeTapCount]).png"
-                print(mShoeArr[mShoeTapCount])
-                
-            } else {
-                mFootweaerImage = "\(mShoeArr[mShoeTapCount]).png"
-                print(mShoeArr[mShoeTapCount])
-                
             }
+            
+            mFootweaerImage = "\(mShoeArr[mShoeTapCount]).png"
+            shoeImageView.image = UIImage(named: mFootweaerImage)
+            
         case 1:
             fShoeTapCount += 1
-            print("tapped fshoe)")
             
             if fShoeTapCount >= fShoeArr.count {
                 fShoeTapCount = 0
-                fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
-                print(fShoeArr[fShoeTapCount])
-                
-            } else {
-                fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
-                print(fShoeArr[fShoeTapCount])
-                
             }
+            
+            fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
+            shoeImageView.image = UIImage(named: mFootweaerImage)
+            
         default: break
         }
         
@@ -256,8 +222,6 @@ class ResultVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
         headImageView.image = UIImage(named: mHeadImage)
@@ -267,7 +231,6 @@ class ResultVC: UIViewController {
         shoeImageView.image = UIImage(named: mFootweaerImage)
         accImageView.image = UIImage(named: mAccImage)
         
-        WeatherDataService.shared.getOutfits(WeatherData.shared)
         Outfits.shared.getClothingCombo(WeatherData.shared)
         Outfits.shared.printSetting()
         
