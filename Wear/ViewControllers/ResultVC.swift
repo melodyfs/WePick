@@ -21,11 +21,6 @@ class ResultVC: UIViewController {
     var mFootAccImage = "\(Outfits.shared.mFootAcc).png"
     var mAccImage = "\(Outfits.shared.mAccessory).png"
     
-    var mTopArr = SwitchClothesService.shared.mTops
-    var mTopAccArr = SwitchClothesService.shared.mTopAccs
-    var mBottomArr = SwitchClothesService.shared.mBottoms
-    var mFootArr = SwitchClothesService.shared.mFoots
-    
     var fHeadImage = "\(Outfits.shared.fHead).png"
     var fTopImage = "\(Outfits.shared.fTop).png"
     var fTopAccImage = "\(Outfits.shared.fTopAcc).png"
@@ -34,8 +29,17 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
+    var mHeadArr = SwitchClothesService.shared.mHeads
+    var mTopArr = SwitchClothesService.shared.mTops
+    var mTopAccArr = SwitchClothesService.shared.mTopAccs
+    var mBottomArr = SwitchClothesService.shared.mBottoms
+    var mShoeArr = SwitchClothesService.shared.mFoots
+    
     var selectedIndex = 0
-    var tapCount = 0
+    var topTapCount = 0
+    var bottomTapCount = 0
+    var shoeTapCount = 0
+    var headTapCount = 0
 
     
     //MARK: - Outlets
@@ -50,7 +54,6 @@ class ResultVC: UIViewController {
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var changeTopButton: UIButton!
     
     //MARK: - Public Methods
     
@@ -60,22 +63,20 @@ class ResultVC: UIViewController {
     
     //MARK: - Actions
     
-    
+
     @IBAction func topImgTapped(_ sender: UITapGestureRecognizer) {
         
         switch selectedIndex {
         case 0:
-            tapCount += 1
+            topTapCount += 1
+            print("tapped top")
             
-            print("tapped \(tapCount)")
-            print("image touched")
-            
-            if tapCount >= mTopArr.count {
-                tapCount = 0
-                print(mTopArr[tapCount])
+            if topTapCount >= mTopArr.count {
+                topTapCount = 0
+                print(mTopArr[topTapCount])
                 
             } else {
-                print(mTopArr[tapCount])
+                print(mTopArr[topTapCount])
                 
             }
         case 1: break
@@ -84,27 +85,77 @@ class ResultVC: UIViewController {
             
         }
         
-        print("change top img tapped")
+    }
+    
+    @IBAction func bottomImgTapped(_ sender: UITapGestureRecognizer) {
         
-
+        switch selectedIndex {
+        case 0:
+            bottomTapCount += 1
+            print("tapped bottom)")
+            
+            if bottomTapCount >= mBottomArr.count {
+                bottomTapCount = 0
+                print(mBottomArr[bottomTapCount])
+                
+            } else {
+                print(mBottomArr[bottomTapCount])
+                
+            }
+        case 1: break
+            
+        default: break
+            
+        }
         
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        
-
     
-    
-    func changeTopTapped(sender: UITapGestureRecognizer) {
+    @IBAction func headImgTapped(_ sender: UITapGestureRecognizer) {
         
-//        let touch = event.allTouches?.first!
-    
-//        topImageView. (self, action: #selector(getter: ResultVC.changeTopButton), for: UIControlEvents.touchDownRepeat))
-        
-        //change the top as user clicks on it multiple times
+        switch selectedIndex {
+        case 0:
+            headTapCount += 1
+            print("tapped head)")
+            
+            if headTapCount >= mHeadArr.count {
+                headTapCount = 0
+                print(mHeadArr[headTapCount])
+                
+            } else {
+                print(mHeadArr[headTapCount])
+                
+            }
+        case 1: break
+            
+        default: break
+            
         }
+        
+    }
     
-    
+    @IBAction func shoeImgTapped(_ sender: UITapGestureRecognizer) {
+        
+        switch selectedIndex {
+        case 0:
+            shoeTapCount += 1
+            print("tapped shoe)")
+            
+            if shoeTapCount >= mShoeArr.count {
+                shoeTapCount = 0
+                print(mShoeArr[shoeTapCount])
+                
+            } else {
+                print(mShoeArr[shoeTapCount])
+                
+            }
+        case 1: break
+            
+        default: break
+            
+        }
+        
+    }
     @IBAction func genderSelector(_ sender: Any) {
         selectedIndex = (sender as AnyObject).selectedSegmentIndex
         
@@ -161,12 +212,32 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
-        tapRecognizer.numberOfTapsRequired = 1
-        tapRecognizer.numberOfTouchesRequired = 1
         
+        let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
+        topTapRecognizer.numberOfTapsRequired = 1
+        topTapRecognizer.numberOfTouchesRequired = 1
         topImageView.isUserInteractionEnabled = true
-        topImageView.addGestureRecognizer(tapRecognizer)
+        topImageView.addGestureRecognizer(topTapRecognizer)
+        
+        let bottomTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.bottomImgTapped(_:)))
+        bottomTapRecognizer.numberOfTapsRequired = 1
+        bottomTapRecognizer.numberOfTouchesRequired = 1
+        bottomImageView.isUserInteractionEnabled = true
+        bottomImageView.addGestureRecognizer(bottomTapRecognizer)
+        
+        let headTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.headImgTapped(_:)))
+        headTapRecognizer.numberOfTapsRequired = 1
+        headTapRecognizer.numberOfTouchesRequired = 1
+        headImageView.isUserInteractionEnabled = true
+        headImageView.addGestureRecognizer(headTapRecognizer)
+
+        let shoeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.shoeImgTapped(_:)))
+        shoeTapRecognizer.numberOfTapsRequired = 1
+        shoeTapRecognizer.numberOfTouchesRequired = 1
+        shoeImageView.isUserInteractionEnabled = true
+        shoeImageView.addGestureRecognizer(shoeTapRecognizer)
+
+        
         
     }
     

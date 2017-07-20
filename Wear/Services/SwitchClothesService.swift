@@ -15,15 +15,29 @@ class SwitchClothesService {
     
     //MARK: - Male
     
+    var mHeadCount = 0
     var mTopCount = 0
     var mTopAccCount = 0
     var mBottomCount = 0
     var mFootCount = 0
     
+    var mHeads: [MClothingItems.Head] = []
     var mTops: [MClothingItems.Top] = []
     var mTopAccs: [MClothingItems.TopAcc] = []
     var mBottoms: [MClothingItems.Bottom] = []
     var mFoots: [MClothingItems.Footwear] = []
+    
+    
+    func sortHead() {
+        countHead()
+        
+        let iToRemove = MClothingItems.Head.none
+        if let i = mHeads.index(of: iToRemove) {
+            mTops.remove(at: i)
+        }
+        mHeads = mHeads.sorted(by: {$0.rawValue < $1.rawValue})
+
+    }
     
     
     func sortTop() {
@@ -65,6 +79,14 @@ class SwitchClothesService {
             mFoots.remove(at: i)
         }
         mFoots = mFoots.sorted(by: {$0.rawValue < $1.rawValue} )
+    }
+    
+    private func countHead() {
+        for str in WeatherDataService.shared.iterateEnum(MClothingItems.Head.self) {
+            mHeadCount += 1
+            mHeads.append(str)
+        }
+    
     }
     
     private func countTop() {
