@@ -21,6 +21,11 @@ class ResultVC: UIViewController {
     var mFootAccImage = "\(Outfits.shared.mFootAcc).png"
     var mAccImage = "\(Outfits.shared.mAccessory).png"
     
+    var mTopArr = SwitchClothesService.shared.mTops
+    var mTopAccArr = SwitchClothesService.shared.mTopAccs
+    var mBottomArr = SwitchClothesService.shared.mBottoms
+    var mFootArr = SwitchClothesService.shared.mFoots
+    
     var fHeadImage = "\(Outfits.shared.fHead).png"
     var fTopImage = "\(Outfits.shared.fTop).png"
     var fTopAccImage = "\(Outfits.shared.fTopAcc).png"
@@ -29,10 +34,9 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
-    var mTopArr = Outfits.shared.mTops
     var selectedIndex = 0
     var tapCount = 0
-//    var index = 0
+
     
     //MARK: - Outlets
     
@@ -57,33 +61,48 @@ class ResultVC: UIViewController {
     //MARK: - Actions
     
     
-    @IBAction func changeTopButtonTapped(_ sender: UIButton, event: UIEvent) {
-        let touch: UITouch = event.allTouches!.first!
-        tapCount += 1
+    @IBAction func topImgTapped(_ sender: UITapGestureRecognizer) {
         
-        print("tapped \(tapCount)")
-    
-        changeTopButton.addTarget(self, action: #selector(getter: ResultVC.changeTopButton), for: UIControlEvents.touchDownRepeat)
-        
-        //change the top as user clicks on it multiple times
         switch selectedIndex {
         case 0:
+            tapCount += 1
+            
+            print("tapped \(tapCount)")
+            print("image touched")
+            
             if tapCount >= mTopArr.count {
                 tapCount = 0
                 print(mTopArr[tapCount])
+                
             } else {
                 print(mTopArr[tapCount])
-            }
-        case 1:
-            if touch.tapCount == 1 {
                 
             }
+        case 1: break
+            
         default: break
             
         }
         
-        print("change top button tapped")
+        print("change top img tapped")
+        
+
+        
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+
+    
+    
+    func changeTopTapped(sender: UITapGestureRecognizer) {
+        
+//        let touch = event.allTouches?.first!
+    
+//        topImageView. (self, action: #selector(getter: ResultVC.changeTopButton), for: UIControlEvents.touchDownRepeat))
+        
+        //change the top as user clicks on it multiple times
+        }
     
     
     @IBAction func genderSelector(_ sender: Any) {
@@ -133,15 +152,21 @@ class ResultVC: UIViewController {
         shoeImageView.image = UIImage(named: mFootweaerImage)
         accImageView.image = UIImage(named: mAccImage)
         
-//        WeatherDataService.shared.getOutfits(WeatherData.shared)
-//        Outfits.shared.getClothingCombo(WeatherData.shared)
-//        Outfits.shared.printSetting()
+        WeatherDataService.shared.getOutfits(WeatherData.shared)
+        Outfits.shared.getClothingCombo(WeatherData.shared)
+        Outfits.shared.printSetting()
         
         print("DF")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        
+        topImageView.isUserInteractionEnabled = true
+        topImageView.addGestureRecognizer(tapRecognizer)
         
     }
     

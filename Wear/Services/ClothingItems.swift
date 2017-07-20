@@ -54,7 +54,7 @@ enum MClothingItems {
 //    }
     
     
-    enum bottom : String {
+    enum Bottom : String {
         case none
         //thick pants (for winter/cold)
         case mPants
@@ -125,7 +125,7 @@ enum FClothingItems {
     }
     
     
-    enum bottom : String {
+    enum Bottom : String {
         case none
         //thick pants (for winter/cold)
         case fPants

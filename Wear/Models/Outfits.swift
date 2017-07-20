@@ -22,49 +22,17 @@ class Outfits {
     var mHead = MClothingItems.Head.none
     var mTop = MClothingItems.Top.mShortSleeveShirt
     var mTopAcc = MClothingItems.TopAcc.none
-    var mBottom = MClothingItems.bottom.mPants
+    var mBottom = MClothingItems.Bottom.mPants
     var mFootwear = MClothingItems.Footwear.mSneakers
     var mFootAcc = MClothingItems.Footwear.none
     var mAccessory = MClothingItems.Accessories.none
-    var mTopCount = 0
-    
-    var mTops: [MClothingItems.Top] = []
-    var mTopAccs: [MClothingItems.TopAcc] = []
-    var mBottoms: [MClothingItems.TopAcc] = []
-    var mFoots: [MClothingItems.Footwear] = []
- 
-    
-    func sortTop() {
-        countTop()
-        
-        let iToRemove = MClothingItems.Top.none
-        if let i = mTops.index(of: iToRemove) {
-            mTops.remove(at: i)
-        }
-    
-        mTops = mTops.sorted(by: {$0.rawValue < $1.rawValue})
-        
-        
-    }
-    
-    private func sortAlphabeticaly(_ s1: String, _ s2: String) -> Bool {
-        return s1 < s2
-    }
-    
-    private func countTop() {
-        for str in WeatherDataService.shared.iterateEnum(MClothingItems.Top.self) {
-            mTopCount += 1
-            mTops.append(str)
-        }
-        
-    }
     
     
     //default female clothing items changed based on weather description
     var fHead = FClothingItems.Head.none
     var fTop = FClothingItems.Top.fShortSleeveShirt
     var fTopAcc = FClothingItems.TopAcc.none
-    var fBottom = FClothingItems.bottom.fPants
+    var fBottom = FClothingItems.Bottom.fPants
     var fFootwear = FClothingItems.Footwear.fSneakers
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
@@ -162,19 +130,19 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist:
-            mBottom = MClothingItems.bottom.mPants
+            mBottom = MClothingItems.Bottom.mPants
         case .sand:
-            mBottom = MClothingItems.bottom.mShorts
+            mBottom = MClothingItems.Bottom.mShorts
         case .naturalDisaster: fallthrough
         case .cold: fallthrough
         case .hot:
-            mBottom = MClothingItems.bottom.mShorts
+            mBottom = MClothingItems.Bottom.mShorts
         case .hail: fallthrough
         case .calm: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         default:
-            mBottom = MClothingItems.bottom.jeans
+            mBottom = MClothingItems.Bottom.jeans
         }
         
         mTempBottom()
@@ -319,13 +287,13 @@ class Outfits {
    private func mTempBottom() {
         switch temp {
         case 0...60:
-            if mBottom != MClothingItems.bottom.mPants {
-                mBottom = MClothingItems.bottom.mPants
+            if mBottom != MClothingItems.Bottom.mPants {
+                mBottom = MClothingItems.Bottom.mPants
             }
         case 61...70: break
         case 71..<200:
-            if mBottom != MClothingItems.bottom.mShorts {
-                mBottom = MClothingItems.bottom.mShorts
+            if mBottom != MClothingItems.Bottom.mShorts {
+                mBottom = MClothingItems.Bottom.mShorts
             }
         default:
             mForBottom()
@@ -439,19 +407,19 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist:
-            fBottom = FClothingItems.bottom.fPants
+            fBottom = FClothingItems.Bottom.fPants
         case .sand:
-            fBottom = FClothingItems.bottom.fShorts
+            fBottom = FClothingItems.Bottom.fShorts
         case .naturalDisaster: fallthrough
         case .cold: fallthrough
         case .hot:
-            fBottom = FClothingItems.bottom.fShorts
+            fBottom = FClothingItems.Bottom.fShorts
         case .hail: fallthrough
         case .calm: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         default:
-            fBottom = FClothingItems.bottom.jeans
+            fBottom = FClothingItems.Bottom.jeans
         }
         
         fTempBottom()
@@ -597,13 +565,13 @@ class Outfits {
     private func fTempBottom() {
         switch temp {
         case 0...60:
-            if fBottom != FClothingItems.bottom.fPants {
-                fBottom = FClothingItems.bottom.fPants
+            if fBottom != FClothingItems.Bottom.fPants {
+                fBottom = FClothingItems.Bottom.fPants
             }
         case 61...70: break
         case 71..<200:
-            if fBottom != FClothingItems.bottom.fShorts {
-                fBottom = FClothingItems.bottom.fShorts
+            if fBottom != FClothingItems.Bottom.fShorts {
+                fBottom = FClothingItems.Bottom.fShorts
             }
         default:
             fForBottom()
