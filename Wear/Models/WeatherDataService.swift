@@ -33,7 +33,7 @@ enum Category: String {
     case hail = "Hail"
     
     case calm = "Calm"
-    case lightBreeze = "Lightbreeze"
+    case lightBreeze = "LightBreeze"
     case gentleBreeze = "GentleBreeze"
     case moderateBreeze = "ModerateBreexe"
     case freshBreeze = "FreshBreexe"
@@ -73,7 +73,7 @@ class WeatherDataService {
     let hail = "Hail"
     
     let calm = "Calm"
-    let lightBreeze = "Lightbreeze"
+    let lightBreeze = "LightBreeze"
     let gentleBreeze = "GentleBreeze"
     let moderateBreeze = "ModerateBreexe"
     let freshBreeze = "FreshBreexe"
@@ -105,7 +105,7 @@ class WeatherDataService {
     }
     
     
-    //Assigns a generic category if they are in the enums
+    //Assigns a specific category if they are in Category
     private func compareEnumValues(_ ds: WeatherData) {
         let dsReformat = reformatWeatherDescription(ds)
         

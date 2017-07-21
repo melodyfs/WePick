@@ -29,6 +29,8 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
+    var bgImage = "\(WeatherDataService.shared.category).png"
+    
     var mHeadArr = SwitchClothesService.shared.mHeads
     var mTopArr = SwitchClothesService.shared.mTops
     var mTopAccArr = SwitchClothesService.shared.mTopAccs
@@ -62,6 +64,7 @@ class ResultVC: UIViewController {
     @IBOutlet weak var shoeImageView: UIImageView!
     @IBOutlet weak var accImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var topAccIcon: UIImageView!
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
@@ -74,6 +77,16 @@ class ResultVC: UIViewController {
     
     //MARK: - Actions
     
+
+    @IBAction func changeItemTapped(_ sender: Any) {
+        topAccImageView.isHidden = true
+        topAccIcon.isHidden = false
+        
+        topImageView.isUserInteractionEnabled = true
+        bottomImageView.isUserInteractionEnabled = true
+        headImageView.isUserInteractionEnabled = true
+        shoeImageView.isUserInteractionEnabled = true
+    }
 
     @IBAction func topImgTapped(_ sender: UITapGestureRecognizer) {
         
@@ -224,12 +237,15 @@ class ResultVC: UIViewController {
         
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
+        topAccIcon.isHidden = true
+        
         headImageView.image = UIImage(named: mHeadImage)
         topImageView.image = UIImage(named: mTopImage)
         topAccImageView.image = UIImage(named: mTopAccImage)
         bottomImageView.image = UIImage(named: mBottomImage)
         shoeImageView.image = UIImage(named: mFootweaerImage)
         accImageView.image = UIImage(named: mAccImage)
+        backgroundImageView.image = UIImage(named: bgImage)
         
         Outfits.shared.getClothingCombo(WeatherData.shared)
         Outfits.shared.printSetting()
@@ -243,25 +259,25 @@ class ResultVC: UIViewController {
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
         topTapRecognizer.numberOfTapsRequired = 1
         topTapRecognizer.numberOfTouchesRequired = 1
-        topImageView.isUserInteractionEnabled = true
+        topImageView.isUserInteractionEnabled = false
         topImageView.addGestureRecognizer(topTapRecognizer)
         
         let bottomTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.bottomImgTapped(_:)))
         bottomTapRecognizer.numberOfTapsRequired = 1
         bottomTapRecognizer.numberOfTouchesRequired = 1
-        bottomImageView.isUserInteractionEnabled = true
+        bottomImageView.isUserInteractionEnabled = false
         bottomImageView.addGestureRecognizer(bottomTapRecognizer)
         
         let headTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.headImgTapped(_:)))
         headTapRecognizer.numberOfTapsRequired = 1
         headTapRecognizer.numberOfTouchesRequired = 1
-        headImageView.isUserInteractionEnabled = true
+        headImageView.isUserInteractionEnabled = false
         headImageView.addGestureRecognizer(headTapRecognizer)
 
         let shoeTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.shoeImgTapped(_:)))
         shoeTapRecognizer.numberOfTapsRequired = 1
         shoeTapRecognizer.numberOfTouchesRequired = 1
-        shoeImageView.isUserInteractionEnabled = true
+        shoeImageView.isUserInteractionEnabled = false
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
 
         

@@ -37,7 +37,7 @@ class Outfits {
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
     
-        //MARK: - Male
+    //MARK: - Male
     
     private func mForHead() {
 

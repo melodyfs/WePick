@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C3F5A691F0EBBBD00C079CB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */; };
+		6C6E3ADA1F2271FE00D60C7C /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */; };
 		6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABDA071F0C48A400133DBB /* Outfits.swift */; };
-		6CABDA0A1F0D6ECE00133DBB /* TemperatureEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABDA091F0D6ECE00133DBB /* TemperatureEnum.swift */; };
 		6CB17C181F02D88C0093791F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C171F02D88C0093791F /* Main.storyboard */; };
 		6CB17C1B1F02D8A40093791F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB17C191F02D8A40093791F /* HomeVC.swift */; };
 		6CB17C1C1F02D8A40093791F /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB17C1A1F02D8A40093791F /* ResultVC.swift */; };
@@ -30,8 +30,8 @@
 /* Begin PBXFileReference section */
 		4E4FB76890F8944D26D8CDE7 /* Pods-Wear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wear/Pods-Wear.release.xcconfig"; sourceTree = "<group>"; };
 		6C3F5A681F0EBBBD00C079CB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpVC.swift; path = ViewControllers/PopUpVC.swift; sourceTree = "<group>"; };
 		6CABDA071F0C48A400133DBB /* Outfits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Outfits.swift; path = Models/Outfits.swift; sourceTree = "<group>"; };
-		6CABDA091F0D6ECE00133DBB /* TemperatureEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureEnum.swift; path = Enums/TemperatureEnum.swift; sourceTree = "<group>"; };
 		6CB17BFF1F02D7C40093791F /* Wear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB17C171F02D88C0093791F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		6CB17C191F02D8A40093791F /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ViewControllers/HomeVC.swift; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 			children = (
 				6CFF83A31F06FEA700255329 /* ClothingItems.swift */,
 				6CFF839E1F06F33E00255329 /* WeatherEnums.swift */,
-				6CABDA091F0D6ECE00133DBB /* TemperatureEnum.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 			children = (
 				6CB17C191F02D8A40093791F /* HomeVC.swift */,
 				6CB17C1A1F02D8A40093791F /* ResultVC.swift */,
+				6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -314,9 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CFF839B1F031E3D00255329 /* WeatherData.swift in Sources */,
+				6C6E3ADA1F2271FE00D60C7C /* PopUpVC.swift in Sources */,
 				6CB17C1C1F02D8A40093791F /* ResultVC.swift in Sources */,
 				6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */,
-				6CABDA0A1F0D6ECE00133DBB /* TemperatureEnum.swift in Sources */,
 				6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */,
 				6CFF83A21F06FDBC00255329 /* WeatherDataService.swift in Sources */,
 				6CFF83A41F06FEA700255329 /* ClothingItems.swift in Sources */,

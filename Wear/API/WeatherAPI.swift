@@ -18,9 +18,6 @@ class WeatherAPI {
     //MARK: - Properties
     fileprivate static let BaseURL = "http://api.openweathermap.org/data/2.5/weather?zip="
     fileprivate static let key = "45ca707f502b31f8464232fb3f89b3b0"
-    fileprivate static let imageURL = "http://openweathermap.org/img/w/"
-    
-    var iconCode = WeatherData.shared.icon
     
     //MARK: - Class Methods
     //passing closure with data of weather. The data will only be called once the request is completed

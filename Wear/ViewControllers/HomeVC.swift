@@ -23,8 +23,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
     @IBOutlet weak var currentWeatherState: UILabel!
-    @IBOutlet weak var weatherIcon: UILabel!
-    
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -35,7 +33,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-
+        
 
     }
     
@@ -91,10 +89,20 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     
     //MARK: - Actions
-    @IBAction func seeSuggestionButtonTapped(_ sender: Any) {
-        print("see suggestion button tapped")
+    
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
     }
     
+    @IBAction func seeSuggestionButtonTapped(_ sender: Any) {
+        print("see suggestion button tapped")
+        
+    }
     
     func updateUI(weather: WeatherData) {
         DispatchQueue.main.async() {
