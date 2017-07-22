@@ -12,10 +12,14 @@ import CoreLocation
 
 class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
+    static var shared = HomeVC()
+    
     //MARK: - Properties
     var locationManager = CLLocationManager()
 
     var  tempZip = ""
+    
+    var bgImage = "\(WeatherDataService.shared.category).png"
     
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -23,6 +27,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
     @IBOutlet weak var currentWeatherState: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -34,7 +39,13 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        weatherImageView.image = UIImage(named: "bg3")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -122,6 +133,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortTopAcc()
             SwitchClothesService.shared.fSortBottomAcc()
             SwitchClothesService.shared.fSortFoot()
+            
+            Outfits.shared.decideTemp()
         }
     }
 }

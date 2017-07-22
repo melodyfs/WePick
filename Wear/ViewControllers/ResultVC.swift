@@ -44,13 +44,16 @@ class ResultVC: UIViewController {
     var fShoeArr = SwitchClothesService.shared.fShoes
     
     var selectedIndex = 0
+    var changeTapCount = 0
     
     var mTopTapCount = 0
+    var mTopAccTapCount = 0
     var mBottomTapCount = 0
     var mShoeTapCount = 0
     var mHeadTapCount = 0
     
     var fTopTapCount = 0
+    var fTopAccTapCount = 0
     var fBottomTapCount = 0
     var fShoeTapCount = 0
     var fHeadTapCount = 0
@@ -78,14 +81,32 @@ class ResultVC: UIViewController {
     //MARK: - Actions
     
 
-    @IBAction func changeItemTapped(_ sender: Any) {
+    @IBAction func changeItemTapped(_ sender: UIButton) {
         topAccImageView.isHidden = true
-        topAccIcon.isHidden = false
-        
+        changeTapCount += 1
+        sender.setTitle("Done", for: .normal)
+  //      topAccIcon.isHidden = false
+       
         topImageView.isUserInteractionEnabled = true
         bottomImageView.isUserInteractionEnabled = true
         headImageView.isUserInteractionEnabled = true
         shoeImageView.isUserInteractionEnabled = true
+        
+        bgImage = "resultBG"
+        backgroundImageView.image = UIImage(named: bgImage)
+        
+        if changeTapCount % 2 == 0 {
+            topImageView.isUserInteractionEnabled = false
+            bottomImageView.isUserInteractionEnabled = false
+            headImageView.isUserInteractionEnabled = false
+            shoeImageView.isUserInteractionEnabled = false
+            topAccImageView.isHidden = false
+//            topAccIcon.isHidden = true
+            
+            bgImage = "bg"
+            backgroundImageView.image = UIImage(named: bgImage)
+            sender.setTitle("Change", for: .normal)
+        }
     }
 
     @IBAction func topImgTapped(_ sender: UITapGestureRecognizer) {
@@ -109,11 +130,39 @@ class ResultVC: UIViewController {
             }
             
             fTopImage = "\(fTopArr[fTopTapCount]).png"
-            topImageView.image = UIImage(named: mTopImage)
+            topImageView.image = UIImage(named: fTopImage)
         default: break
         }
         
     }
+    
+    @IBAction func topAccImgTapped(_ sender: UITapGestureRecognizer) {
+        
+        switch selectedIndex {
+        case 0:
+            mTopAccTapCount += 1
+            
+            if mTopAccTapCount >= mTopAccArr.count {
+                mTopAccTapCount = 0
+            }
+            
+            mTopAccImage = "\(mTopAccArr[mTopAccTapCount]).png"
+            topAccImageView.image = UIImage(named: mTopAccImage)
+            
+        case 1:
+            fTopAccTapCount += 1
+            
+            if fTopAccTapCount >= fTopAccArr.count {
+                fTopAccTapCount = 0
+            }
+            fTopAccImage = "\(fTopAccArr[fTopAccTapCount]).png"
+            topAccImageView.image = UIImage(named: fTopAccImage)
+            
+        default: break
+        }
+
+    }
+    
     
     @IBAction func bottomImgTapped(_ sender: UITapGestureRecognizer) {
         
@@ -135,7 +184,7 @@ class ResultVC: UIViewController {
                 fBottomTapCount = 0
             }
             fBottomImage = "\(fBottomArr[fBottomTapCount]).png"
-            bottomImageView.image = UIImage(named: mBottomImage)
+            bottomImageView.image = UIImage(named: fBottomImage)
             
         default: break
         }
@@ -164,7 +213,7 @@ class ResultVC: UIViewController {
             }
             
             fHeadImage = "\(fHeadArr[fHeadTapCount]).png"
-            headImageView.image = UIImage(named: mHeadImage)
+            headImageView.image = UIImage(named: fHeadImage)
             
         default: break
         }
@@ -192,7 +241,7 @@ class ResultVC: UIViewController {
             }
             
             fFootweaerImage = "\(fShoeArr[fShoeTapCount]).png"
-            shoeImageView.image = UIImage(named: mFootweaerImage)
+            shoeImageView.image = UIImage(named: fFootweaerImage)
             
         default: break
         }
@@ -280,7 +329,7 @@ class ResultVC: UIViewController {
         shoeImageView.isUserInteractionEnabled = false
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
 
-        
+        Outfits.shared.decideTemp()
         
     }
     

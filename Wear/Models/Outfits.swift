@@ -14,9 +14,7 @@ class Outfits {
     var category : Category = .unknown
     var categoryAtm = ""
     
-    let temp = WeatherData.shared.temperature
-    
-    
+    var temp = WeatherData.shared.temperature
     
     //default male clothing items changed based on weather description
     var mHead = MClothingItems.Head.none
@@ -36,6 +34,19 @@ class Outfits {
     var fFootwear = FClothingItems.Footwear.fSneakers
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
+    
+    func decideTemp() {
+        switch UserTemp.shared.userTemp {
+        case "cold":
+            temp = 55
+        case "middle" : break
+        case "hot":
+            temp = 75
+        default: break
+        
+        }
+    }
+    
     
     //MARK: - Male
     
@@ -252,7 +263,7 @@ class Outfits {
    private func mTempTop() {
         switch temp {
         case 0...60:
-            if mTop == MClothingItems.Top.mShortSleeveShirt {
+            if mTop != MClothingItems.Top.mLongSleeveShirt {
                 mTop = MClothingItems.Top.mLongSleeveShirt
             }
         case 61...70: break

@@ -21,7 +21,7 @@ class JSONParser {
         let description = getDescription(from: weatherData)
         let weatherState = getWeatherState(from: weatherData)
         let temperature = getTemperature(from: weatherData)
-//        let temperature = 72
+//        let temperature = 55
         let locationName = getLocation(from: weatherData)
         let icon = getIcon(from: weatherData)
         
