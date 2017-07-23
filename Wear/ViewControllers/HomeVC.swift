@@ -45,7 +45,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherImageView.image = UIImage(named: "bg3")
+        weatherImageView.image = UIImage(named: "")
     }
     
     override func viewDidAppear(_ animated: Bool) {

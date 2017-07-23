@@ -21,6 +21,7 @@ class PopUpVC: UIViewController {
     
     @IBAction func coldTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
+        sender.setBackgroundColor(color: .white, forState: .selected)
         
         middleButton.isSelected = false
         hotButton.isSelected = false
@@ -30,7 +31,7 @@ class PopUpVC: UIViewController {
     
     @IBAction func middleTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
-//        selectButton(button: middleButton)
+        sender.setBackgroundColor(color: .white, forState: .selected)
         
         coldTempButton.isSelected = false
         hotButton.isSelected = false
@@ -40,7 +41,7 @@ class PopUpVC: UIViewController {
     
     @IBAction func hotTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
-//        selectButton(button: hotButton)
+        sender.setBackgroundColor(color: .white, forState: .selected)
         
         coldTempButton.isSelected = false
         middleButton.isSelected = false
@@ -49,7 +50,7 @@ class PopUpVC: UIViewController {
     
     @IBAction func dfTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
-//        selectButton(button: dfButton)
+        sender.setBackgroundColor(color: .white, forState: .selected)
         
         coldTempButton.isSelected = false
         hotButton.isSelected = false
@@ -117,4 +118,15 @@ class PopUpVC: UIViewController {
     }
     
 
+}
+
+extension UIButton {
+    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.setBackgroundImage(colorImage, for: forState)
+    }
 }

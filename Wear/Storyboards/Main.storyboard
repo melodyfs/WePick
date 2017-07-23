@@ -156,12 +156,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-BS-4Mh">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-BS-4Mh">
                                         <rect key="frame" x="5" y="103" width="260" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYI-jt-k4C">
-                                                <rect key="frame" x="8" y="8" width="244" height="46"/>
-                                                <color key="backgroundColor" red="1" green="0.51079797739999999" blue="0.68159466980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="8" width="244" height="42.5"/>
+                                                <color key="backgroundColor" red="1" green="0.80739732703688427" blue="0.98038299094419257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <size key="titleShadowOffset" width="-1" height="0.0"/>
@@ -169,7 +169,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,45 +179,45 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XW-op-kCB">
-                                                <rect key="frame" x="8" y="54" width="244" height="46"/>
-                                                <color key="backgroundColor" red="1" green="0.51079797739999999" blue="0.68159466980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="55.5" width="244" height="42"/>
+                                                <color key="backgroundColor" red="0.93713897400182489" green="0.70159478373666251" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="0.98679953809999998" green="0.65468043090000005" blue="0.77666962149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="70~75">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="middleTempButtonTapped:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="9KK-in-8Hr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G41-zq-LTG">
-                                                <rect key="frame" x="8" y="100" width="244" height="46"/>
-                                                <color key="backgroundColor" red="1" green="0.51079797739999999" blue="0.68159466980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="102.5" width="244" height="42.5"/>
+                                                <color key="backgroundColor" red="0.94719622461928932" green="0.55947610786456237" blue="0.89574298142423092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="1" green="0.87862480899999995" blue="0.94264810619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="75~80">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="hotTempButtonTapped:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="Ebk-5f-t0W"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZU-HC-VVs">
-                                                <rect key="frame" x="8" y="146" width="244" height="46"/>
-                                                <color key="backgroundColor" red="1" green="0.51079797739999999" blue="0.68159466980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="150" width="244" height="42"/>
+                                                <color key="backgroundColor" red="0.94719622461928932" green="0.31850264582310545" blue="0.78125373694277034" alpha="0.58575021404109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="1" green="0.87862480899999995" blue="0.94264810619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="I don't know">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="dfTempButtonTapped:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="5yA-8C-Qp2"/>
@@ -231,13 +231,14 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-0U-eaD">
-                                        <rect key="frame" x="5" y="303" width="260" height="40"/>
-                                        <color key="backgroundColor" red="1" green="0.73379822646966963" blue="0.84348045880379663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="311" width="270" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.088244510400000004" blue="0.6121550281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Rel-lf-XR6"/>
+                                            <constraint firstAttribute="width" constant="270" id="hwa-BB-Vcg"/>
+                                            <constraint firstAttribute="height" constant="40" id="xXv-Su-duA"/>
                                         </constraints>
                                         <state key="normal" title="Done">
-                                            <color key="titleColor" red="1" green="0.088244510400000004" blue="0.6121550281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.98149984137055835" green="0.78113922966357352" blue="0.97934648004697067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="donePopUp:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="Dfi-qH-Yur"/>
@@ -245,22 +246,18 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.50810656287872757" blue="0.682622147075715" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.72228669530161993" blue="0.80973021862310257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="centerX" secondItem="cZj-g2-aJT" secondAttribute="centerX" constant="0.5" id="18J-BR-ieD"/>
+                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="leading" secondItem="4wV-I1-5ls" secondAttribute="leading" id="33t-no-2QG"/>
                                     <constraint firstItem="cZj-g2-aJT" firstAttribute="leading" secondItem="4wV-I1-5ls" secondAttribute="leading" id="Hpm-o6-wvj"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="centerX" secondItem="4wV-I1-5ls" secondAttribute="centerX" id="JcL-f2-Rwz"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="top" secondItem="DDI-BS-4Mh" secondAttribute="bottom" id="MfI-YH-6KV"/>
                                     <constraint firstItem="DDI-BS-4Mh" firstAttribute="centerX" secondItem="4wV-I1-5ls" secondAttribute="centerX" id="OQo-Vw-sgF"/>
                                     <constraint firstItem="cZj-g2-aJT" firstAttribute="top" secondItem="4wV-I1-5ls" secondAttribute="top" id="PvW-nP-26c"/>
                                     <constraint firstAttribute="width" constant="270" id="Urk-jt-Lne"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="leading" secondItem="4wV-I1-5ls" secondAttribute="leading" constant="5" id="cbJ-PT-tvS"/>
+                                    <constraint firstAttribute="bottom" secondItem="GdP-0U-eaD" secondAttribute="bottom" id="WOF-ZL-UxJ"/>
                                     <constraint firstAttribute="height" constant="351" id="ilj-J6-Wiw"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="centerY" secondItem="4wV-I1-5ls" secondAttribute="centerY" constant="147.5" id="jKU-Wd-t8f"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="centerY" secondItem="4wV-I1-5ls" secondAttribute="centerY" constant="147.5" id="qn6-kP-oEB"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="centerX" secondItem="4wV-I1-5ls" secondAttribute="centerX" id="uRO-eY-SB4"/>
+                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="top" secondItem="DDI-BS-4Mh" secondAttribute="bottom" constant="8" symbolic="YES" id="lTG-IQ-oz8"/>
                                     <constraint firstAttribute="trailing" secondItem="cZj-g2-aJT" secondAttribute="trailing" id="xFo-cK-udO"/>
-                                    <constraint firstAttribute="bottom" secondItem="GdP-0U-eaD" secondAttribute="bottom" constant="8" id="xgw-ls-JlH"/>
+                                    <constraint firstAttribute="trailing" secondItem="GdP-0U-eaD" secondAttribute="trailing" id="zJw-vZ-Kmz"/>
                                     <constraint firstAttribute="bottom" secondItem="cZj-g2-aJT" secondAttribute="bottom" constant="266" id="zwp-WV-vjv"/>
                                 </constraints>
                             </view>
@@ -280,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWa-A5-gir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="-535"/>
+            <point key="canvasLocation" x="1852" y="-535.68215892053979"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="eyR-8R-Njc">
