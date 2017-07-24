@@ -29,7 +29,7 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
-    var bgImage = "\(WeatherDataService.shared.category).png"
+    var bgImage = "\(Outfits.shared.category).png"
     
     var mHeadArr = SwitchClothesService.shared.mHeads
     var mTopArr = SwitchClothesService.shared.mTops
@@ -286,7 +286,7 @@ class ResultVC: UIViewController {
         
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
-        topAccIcon.isHidden = true
+//        topAccIcon.isHidden = true
         
         headImageView.image = UIImage(named: mHeadImage)
         topImageView.image = UIImage(named: mTopImage)

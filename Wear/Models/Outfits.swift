@@ -20,7 +20,7 @@ class Outfits {
     var mHead = MClothingItems.Head.none
     var mTop = MClothingItems.Top.mShortSleeveShirt
     var mTopAcc = MClothingItems.TopAcc.none
-    var mBottom = MClothingItems.Bottom.mPants
+    var mBottom = MClothingItems.Bottom.jeans
     var mFootwear = MClothingItems.Footwear.mSneakers
     var mFootAcc = MClothingItems.Footwear.none
     var mAccessory = MClothingItems.Accessories.none
@@ -107,8 +107,8 @@ class Outfits {
     private func mForTopAcc() {
         switch category {
         case .thunderstorm: fallthrough
-        case .rain:
-            mTopAcc = MClothingItems.TopAcc.rainCoat
+        case .rain: fallthrough
+//            mTopAcc = MClothingItems.TopAcc.rainCoat
         case .cold: fallthrough
         case .drizzle: fallthrough
         case .clouds:
@@ -281,7 +281,7 @@ class Outfits {
         switch temp {
         case 0...60:
             if mTopAcc == MClothingItems.TopAcc.none {
-                mTopAcc = MClothingItems.TopAcc.mCoat
+                mTopAcc = MClothingItems.TopAcc.mJacket
             }
         case 61...70: break
         case 71...200:

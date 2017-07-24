@@ -25,11 +25,11 @@ enum MClothingItems {
     enum Top: String {
         case none
         case mLongSleeveShirt
-//        case mLongSleeveShirt1
-//        case mLongSleeveShirt2
-//        case mLongSleeveShirt3
+        case mLongSleeveShirt1
+        case mLongSleeveShirt2
+        case mLongSleeveShirt3
         case mShortSleeveShirt
-//        case mShortSleeveShirt2
+        case mShortSleeveShirt2
         
 
         
@@ -39,10 +39,10 @@ enum MClothingItems {
     enum TopAcc : String {
         case none
         case mJacket
-        case mSweater
+//        case mSweater
         case mTrenchCoat
-        case rainCoat
-        
+//        case rainCoat
+//        
 //        case mVest
 //        case mBlazer
         case mCoat
@@ -110,12 +110,12 @@ enum FClothingItems {
     enum TopAcc : String {
         case none
         case fJacket
-        case fSweater
+//        case fSweater
         case fTrenchCoat
         case fRainCoat
         
-        case fVest
-        case fBlazer
+//        case fVest
+//        case fBlazer
         case fCoat
     }
     

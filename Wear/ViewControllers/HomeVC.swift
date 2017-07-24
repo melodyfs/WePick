@@ -19,7 +19,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
 
     var  tempZip = ""
     
-    var bgImage = "\(WeatherDataService.shared.category).png"
+    var bgImage = "\(Outfits.shared.category).png"
     
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -45,7 +45,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherImageView.image = UIImage(named: "")
+        weatherImageView.image = UIImage(named: bgImage)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,7 +134,9 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortBottomAcc()
             SwitchClothesService.shared.fSortFoot()
             
+        
             Outfits.shared.decideTemp()
+            
         }
     }
 }

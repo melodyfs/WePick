@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "top.png",
+      "filename" : "mShortSleeveShirt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "mShortSleeveShirt@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "mShortSleeveShirt@3x.png",
       "scale" : "3x"
     }
   ],
