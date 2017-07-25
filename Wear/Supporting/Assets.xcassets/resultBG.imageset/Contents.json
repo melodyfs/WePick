@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "resultBG.png",
+      "filename" : "changebg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "changebg@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "changebg@3x.png",
       "scale" : "3x"
     }
   ],

@@ -65,7 +65,7 @@ enum MClothingItems {
     
     enum Footwear: String {
         case none
-        case mSneakers
+        case sneakers
         case mBoots
         case mSandals
         case mRainBoots
@@ -138,7 +138,7 @@ enum FClothingItems {
     
     enum Footwear: String {
         case none
-        case fSneakers
+        case sneakers
         case fBoots
         case fSandals
         case fRainBoots

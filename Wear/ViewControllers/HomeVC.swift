@@ -64,6 +64,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
                 var placeMark: CLPlacemark!
                 placeMark = placemarks?[0]
                 let zipcode = placeMark.postalCode ?? ""
+                let city = placeMark.locality ?? ""
                 if self.tempZip != zipcode {
                     self.tempZip = zipcode
                     WeatherAPI.getWeather(fromZipcode: zipcode, completion: { data in
@@ -134,7 +135,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortBottomAcc()
             SwitchClothesService.shared.fSortFoot()
             
-        
+            Outfits.shared.getClothingCombo(WeatherData.shared)
+            Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.decideTemp()
             
         }

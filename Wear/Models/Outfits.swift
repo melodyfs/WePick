@@ -21,7 +21,7 @@ class Outfits {
     var mTop = MClothingItems.Top.mShortSleeveShirt
     var mTopAcc = MClothingItems.TopAcc.none
     var mBottom = MClothingItems.Bottom.jeans
-    var mFootwear = MClothingItems.Footwear.mSneakers
+    var mFootwear = MClothingItems.Footwear.sneakers
     var mFootAcc = MClothingItems.Footwear.none
     var mAccessory = MClothingItems.Accessories.none
     
@@ -31,7 +31,7 @@ class Outfits {
     var fTop = FClothingItems.Top.fShortSleeveShirt
     var fTopAcc = FClothingItems.TopAcc.none
     var fBottom = FClothingItems.Bottom.fPants
-    var fFootwear = FClothingItems.Footwear.fSneakers
+    var fFootwear = FClothingItems.Footwear.sneakers
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
     
@@ -179,7 +179,7 @@ class Outfits {
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            mFootwear = MClothingItems.Footwear.mSneakers
+            mFootwear = MClothingItems.Footwear.sneakers
         }
         
     }
@@ -456,7 +456,7 @@ class Outfits {
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            fFootwear = FClothingItems.Footwear.fSneakers
+            fFootwear = FClothingItems.Footwear.sneakers
         }
         
     }

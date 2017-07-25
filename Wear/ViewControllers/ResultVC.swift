@@ -284,6 +284,10 @@ class ResultVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        Outfits.shared.getClothingCombo(WeatherData.shared)
+        Outfits.shared.printSetting()
+
+        
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
 //        topAccIcon.isHidden = true
@@ -295,9 +299,6 @@ class ResultVC: UIViewController {
         shoeImageView.image = UIImage(named: mFootweaerImage)
         accImageView.image = UIImage(named: mAccImage)
         backgroundImageView.image = UIImage(named: bgImage)
-        
-        Outfits.shared.getClothingCombo(WeatherData.shared)
-        Outfits.shared.printSetting()
         
         print("DF")
     }
@@ -330,6 +331,7 @@ class ResultVC: UIViewController {
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
 
         Outfits.shared.decideTemp()
+        
         
     }
     
