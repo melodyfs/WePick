@@ -286,6 +286,9 @@ class ResultVC: UIViewController {
         
         Outfits.shared.getClothingCombo(WeatherData.shared)
         Outfits.shared.printSetting()
+        
+        Outfits.shared.fGetClothingCombo(WeatherData.shared)
+        Outfits.shared.printSetting()
 
         
         genderSegmentedControl.selectedSegmentIndex = selectedIndex

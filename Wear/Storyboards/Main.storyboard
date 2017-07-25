@@ -232,7 +232,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-0U-eaD">
                                         <rect key="frame" x="0.0" y="311" width="270" height="40"/>
-                                        <color key="backgroundColor" red="1" green="0.088244510400000004" blue="0.6121550281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.72024208307266235" green="0.51957350969314575" blue="0.98010522127151489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="270" id="hwa-BB-Vcg"/>
                                             <constraint firstAttribute="height" constant="40" id="xXv-Su-duA"/>
@@ -303,7 +303,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PtM-py-1A5">
                                 <rect key="frame" x="282" y="535" width="59" height="93"/>
-                                <color key="backgroundColor" red="1" green="0.088244510400000004" blue="0.6121550281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="93" id="67l-as-5ir"/>
                                     <constraint firstAttribute="width" constant="59" id="zRH-lr-Tzn"/>
