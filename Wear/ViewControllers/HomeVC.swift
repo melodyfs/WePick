@@ -102,6 +102,9 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     //MARK: - Actions
     
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        
+    }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
@@ -135,8 +138,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortBottomAcc()
             SwitchClothesService.shared.fSortFoot()
             
-            Outfits.shared.getClothingCombo(WeatherData.shared)
-            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+//            Outfits.shared.getClothingCombo(WeatherData.shared)
+//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.decideTemp()
             
         }

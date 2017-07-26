@@ -384,16 +384,16 @@ class Outfits {
     private func fForTopAcc() {
         switch category {
         case .thunderstorm: fallthrough
-        case .rain:
-            fTopAcc = FClothingItems.TopAcc.fRainCoat
+        case .rain: fallthrough
+//            fTopAcc = FClothingItems.TopAcc.fRainCoat
         case .cold: fallthrough
         case .drizzle: fallthrough
         case .clouds:
-            fTopAcc = FClothingItems.TopAcc.fJacket
+            fTopAcc = FClothingItems.TopAcc.fCoat
         case .snow: fallthrough
         case .storm: fallthrough
         case .mist:
-            fTopAcc = FClothingItems.TopAcc.fCoat
+            fTopAcc = FClothingItems.TopAcc.fJacket
         case .sand: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
@@ -564,7 +564,7 @@ class Outfits {
         case 61...70: break
         case 71...200:
             if fTopAcc == FClothingItems.TopAcc.none {
-                fTopAcc = FClothingItems.TopAcc.fJacket
+                fTopAcc = FClothingItems.TopAcc.fCoat
             }
         default:
             fForTopAcc()

@@ -26,10 +26,10 @@ enum MClothingItems {
         case none
         case mLongSleeveShirt
         case mLongSleeveShirt1
-        case mLongSleeveShirt2
-        case mLongSleeveShirt3
+//        case mLongSleeveShirt2
+//        case mLongSleeveShirt3
         case mShortSleeveShirt
-        case mShortSleeveShirt2
+        case mShortSleeveShirt1
         
 
         
@@ -104,7 +104,9 @@ enum FClothingItems {
     enum Top: String {
         case none
         case fLongSleeveShirt
+        case fLongSleeveShirt1
         case fShortSleeveShirt
+        case fShortSleeveShirt1
     }
     
     enum TopAcc : String {
@@ -131,7 +133,7 @@ enum FClothingItems {
         case fPants
         case fShorts
         case jeans
-        case fLeggings
+//        case fLeggings
         
         case skirt
     }

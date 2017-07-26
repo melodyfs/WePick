@@ -87,7 +87,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-HZ-HrM">
                                 <rect key="frame" x="0.0" y="584" width="375" height="63"/>
-                                <color key="backgroundColor" red="0.72128220040000002" green="0.52311124899999994" blue="0.97854536800000003" alpha="0.76897717198581561" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.0" blue="1" alpha="0.76897717198581561" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="NP5-IC-mIr"/>
                                 </constraints>
@@ -120,7 +120,13 @@
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w0M-Om-jgf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5CK-9b-Uhw"/>
+                    <navigationItem key="navigationItem" id="5CK-9b-Uhw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="cRe-cl-txV">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="BYZ-38-t0r" id="zMt-Ej-ufg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentLocationLabel" destination="LOm-Wk-vCx" id="tUf-tB-mLs"/>
                         <outlet property="currentTemperatureLabel" destination="yYZ-py-L07" id="pyY-LN-pEK"/>
@@ -150,18 +156,34 @@
                                 <rect key="frame" x="53" y="156" width="270" height="351"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your comfortable temperature? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-g2-aJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="85"/>
-                                        <color key="backgroundColor" red="0.99208859453593057" green="0.93757906014287828" blue="1" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="64"/>
+                                        <color key="backgroundColor" red="0.95294117647058818" green="0.89803921568627454" blue="0.96078431372549022" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-0U-eaD">
+                                        <rect key="frame" x="0.0" y="297" width="270" height="54"/>
+                                        <color key="backgroundColor" red="0.66666666666666663" green="0.0" blue="1" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="hwa-BB-Vcg"/>
+                                            <constraint firstAttribute="height" constant="54" id="xXv-Su-duA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.98149984137055835" green="0.78113922966357352" blue="0.97934648004697067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="donePopUp:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="Dfi-qH-Yur"/>
+                                            <segue destination="tIJ-LN-KCI" kind="show" id="HBI-5d-Hc8"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DDI-BS-4Mh">
-                                        <rect key="frame" x="-7" y="72" width="285" height="250"/>
+                                        <rect key="frame" x="-8" y="56" width="286" height="250"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYI-jt-k4C">
-                                                <rect key="frame" x="8" y="8" width="269" height="58.5"/>
-                                                <color key="backgroundColor" red="0.98580784581325109" green="0.8401032954753036" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="8" width="270" height="58.5"/>
+                                                <color key="backgroundColor" red="0.92289423581932772" green="0.74509803921568629" blue="0.98757878151260492" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <size key="titleShadowOffset" width="-1" height="0.0"/>
@@ -179,8 +201,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XW-op-kCB">
-                                                <rect key="frame" x="8" y="66.5" width="269" height="58.5"/>
-                                                <color key="backgroundColor" red="1" green="0.7000792571263903" blue="0.99910248406574342" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="66.5" width="270" height="58.5"/>
+                                                <color key="backgroundColor" red="0.8730217086834734" green="0.55974346769957983" blue="0.90244386817226896" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="0.98679953809999998" green="0.65468043090000005" blue="0.77666962149999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="70~75">
@@ -194,8 +216,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G41-zq-LTG">
-                                                <rect key="frame" x="8" y="125" width="269" height="58.5"/>
-                                                <color key="backgroundColor" red="0.94719622461928932" green="0.55947610786456237" blue="0.89574298142423092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="125" width="270" height="58.5"/>
+                                                <color key="backgroundColor" red="0.80784313725490198" green="0.40315864627100839" blue="0.90244386817226896" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="1" green="0.87862480899999995" blue="0.94264810619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="75~80">
@@ -209,8 +231,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZU-HC-VVs">
-                                                <rect key="frame" x="8" y="183.5" width="269" height="58.5"/>
-                                                <color key="backgroundColor" red="0.94719622461928932" green="0.31850264582310545" blue="0.78125373694277034" alpha="0.58575021404109584" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="8" y="183.5" width="270" height="58.5"/>
+                                                <color key="backgroundColor" red="0.80784313725490198" green="0.21694212841386554" blue="0.90244386817226896" alpha="0.93364726027808209" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="1" green="0.87862480899999995" blue="0.94264810619999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="I don't know">
@@ -225,26 +247,11 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="285" id="C4X-mz-1ZL"/>
+                                            <constraint firstAttribute="width" constant="286" id="C4X-mz-1ZL"/>
                                             <constraint firstAttribute="height" constant="250" id="xgZ-xw-xoi"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-0U-eaD">
-                                        <rect key="frame" x="0.0" y="311" width="270" height="40"/>
-                                        <color key="backgroundColor" red="0.72024208307266235" green="0.51957350969314575" blue="0.98010522127151489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="270" id="hwa-BB-Vcg"/>
-                                            <constraint firstAttribute="height" constant="40" id="xXv-Su-duA"/>
-                                        </constraints>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.98149984137055835" green="0.78113922966357352" blue="0.97934648004697067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="donePopUp:" destination="cAe-PZ-j4W" eventType="touchUpInside" id="Dfi-qH-Yur"/>
-                                            <segue destination="tIJ-LN-KCI" kind="show" id="HBI-5d-Hc8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.72228669530161993" blue="0.80973021862310257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -255,10 +262,10 @@
                                     <constraint firstAttribute="width" constant="270" id="Urk-jt-Lne"/>
                                     <constraint firstAttribute="bottom" secondItem="GdP-0U-eaD" secondAttribute="bottom" id="WOF-ZL-UxJ"/>
                                     <constraint firstAttribute="height" constant="351" id="ilj-J6-Wiw"/>
-                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="top" secondItem="DDI-BS-4Mh" secondAttribute="bottom" constant="-11" id="lTG-IQ-oz8"/>
+                                    <constraint firstItem="GdP-0U-eaD" firstAttribute="top" secondItem="DDI-BS-4Mh" secondAttribute="bottom" constant="-9" id="lTG-IQ-oz8"/>
                                     <constraint firstAttribute="trailing" secondItem="cZj-g2-aJT" secondAttribute="trailing" id="xFo-cK-udO"/>
                                     <constraint firstAttribute="trailing" secondItem="GdP-0U-eaD" secondAttribute="trailing" id="zJw-vZ-Kmz"/>
-                                    <constraint firstAttribute="bottom" secondItem="cZj-g2-aJT" secondAttribute="bottom" constant="266" id="zwp-WV-vjv"/>
+                                    <constraint firstAttribute="bottom" secondItem="cZj-g2-aJT" secondAttribute="bottom" constant="287" id="zwp-WV-vjv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -384,7 +391,7 @@
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
-                                <color key="tintColor" red="0.72128220041646374" green="0.52311124899629768" blue="0.97854536800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.66666666666666663" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="genderSelector:" destination="tIJ-LN-KCI" eventType="valueChanged" id="eld-eD-SQo"/>
                                 </connections>
@@ -430,6 +437,7 @@
                     <navigationItem key="navigationItem" id="t1O-Ji-URL"/>
                     <connections>
                         <outlet property="AccImageView" destination="PtM-py-1A5" id="Vmi-br-NDo"/>
+                        <outlet property="accImageView" destination="PtM-py-1A5" id="mZB-ji-q9P"/>
                         <outlet property="backgroundImageView" destination="u5r-D3-f54" id="xJY-NV-typ"/>
                         <outlet property="bottomImageView" destination="K4T-G3-Fwq" id="9Uj-bN-ee7"/>
                         <outlet property="genderSegmentedControl" destination="rTg-Zn-I6r" id="voN-kn-yCv"/>

@@ -303,6 +303,9 @@ class ResultVC: UIViewController {
         accImageView.image = UIImage(named: mAccImage)
         backgroundImageView.image = UIImage(named: bgImage)
         
+        self.view.updateConstraintsIfNeeded()
+        self.view.layoutIfNeeded()
+        
         print("DF")
     }
     
