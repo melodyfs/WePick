@@ -83,6 +83,10 @@ class ResultVC: UIViewController {
 
     @IBAction func changeItemTapped(_ sender: UIButton) {
         topAccImageView.isHidden = true
+//        var old = topAccImageView.frame.origin.x
+//        old += 50
+        
+        
         changeTapCount += 1
         sender.setTitle("Done", for: .normal)
   //      topAccIcon.isHidden = false

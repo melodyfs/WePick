@@ -14,18 +14,20 @@ import GooglePlaces
 class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     static var shared = HomeVC()
-    
     var locationManager = CLLocationManager()
     
     //MARK: - Properties
     var tempZip = ""
     var bgImage = "\(Outfits.shared.category).png"
     
+    
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
     
     var city = ""
+    
+    
     
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -38,7 +40,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 200
@@ -69,12 +71,16 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+        weatherImageView.image = UIImage(named: bgImage)
         
-        weatherImageView.image = UIImage(named: "cS")
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        super.viewDidAppear(animated)
         
     }
     
@@ -89,7 +95,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
                 var placeMark: CLPlacemark!
                 placeMark = placemarks?[0]
                 let zipcode = placeMark.postalCode ?? ""
-//                let city = placeMark.locality ?? ""
                 if self.tempZip != zipcode {
                     self.tempZip = zipcode
                     WeatherAPI.getWeather(fromZipcode: zipcode, completion: { data in
@@ -162,7 +167,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
 //            Outfits.shared.getClothingCombo(WeatherData.shared)
 //            Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.decideTemp()
-            
+     
         }
     }
 }
@@ -173,9 +178,20 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
 extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
-        city = place.name
+        
+        func getCityName() {
+            self.city = place.name
+        }
+        getCityName()
         
         print("Place name: \(city)")
+        
+        WeatherAPI.getWeatherCity(from: city, completion: { data in
+            //Once the data download has been complete, we update the UI
+            // print(data)
+            print(data)
+            return self.updateUI(weather: data)
+        })
 
     }
     
