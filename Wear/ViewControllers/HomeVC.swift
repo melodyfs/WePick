@@ -9,17 +9,23 @@
 import Foundation
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     static var shared = HomeVC()
     
-    //MARK: - Properties
     var locationManager = CLLocationManager()
-
-    var  tempZip = ""
     
+    //MARK: - Properties
+    var tempZip = ""
     var bgImage = "\(Outfits.shared.category).png"
+    
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
+    var city = ""
     
     //MARK: - Outlets
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -39,13 +45,32 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-       
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        resultsViewController?.autocompleteFilter = filter
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        
+        searchController?.searchBar.sizeToFit()
+        navigationItem.titleView = searchController?.searchBar
+        searchController?.searchBar.placeholder = "Search your city"
+        
+        // When UISearchController presents the results view, present it in
+        // this view controller, not one further up the chain.
+        definesPresentationContext = true
+        
+        // Prevent the navigation bar from being hidden when searching.
+        searchController?.hidesNavigationBarDuringPresentation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherImageView.image = UIImage(named: bgImage)
+        weatherImageView.image = UIImage(named: "cS")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +89,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
                 var placeMark: CLPlacemark!
                 placeMark = placemarks?[0]
                 let zipcode = placeMark.postalCode ?? ""
-                let city = placeMark.locality ?? ""
+//                let city = placeMark.locality ?? ""
                 if self.tempZip != zipcode {
                     self.tempZip = zipcode
                     WeatherAPI.getWeather(fromZipcode: zipcode, completion: { data in
@@ -101,10 +126,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     
     //MARK: - Actions
-    
-    @IBAction func searchButtonTapped(_ sender: Any) {
-        
-    }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
@@ -143,6 +164,32 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             Outfits.shared.decideTemp()
             
         }
+    }
+}
+
+
+
+// Handle the user's selection.
+extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        city = place.name
+        
+        print("Place name: \(city)")
+
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error){
+        print("Please enter a valid city", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 

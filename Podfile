@@ -5,7 +5,9 @@ target 'Wear' do
   use_frameworks!
 
   # Pods for Wear
-   pod 'Alamofire', '~> 4.0' 
    pod 'SwiftyJSON', '>= 3.0.0'
+   pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
 
 end

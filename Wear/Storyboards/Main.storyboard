@@ -120,13 +120,7 @@
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w0M-Om-jgf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5CK-9b-Uhw">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="cRe-cl-txV">
-                            <connections>
-                                <action selector="searchButtonTapped:" destination="BYZ-38-t0r" id="zMt-Ej-ufg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="5CK-9b-Uhw"/>
                     <connections>
                         <outlet property="currentLocationLabel" destination="LOm-Wk-vCx" id="tUf-tB-mLs"/>
                         <outlet property="currentTemperatureLabel" destination="yYZ-py-L07" id="pyY-LN-pEK"/>
