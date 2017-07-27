@@ -82,7 +82,7 @@ class ResultVC: UIViewController {
     
 
     @IBAction func changeItemTapped(_ sender: UIButton) {
-        topAccImageView.isHidden = true
+//        topAccImageView.isHidden = true
 //        var old = topAccImageView.frame.origin.x
 //        old += 50
         
@@ -98,6 +98,10 @@ class ResultVC: UIViewController {
         
         bgImage = "resultBG"
         backgroundImageView.image = UIImage(named: bgImage)
+        
+        if topAccImageView != nil {
+            
+        }
         
         if changeTapCount % 2 == 0 {
             topImageView.isUserInteractionEnabled = false
