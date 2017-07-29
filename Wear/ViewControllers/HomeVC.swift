@@ -13,12 +13,12 @@ import GooglePlaces
 
 class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
-    static var shared = HomeVC()
+    static var WDS = WeatherDataService()
     var locationManager = CLLocationManager()
     
     //MARK: - Properties
     var tempZip = ""
-    var bgImage = "\(Outfits.shared.category).png"
+    var bgImage = WeatherDataService.shared.category
     
     
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -40,7 +40,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 200
@@ -71,12 +71,9 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-        weatherImageView.image = UIImage(named: bgImage)
         
-        
-        
-        
+       WeatherDataService.shared.compareEnumValues(WeatherData.shared)
+       weatherImageView.image = UIImage(named: "mist")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -166,8 +163,10 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             
 //            Outfits.shared.getClothingCombo(WeatherData.shared)
 //            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+            WeatherDataService.shared.compareEnumValues(WeatherData.shared)
             Outfits.shared.decideTemp()
-     
+            self.bgImage = WeatherDataService.shared.category
+//            self.weatherImageView.image = UIImage(named: "\(self.bgImage).png")
         }
     }
 }
@@ -187,9 +186,7 @@ extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
         print("Place name: \(city)")
         
         WeatherAPI.getWeatherCity(from: city, completion: { data in
-            //Once the data download has been complete, we update the UI
-            // print(data)
-            print(data)
+    
             return self.updateUI(weather: data)
         })
 

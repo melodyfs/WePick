@@ -106,7 +106,7 @@ class WeatherDataService {
     
     
     //Assigns a specific category if they are in Category
-    private func compareEnumValues(_ ds: WeatherData) {
+    func compareEnumValues(_ ds: WeatherData) {
         let dsReformat = reformatWeatherDescription(ds)
         
         for aCategory in iterateEnum(Category.self){

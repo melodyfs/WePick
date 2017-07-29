@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class ItemCell : UICollectionViewCell {
     
     @IBOutlet weak var thumbImageView: UIImageView!

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-Pf-jww">
-                                <rect key="frame" x="0.0" y="64" width="375" height="694"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wee-Pf-jww" secondAttribute="height" multiplier="343:603" constant="-19.762852404643411" id="Wsm-4v-uDl"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOJ-CB-ub6">
                                 <rect key="frame" x="268" y="189" width="30" height="34.5"/>
@@ -76,7 +72,7 @@
                                     <constraint firstAttribute="height" constant="98.5" id="kUG-dF-bd9"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="60">
+                                    <fragment content="0">
                                         <attributes>
                                             <font key="NSFont" size="72" name="AvenirNext-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -102,22 +98,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Wee-Pf-jww" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1le-Q3-W8R"/>
                             <constraint firstItem="JOJ-CB-ub6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="189" id="50P-Hv-TlM"/>
                             <constraint firstItem="fcp-HZ-HrM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9ji-pI-czm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wee-Pf-jww" secondAttribute="bottom" constant="-91" id="HPL-JM-zXC"/>
                             <constraint firstItem="oli-7C-JWV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="77" id="KUJ-iq-V7S"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wee-Pf-jww" secondAttribute="bottom" id="Nyc-Py-N9p"/>
                             <constraint firstItem="yYZ-py-L07" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="189" id="PTl-1u-FlC"/>
                             <constraint firstAttribute="trailing" secondItem="JOJ-CB-ub6" secondAttribute="trailing" constant="77" id="R9u-XN-wQC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yYZ-py-L07" secondAttribute="trailing" id="ZY5-Yv-6HW"/>
                             <constraint firstItem="oli-7C-JWV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ctY-Vy-ygu"/>
                             <constraint firstAttribute="trailing" secondItem="fcp-HZ-HrM" secondAttribute="trailing" id="dSJ-ce-yV1"/>
-                            <constraint firstItem="Wee-Pf-jww" firstAttribute="centerX" secondItem="oli-7C-JWV" secondAttribute="centerX" id="hoe-pg-xkx"/>
+                            <constraint firstItem="Wee-Pf-jww" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mXz-GE-kVl"/>
                             <constraint firstItem="yYZ-py-L07" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mq1-ve-tSS"/>
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="n7f-MR-UYR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fcp-HZ-HrM" secondAttribute="bottom" constant="20" id="qxD-mh-fBO"/>
-                            <constraint firstItem="Wee-Pf-jww" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vWd-M4-IrL"/>
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="vlP-tw-8OJ"/>
                             <constraint firstItem="LOm-Wk-vCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w0M-Om-jgf"/>
+                            <constraint firstAttribute="trailing" secondItem="Wee-Pf-jww" secondAttribute="trailing" id="wDv-I6-ONv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5CK-9b-Uhw"/>
@@ -292,7 +289,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-D3-f54">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mist" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-D3-f54">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stick" translatesAutoresizingMaskIntoConstraints="NO" id="rYM-AS-QEu" userLabel="Stick">
@@ -491,6 +488,7 @@
     </scenes>
     <resources>
         <image name="cap" width="533" height="454"/>
+        <image name="mist" width="1243" height="2208"/>
         <image name="stick" width="268" height="1192"/>
     </resources>
 </document>

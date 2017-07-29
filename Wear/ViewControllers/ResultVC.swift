@@ -112,7 +112,7 @@ class ResultVC: UIViewController {
 //            topAccIcon.isHidden = true
             
             bgImage = "bg"
-            backgroundImageView.image = UIImage(named: "")
+            backgroundImageView.image = UIImage(named: "mist")
             sender.setTitle("Change", for: .normal)
         }
     }

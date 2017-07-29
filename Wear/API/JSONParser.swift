@@ -17,7 +17,7 @@ class JSONParser {
           return
         }
 
-//       let description = "hail"
+//       let description = "mist"
         let description = getDescription(from: weatherData)
         let weatherState = getWeatherState(from: weatherData)
         let temperature = getTemperature(from: weatherData)

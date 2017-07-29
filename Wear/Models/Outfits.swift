@@ -31,7 +31,7 @@ class Outfits {
     var fTop = FClothingItems.Top.fShortSleeveShirt
     var fTopAcc = FClothingItems.TopAcc.none
     var fBottom = FClothingItems.Bottom.fPants
-    var fFootwear = FClothingItems.Footwear.sneakers
+    var fFootwear = FClothingItems.Footwear.sneakers1
     var fFootAcc = FClothingItems.Footwear.none
     var fAccessory = FClothingItems.Accessories.none
     
@@ -41,23 +41,23 @@ class Outfits {
         switch uTemp {
         case "cold":
             if temp > 70 {
-                temp = 55
+                temp = 75
             } else {
                 break
             }
         case "middle" :
             if temp < 60 {
-                temp = 55
-            } else if temp > 70 {
                 temp = 75
+            } else if temp > 70 {
+                temp = 55
             } else {
                 break
             }
         case "hot":
             if temp < 60 {
-                temp = 55
-            } else {
                 temp = 75
+            } else {
+                temp = 55
             }
         default: break
         
@@ -280,14 +280,15 @@ class Outfits {
    private func mTempTop() {
         switch temp {
         case 0...60:
-            if mTop == MClothingItems.Top.mLongSleeveShirt {
-                mTop = MClothingItems.Top.mShortSleeveShirt
-            }
-        case 61...70: break
-        case 71...200:
             if mTop == MClothingItems.Top.mShortSleeveShirt {
                 mTop = MClothingItems.Top.mLongSleeveShirt
             }
+                    case 61...70: break
+        case 71...200:
+            if mTop == MClothingItems.Top.mLongSleeveShirt {
+                mTop = MClothingItems.Top.mShortSleeveShirt
+            }
+
         default:
             mForTop()
         }
@@ -297,13 +298,15 @@ class Outfits {
    private func mTempTopAcc() {
         switch temp {
         case 0...60:
-            if mTopAcc != MClothingItems.TopAcc.none {
-                mTopAcc = MClothingItems.TopAcc.none
-            }
-        case 61...70: break
-        case 71...200:
             if mTopAcc == MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.mJacket
+            }
+
+           
+        case 61...70: break
+        case 71...200:
+              if mTopAcc != MClothingItems.TopAcc.none {
+                mTopAcc = MClothingItems.TopAcc.none
             }
         default:
             mForTopAcc()
@@ -315,13 +318,14 @@ class Outfits {
    private func mTempBottom() {
         switch temp {
         case 0...60:
-            if mBottom != MClothingItems.Bottom.mShorts {
-                mBottom = MClothingItems.Bottom.mShorts
+            if mBottom != MClothingItems.Bottom.mPants {
+                mBottom = MClothingItems.Bottom.mPants
             }
         case 61...70: break
         case 71..<200:
-            if mBottom != MClothingItems.Bottom.mPants {
-                mBottom = MClothingItems.Bottom.mPants
+           
+            if mBottom != MClothingItems.Bottom.mShorts {
+                mBottom = MClothingItems.Bottom.mShorts
             }
         default:
             mForBottom()
@@ -473,7 +477,7 @@ class Outfits {
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            fFootwear = FClothingItems.Footwear.sneakers
+            fFootwear = FClothingItems.Footwear.sneakers1
         }
         
     }
@@ -558,12 +562,13 @@ class Outfits {
     private func fTempTop() {
         switch temp {
         case 0...60:
-            if fTop == FClothingItems.Top.fLongSleeveShirt {
+           if fTop != FClothingItems.Top.fShortSleeveShirt {
                 fTop = FClothingItems.Top.fShortSleeveShirt
             }
         case 61...70: break
         case 71...200:
-            if fTop != FClothingItems.Top.fShortSleeveShirt {
+            
+            if fTop == FClothingItems.Top.fLongSleeveShirt {
                 fTop = FClothingItems.Top.fShortSleeveShirt
             }
         default:
@@ -575,13 +580,13 @@ class Outfits {
     private func fTempTopAcc() {
         switch temp {
         case 0...60:
-            if fTopAcc != FClothingItems.TopAcc.none {
-                fTopAcc = FClothingItems.TopAcc.none
+            if fTopAcc == FClothingItems.TopAcc.none {
+                fTopAcc = FClothingItems.TopAcc.fCoat
             }
         case 61...70: break
         case 71...200:
-            if fTopAcc == FClothingItems.TopAcc.none {
-                fTopAcc = FClothingItems.TopAcc.fCoat
+            if fTopAcc != FClothingItems.TopAcc.none {
+                fTopAcc = FClothingItems.TopAcc.none
             }
         default:
             fForTopAcc()
@@ -593,13 +598,13 @@ class Outfits {
     private func fTempBottom() {
         switch temp {
         case 0...60:
-            if fBottom != FClothingItems.Bottom.fShorts {
-                fBottom = FClothingItems.Bottom.fShorts
+            if fBottom != FClothingItems.Bottom.fPants {
+                fBottom = FClothingItems.Bottom.fPants
             }
         case 61...70: break
         case 71..<200:
-            if fBottom != FClothingItems.Bottom.fPants {
-                fBottom = FClothingItems.Bottom.fPants
+             if fBottom != FClothingItems.Bottom.fShorts {
+                fBottom = FClothingItems.Bottom.fShorts
             }
         default:
             fForBottom()
