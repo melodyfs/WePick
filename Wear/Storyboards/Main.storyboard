@@ -117,7 +117,18 @@
                             <constraint firstAttribute="trailing" secondItem="Wee-Pf-jww" secondAttribute="trailing" id="wDv-I6-ONv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5CK-9b-Uhw"/>
+                    <navigationItem key="navigationItem" id="5CK-9b-Uhw">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="Ztq-zm-2uG">
+                            <connections>
+                                <action selector="settingButtonTapped:" destination="BYZ-38-t0r" id="o5r-s6-scu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="gzD-rC-Hua">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="BYZ-38-t0r" id="07v-xm-hMx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentLocationLabel" destination="LOm-Wk-vCx" id="tUf-tB-mLs"/>
                         <outlet property="currentTemperatureLabel" destination="yYZ-py-L07" id="pyY-LN-pEK"/>

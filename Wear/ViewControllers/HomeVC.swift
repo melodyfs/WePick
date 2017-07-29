@@ -18,7 +18,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     //MARK: - Properties
     var tempZip = ""
-    var bgImage = WeatherDataService.shared.category
+    var bgImage = "\(WeatherDataService.shared.category).png"
     
     
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -47,33 +47,13 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
-        
-        let filter = GMSAutocompleteFilter()
-        filter.type = .city
-        resultsViewController?.autocompleteFilter = filter
-        
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
-        
-        searchController?.searchBar.sizeToFit()
-        navigationItem.titleView = searchController?.searchBar
-        searchController?.searchBar.placeholder = "Search your city"
-        
-        // When UISearchController presents the results view, present it in
-        // this view controller, not one further up the chain.
-        definesPresentationContext = true
-        
-        // Prevent the navigation bar from being hidden when searching.
-        searchController?.hidesNavigationBarDuringPresentation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
-       weatherImageView.image = UIImage(named: "mist")
+       weatherImageView.image = UIImage(named: bgImage)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -129,6 +109,21 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
     //MARK: - Actions
     
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        autocompleteController.autocompleteFilter = filter
+        
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingButtonTapped(_ sender: Any) {
+        
+    }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
         self.addChildViewController(popOverVC)
@@ -160,23 +155,18 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortTopAcc()
             SwitchClothesService.shared.fSortBottomAcc()
             SwitchClothesService.shared.fSortFoot()
-            
-//            Outfits.shared.getClothingCombo(WeatherData.shared)
-//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+        
             WeatherDataService.shared.compareEnumValues(WeatherData.shared)
             Outfits.shared.decideTemp()
-            self.bgImage = WeatherDataService.shared.category
-//            self.weatherImageView.image = UIImage(named: "\(self.bgImage).png")
+
         }
     }
 }
 
-
-
-// Handle the user's selection.
-extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
-    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
-        searchController?.isActive = false
+extension HomeVC: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
         func getCityName() {
             self.city = place.name
@@ -186,14 +176,21 @@ extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
         print("Place name: \(city)")
         
         WeatherAPI.getWeatherCity(from: city, completion: { data in
-    
+            
             return self.updateUI(weather: data)
         })
 
+        dismiss(animated: true, completion: nil)
+        
     }
     
-    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didFailAutocompleteWithError error: Error){
-        print("Please enter a valid city", error.localizedDescription)
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
     // Turn the network activity indicator on and off again.
@@ -204,6 +201,7 @@ extension HomeVC : GMSAutocompleteResultsViewControllerDelegate {
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
+    
 }
 
 
