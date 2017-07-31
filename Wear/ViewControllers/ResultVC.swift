@@ -80,17 +80,11 @@ class ResultVC: UIViewController {
     
     //MARK: - Actions
     
-
-    @IBAction func changeItemTapped(_ sender: UIButton) {
-//        topAccImageView.isHidden = true
-//        var old = topAccImageView.frame.origin.x
-//        old += 50
-        
-        
+    @IBAction func changeItemButtonTapped(_ sender: UITabBarItem) {
         changeTapCount += 1
-        sender.setTitle("Done", for: .normal)
-  //      topAccIcon.isHidden = false
-       
+        sender.title = "Done"
+        //      topAccIcon.isHidden = false
+        
         topImageView.isUserInteractionEnabled = true
         bottomImageView.isUserInteractionEnabled = true
         headImageView.isUserInteractionEnabled = true
@@ -109,13 +103,15 @@ class ResultVC: UIViewController {
             headImageView.isUserInteractionEnabled = false
             shoeImageView.isUserInteractionEnabled = false
             topAccImageView.isHidden = false
-//            topAccIcon.isHidden = true
+            //            topAccIcon.isHidden = true
             
             bgImage = "bg"
             backgroundImageView.image = UIImage(named: "mist")
-            sender.setTitle("Change", for: .normal)
+            sender.title = "Change"
         }
     }
+
+   
 
     @IBAction func topImgTapped(_ sender: UITapGestureRecognizer) {
         
@@ -289,6 +285,13 @@ class ResultVC: UIViewController {
     
     //MARK: - Override Methods
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.navigationBar.backItem?.title = " "
+
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -297,7 +300,7 @@ class ResultVC: UIViewController {
         
         Outfits.shared.fGetClothingCombo(WeatherData.shared)
         Outfits.shared.printSetting()
-
+        
         
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
@@ -319,6 +322,8 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
         topTapRecognizer.numberOfTapsRequired = 1
@@ -345,6 +350,7 @@ class ResultVC: UIViewController {
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
 
         Outfits.shared.decideTemp()
+  
         
         
     }

@@ -14,12 +14,40 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var vc: UIViewController = HomeVC()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         GMSPlacesClient.provideAPIKey("AIzaSyDyCWIAoFRGO6UCSmruWiNisb_TiaRZ68c")
         
-   
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if launchedBefore  {
+            print("launch before")
+
+        }
+        else {
+            
+            
+//            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let popOverVC = storyboard.instantiateViewController(withIdentifier: "showTempChoice") as! UIViewController
+//            vc.addChildViewController(popOverVC)
+//            popOverVC.view.frame = vc.view.frame
+//            vc.view.addSubview(popOverVC.view)
+//            popOverVC.didMove(toParentViewController: vc)
+//            
+//            self.window?.rootViewController = PopUpVC
+//            self.window?.makeKeyAndVisible()
+//            
+//            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            
+            
+        }
+        
+        
+        // UINavigationBar.appearance().font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
+        
+        
         return true
     }
     

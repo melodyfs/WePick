@@ -11,11 +11,14 @@ import Foundation
 class UserTemp {
     
     var userTemp = ""
+    var gender = ""
     
     static var shared = UserTemp()
     
     func setUserTemp(userTemp: String) {
         self.userTemp = userTemp
     }
+    
+    
     
 }

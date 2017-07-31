@@ -74,7 +74,7 @@ class WeatherAPI {
                     print("data couldn't be downloaded")
                     return
                 }
-                print("json handler called")
+               
                 //completion closure is passed to then call it after parsing the data
                 JSONParser.parse(data: data!, completion: completion)
             }

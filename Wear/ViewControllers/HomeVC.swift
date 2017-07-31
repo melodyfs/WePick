@@ -16,6 +16,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     static var WDS = WeatherDataService()
     var locationManager = CLLocationManager()
     
+    
     //MARK: - Properties
     var tempZip = ""
     var bgImage = "\(WeatherDataService.shared.category).png"
@@ -53,7 +54,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         super.viewWillAppear(animated)
         
        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
-       weatherImageView.image = UIImage(named: bgImage)
+       //weatherImageView.image = UIImage(named: bgImage)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -125,11 +126,23 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if launchedBefore  {
+            let showResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showResults") as! ResultVC
+            navigationController?.pushViewController(showResult, animated: true)
+            
+        } else {
+            
+            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showTempChoice") as! PopUpVC
+            self.addChildViewController(popOverVC)
+            popOverVC.view.frame = self.view.frame
+            self.view.addSubview(popOverVC.view)
+            popOverVC.didMove(toParentViewController: self)
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
+        
     }
     
     @IBAction func seeSuggestionButtonTapped(_ sender: Any) {

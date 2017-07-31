@@ -10,6 +10,10 @@ import UIKit
 
 class PopUpVC: UIViewController {
     
+    //MARK: - Properties
+    
+    let uDefault = UserDefaults.standard
+    
     //MARK: - Outlets
     
     @IBOutlet weak var coldTempButton: UIButton!
@@ -21,58 +25,67 @@ class PopUpVC: UIViewController {
     
     @IBAction func coldTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
+        uDefault.set("cold", forKey: "userTemp")
+        UserTemp.shared.userTemp = "cold"
         sender.setBackgroundColor(color: .white, forState: .selected)
+        
         
         middleButton.isSelected = false
         hotButton.isSelected = false
         dfButton.isSelected = false
         
+        self.removeAnimate()
+        
+        let showResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showResults") as! ResultVC
+        navigationController?.pushViewController(showResult, animated: true)
     }
     
     @IBAction func middleTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
+        uDefault.set("middle", forKey: "userTemp")
+        UserTemp.shared.userTemp = "middle"
         sender.setBackgroundColor(color: .white, forState: .selected)
         
         coldTempButton.isSelected = false
         hotButton.isSelected = false
         dfButton.isSelected = false
+        
+        self.removeAnimate()
+        
+        let showResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showResults") as! ResultVC
+        navigationController?.pushViewController(showResult, animated: true)
         
     }
     
     @IBAction func hotTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
+        uDefault.set("hot", forKey: "userTemp")
+        UserTemp.shared.userTemp = "hot"
         sender.setBackgroundColor(color: .white, forState: .selected)
-        
+                
         coldTempButton.isSelected = false
         middleButton.isSelected = false
         dfButton.isSelected = false
+        
+        self.removeAnimate()
+        
+        let showResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showResults") as! ResultVC
+        navigationController?.pushViewController(showResult, animated: true)
     }
     
     @IBAction func dfTempButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
+        UserTemp.shared.userTemp = "df"
         sender.setBackgroundColor(color: .white, forState: .selected)
         
         coldTempButton.isSelected = false
         hotButton.isSelected = false
         middleButton.isSelected = false
-    }
-    
-    @IBAction func donePopUp(_ sender: Any) {
+        
         self.removeAnimate()
-        if coldTempButton.isSelected {
-            UserTemp.shared.setUserTemp(userTemp: "cold")
-        }
         
-        if middleButton.isSelected {
-            UserTemp.shared.setUserTemp(userTemp: "middle")
-        }
-        
-        if hotButton.isSelected {
-            UserTemp.shared.setUserTemp(userTemp: "hot")
-        }
-        
-        
-  //      HomeVC.shared.startButton.backgroundColor = UIColor(red:0.62, green:0.64, blue:1.00, alpha:0.45)
+        let showResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showResults") as! ResultVC
+        navigationController?.pushViewController(showResult, animated: true)
     }
     
     //MARK: - Functions
