@@ -77,6 +77,7 @@ class JSONParser {
         if let array = json["main"] as? [String: Any] {
             if let temp = array["temp"] as? Double {
                 return 9/5 * (temp) - 459.67
+                
             }
         }
         return 0

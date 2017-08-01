@@ -12,6 +12,7 @@ class UserTemp {
     
     var userTemp = ""
     var gender = ""
+    var degree = ""
     
     static var shared = UserTemp()
     

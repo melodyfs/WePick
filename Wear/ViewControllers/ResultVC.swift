@@ -29,7 +29,7 @@ class ResultVC: UIViewController {
     var fFootAccImage = "\(Outfits.shared.fFootAcc).png"
     var fAccImage = "\(Outfits.shared.fAccessory).png"
     
-    var bgImage = "\(Outfits.shared.category).png"
+    var bgImage = "\(WeatherDataService.shared.category).png"
     
     var mHeadArr = SwitchClothesService.shared.mHeads
     var mTopArr = SwitchClothesService.shared.mTops
@@ -68,6 +68,7 @@ class ResultVC: UIViewController {
     @IBOutlet weak var accImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var topAccIcon: UIImageView!
+    @IBOutlet weak var tempBGImageView: UIImageView!
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
@@ -84,7 +85,7 @@ class ResultVC: UIViewController {
         changeTapCount += 1
         sender.title = "Done"
         //      topAccIcon.isHidden = false
-        
+        genderSegmentedControl.isHidden = true
         topImageView.isUserInteractionEnabled = true
         bottomImageView.isUserInteractionEnabled = true
         headImageView.isUserInteractionEnabled = true
@@ -105,8 +106,8 @@ class ResultVC: UIViewController {
             topAccImageView.isHidden = false
             //            topAccIcon.isHidden = true
             
-            bgImage = "bg"
-            backgroundImageView.image = UIImage(named: "mist")
+            //bgImage = "bg"
+            backgroundImageView.image = UIImage(named: "")
             sender.title = "Change"
         }
     }
@@ -288,7 +289,7 @@ class ResultVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.navigationController?.navigationBar.backItem?.title = " "
+       self.navigationItem.backBarButtonItem?.title = " "
 
     }
     
@@ -318,12 +319,15 @@ class ResultVC: UIViewController {
         self.view.layoutIfNeeded()
         
         print("DF")
+        
+        tempBGImageView.image = UIImage(named: bgImage)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //self.navigationItem.backBarButtonItem?.title = " "
         
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
         topTapRecognizer.numberOfTapsRequired = 1
@@ -352,6 +356,7 @@ class ResultVC: UIViewController {
         Outfits.shared.decideTemp()
   
         
+
         
     }
     

@@ -20,32 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSPlacesClient.provideAPIKey("AIzaSyDyCWIAoFRGO6UCSmruWiNisb_TiaRZ68c")
         
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.31, green:0.00, blue:0.48, alpha: 0.10)
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)]
         
-        if launchedBefore  {
-            print("launch before")
+        UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 15)!]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 15)!], for: .normal)
+        UINavigationBar.appearance().tintColor = UIColor(red:0.88, green:0.57, blue:0.90, alpha:1.0)
 
-        }
-        else {
-            
-            
-//            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let popOverVC = storyboard.instantiateViewController(withIdentifier: "showTempChoice") as! UIViewController
-//            vc.addChildViewController(popOverVC)
-//            popOverVC.view.frame = vc.view.frame
-//            vc.view.addSubview(popOverVC.view)
-//            popOverVC.didMove(toParentViewController: vc)
-//            
-//            self.window?.rootViewController = PopUpVC
-//            self.window?.makeKeyAndVisible()
-//            
-//            UserDefaults.standard.set(true, forKey: "launchedBefore")
-            
-            
-        }
-        
-        
-        // UINavigationBar.appearance().font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
         
         
         return true

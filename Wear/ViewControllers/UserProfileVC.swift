@@ -11,23 +11,30 @@ import UIKit
 
 class UserProfileVC: UIViewController {
     
+    static var shared = UserProfileVC()
+    
+    var degree = ""
+    
     @IBOutlet weak var coldButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var hotButton: UIButton!
     @IBOutlet weak var dfButton: UIButton!
+    
+    @IBOutlet weak var fDegreeButton: UIButton!
+    @IBOutlet weak var cDegreeButton: UIButton!
     
     var userTemp = UserTemp.shared.userTemp
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       self.navigationController?.navigationItem.hidesBackButton = true
+       self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //self.navigationController?.navigationItem.hidesBackButton = true
+        
         
     }
     
@@ -105,7 +112,7 @@ class UserProfileVC: UIViewController {
         
     }
     
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
         if coldButton.isSelected {
             UserTemp.shared.userTemp = "cold"
         }
@@ -118,13 +125,48 @@ class UserProfileVC: UIViewController {
             UserTemp.shared.userTemp = "hot"
         }
         
-        self.navigationController!.popViewController(animated: true)
+        if cDegreeButton.isSelected {
+            UserTemp.shared.degree = "c"
+        } else {
+            UserTemp.shared.degree = ""
+        }
+        //self.navigationController!.popViewController(animated: true)
+        //close()
         dismiss(animated: true, completion: nil)
         
         
     }
     
+    @IBAction func fButtonTapped(_ sender: UIButton) {
+        sender.isSelected = true
+        cDegreeButton.isSelected = false
+        
+        coldButton.setTitle("65~70", for: .normal)
+        middleButton.setTitle("70~75", for: .normal)
+        hotButton.setTitle("75~80", for: .normal)
+        
+    }
     
+    @IBAction func cButtonTapped(_ sender: UIButton) {
+        sender.isSelected = true
+        fDegreeButton.isSelected = false
+        
+        coldButton.setTitle("18~21", for: .normal)
+        middleButton.setTitle("21~24", for: .normal)
+        hotButton.setTitle("23~27", for: .normal)
+        
+    }
+    
+       
+    func close() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFade
+        transition.subtype = kCATransitionFromBottom
+        navigationController?.view.layer.add(transition, forKey:kCATransition)
+        let _ = navigationController?.popViewController(animated: false)
+    }
     
 }
 

@@ -13,13 +13,14 @@ import GooglePlaces
 
 class HomeVC: UIViewController, CLLocationManagerDelegate  {
     
-    static var WDS = WeatherDataService()
+    
     var locationManager = CLLocationManager()
     
     
     //MARK: - Properties
     var tempZip = ""
-    var bgImage = "\(WeatherDataService.shared.category).png"
+//    var bgImage = WeatherDataService.shared.category
+    var currentTemp = 0
     
     
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -53,8 +54,13 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       WeatherDataService.shared.compareEnumValues(WeatherData.shared)
-       //weatherImageView.image = UIImage(named: bgImage)
+        if UserTemp.shared.degree == "c" {
+            currentTemperatureLabel.text = String(Int((WeatherData.shared.temperature - 32) * 5/9))
+        } else {
+            currentTemperatureLabel.text = String(WeatherData.shared.temperature)
+        }
+
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -118,11 +124,17 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         filter.type = .city
         autocompleteController.autocompleteFilter = filter
         
+        autocompleteController.tableCellBackgroundColor = UIColor(red:0.31, green:0.00, blue:0.48, alpha: 0.60)
+        autocompleteController.primaryTextColor = UIColor(red:0.69, green:0.68, blue:0.75, alpha:1.0)
+        autocompleteController.primaryTextHighlightColor = UIColor(red:0.91, green:0.91, blue:1.00, alpha:1.0)
+        autocompleteController.secondaryTextColor = UIColor(red:0.88, green:0.57, blue:0.90, alpha:1.0)
+
+        
         present(autocompleteController, animated: true, completion: nil)
     }
     
     @IBAction func settingButtonTapped(_ sender: Any) {
-        
+        open()
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -153,9 +165,17 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     func updateUI(weather: WeatherData) {
         DispatchQueue.main.async() {
             self.currentLocationLabel.text = WeatherData.shared.locationName
-            self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
+            
+            if UserTemp.shared.degree == "c" {
+                 self.currentTemperatureLabel.text = String(Int((WeatherData.shared.temperature - 32) * 5/9))
+            } else {
+                self.currentTemperatureLabel.text = String(WeatherData.shared.temperature)
+            }
+            
             self.currentWeatherState.text = WeatherData.shared.weatherStateDescription
             self.currentWeatherDescriptionLabel.text = WeatherData.shared.description
+            
+            self.currentTemp = WeatherData.shared.temperature
             
             SwitchClothesService.shared.mSortHead()
             SwitchClothesService.shared.mSortTop()
@@ -170,10 +190,24 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             SwitchClothesService.shared.fSortFoot()
         
             WeatherDataService.shared.compareEnumValues(WeatherData.shared)
+            let bgImage = WeatherDataService.shared.category
+            self.weatherImageView.image = UIImage(named: "\(bgImage).png")
             Outfits.shared.decideTemp()
 
         }
     }
+    
+    func open() {
+        let userProfileVC = UserProfileVC()
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromTop;
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
+        navigationController?.pushViewController(userProfileVC, animated: false)
+    }
+
 }
 
 extension HomeVC: GMSAutocompleteViewControllerDelegate {
