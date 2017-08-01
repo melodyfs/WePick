@@ -41,7 +41,7 @@ class Outfits {
         switch uTemp {
         case "cold":
             if temp > 70 {
-                temp = 75
+                temp = 55
             } else {
                 break
             }

@@ -133,6 +133,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         autocompleteController.primaryTextColor = UIColor(red:0.69, green:0.68, blue:0.75, alpha:1.0)
         autocompleteController.primaryTextHighlightColor = UIColor(red:0.91, green:0.91, blue:1.00, alpha:1.0)
         autocompleteController.secondaryTextColor = UIColor(red:0.88, green:0.57, blue:0.90, alpha:1.0)
+        
 
         
         present(autocompleteController, animated: true, completion: nil)
@@ -198,8 +199,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             let bgImage = WeatherDataService.shared.category
             self.weatherImageView.image = UIImage(named: "\(bgImage).png")
             Outfits.shared.decideTemp()
-            Outfits.shared.fGetClothingCombo(WeatherData.shared)
-            Outfits.shared.getClothingCombo(WeatherData.shared)
+//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+//            Outfits.shared.getClothingCombo(WeatherData.shared)
 
         }
     }
