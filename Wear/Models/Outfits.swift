@@ -100,20 +100,21 @@ class Outfits {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain: fallthrough
-        case .snow: fallthrough
         case .clouds: fallthrough
+            mTop = MClothingItems.Top.mLongSleeveShirt
         case .cold: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
+        case .snow: fallthrough
         case .mist:
-            mTop = MClothingItems.Top.mLongSleeveShirt
+            mTop = MClothingItems.Top.mLongSleeveShirt1
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .hot: fallthrough
         case .calm: fallthrough
         default:
-            mTop = MClothingItems.Top.mShortSleeveShirt
+            mTop = MClothingItems.Top.mShortSleeveShirt1
 
         }
         
@@ -183,10 +184,10 @@ class Outfits {
         case .drizzle: fallthrough
         case .storm: fallthrough
         case .naturalDisaster: fallthrough
-        case .rain:
-            mFootwear = MClothingItems.Footwear.mRainBoots
-        case .snow:
-            mFootwear = MClothingItems.Footwear.mSnowBoots
+        case .rain: fallthrough
+           // mFootwear = MClothingItems.Footwear.mRainBoots
+        case .snow: fallthrough
+           // mFootwear = MClothingItems.Footwear.mSnowBoots
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .mist: fallthrough
@@ -216,8 +217,8 @@ class Outfits {
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .calm: fallthrough
-        default:
-            mFootwear = MClothingItems.Footwear.socks
+        default: break
+           // mFootwear = MClothingItems.Footwear.socks
         }
         
         mTempFootAcc()
@@ -380,15 +381,16 @@ class Outfits {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
-        case .rain: fallthrough
-        case .snow: fallthrough
+        case .rain:
+            fTop = FClothingItems.Top.fLongSleeveShirt
         case .clouds: fallthrough
         case .cold: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
+        case .snow: fallthrough
         case .mist:
-            fTop = FClothingItems.Top.fLongSleeveShirt
+            fTop = FClothingItems.Top.fLongSleeveShirt1
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .hot: fallthrough
@@ -464,10 +466,10 @@ class Outfits {
         case .drizzle: fallthrough
         case .storm: fallthrough
         case .naturalDisaster: fallthrough
-        case .rain:
-            fFootwear = FClothingItems.Footwear.fRainBoots
-        case .snow:
-            fFootwear = FClothingItems.Footwear.fSnowBoots
+        case .rain: fallthrough
+           // fFootwear = FClothingItems.Footwear.fRainBoots
+        case .snow: fallthrough
+           // fFootwear = FClothingItems.Footwear.fSnowBoots
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .mist: fallthrough
@@ -497,8 +499,8 @@ class Outfits {
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .calm: fallthrough
-        default:
-            fFootwear = FClothingItems.Footwear.socks
+        default: break
+            //fFootwear = FClothingItems.Footwear.socks
         }
         
         fTempFootAcc()

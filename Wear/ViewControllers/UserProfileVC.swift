@@ -72,7 +72,7 @@ class UserProfileVC: UIViewController {
     @IBAction func coldButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
             sender.setBackgroundColor(color: .white, forState: .selected)
-        
+            UserTemp.shared.userTemp = "cold"
             
             middleButton.isSelected = false
             hotButton.isSelected = false
@@ -83,7 +83,7 @@ class UserProfileVC: UIViewController {
     @IBAction func middleButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
             sender.setBackgroundColor(color: .white, forState: .selected)
-        
+            UserTemp.shared.userTemp = "middle"
             
             coldButton.isSelected = false
             hotButton.isSelected = false
@@ -94,7 +94,7 @@ class UserProfileVC: UIViewController {
     @IBAction func hotButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
             sender.setBackgroundColor(color: .white, forState: .selected)
-        
+            UserTemp.shared.userTemp = "hot"
             
             coldButton.isSelected = false
             middleButton.isSelected = false

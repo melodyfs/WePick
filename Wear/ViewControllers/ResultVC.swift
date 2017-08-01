@@ -104,9 +104,8 @@ class ResultVC: UIViewController {
             headImageView.isUserInteractionEnabled = false
             shoeImageView.isUserInteractionEnabled = false
             topAccImageView.isHidden = false
-            //            topAccIcon.isHidden = true
+            genderSegmentedControl.isHidden = false
             
-            //bgImage = "bg"
             backgroundImageView.image = UIImage(named: "")
             sender.title = "Change"
         }

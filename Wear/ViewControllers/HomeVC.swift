@@ -38,6 +38,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var currentWeatherDescriptionLabel: UILabel!
     @IBOutlet weak var currentWeatherState: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var degreeSign: UILabel!
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -49,6 +50,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        currentWeatherDescriptionLabel.isHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +59,10 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         
         if UserTemp.shared.degree == "c" {
             currentTemperatureLabel.text = String(Int((WeatherData.shared.temperature - 32) * 5/9))
+            degreeSign.text = "ºC"
         } else {
             currentTemperatureLabel.text = String(WeatherData.shared.temperature)
+            degreeSign.text = "ºF"
         }
 
 
