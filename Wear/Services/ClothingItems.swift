@@ -67,9 +67,9 @@ enum MClothingItems {
         case none
         case sneakers
         case sneakers1
-        case mBoots
-        case mSandals
-        //case mRainBoots
+        //case mBoots
+        //case mSandals
+        case rainBoots
         //case mSnowBoots
         
         //case socks
@@ -144,8 +144,8 @@ enum FClothingItems {
         case sneakers
         case sneakers1
         case fBoots
-        case fSandals
-//        case fRainBoots
+        //case fSandals
+        case rainBoots
 //        case fSnowBoots
 //        
 //        case socks

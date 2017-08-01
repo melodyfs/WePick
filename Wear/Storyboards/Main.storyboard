@@ -607,7 +607,7 @@
                                     <outletCollection property="gestureRecognizers" destination="j7F-FU-Jdx" appends="YES" id="4VS-HO-MA2"/>
                                 </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PtM-py-1A5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PtM-py-1A5">
                                 <rect key="frame" x="281" y="479" width="59" height="119"/>
                             </imageView>
                         </subviews>
@@ -650,7 +650,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="accImageView" destination="PtM-py-1A5" id="mZB-ji-q9P"/>
+                        <outlet property="accImageView" destination="PtM-py-1A5" id="eZk-Uh-Eqo"/>
                         <outlet property="backgroundImageView" destination="u5r-D3-f54" id="xJY-NV-typ"/>
                         <outlet property="bottomImageView" destination="K4T-G3-Fwq" id="9Uj-bN-ee7"/>
                         <outlet property="genderSegmentedControl" destination="rTg-Zn-I6r" id="voN-kn-yCv"/>

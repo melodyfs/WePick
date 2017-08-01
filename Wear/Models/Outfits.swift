@@ -192,7 +192,7 @@ class Outfits {
         case .strongBreeze: fallthrough
         case .mist: fallthrough
         case .cold:
-            mFootwear = MClothingItems.Footwear.mBoots
+            mFootwear = MClothingItems.Footwear.rainBoots
         case .clouds: fallthrough
         case .sand: fallthrough
         case .calm: fallthrough
@@ -467,9 +467,9 @@ class Outfits {
         case .storm: fallthrough
         case .naturalDisaster: fallthrough
         case .rain: fallthrough
-           // fFootwear = FClothingItems.Footwear.fRainBoots
         case .snow: fallthrough
-           // fFootwear = FClothingItems.Footwear.fSnowBoots
+           fFootwear = FClothingItems.Footwear.rainBoots
+                   // fFootwear = FClothingItems.Footwear.fSnowBoots
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .mist: fallthrough
