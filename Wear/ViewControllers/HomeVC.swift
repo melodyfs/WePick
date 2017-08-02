@@ -51,7 +51,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.startUpdatingLocation()
         
         currentWeatherDescriptionLabel.isHidden = true
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -198,10 +198,10 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             WeatherDataService.shared.compareEnumValues(WeatherData.shared)
             let bgImage = WeatherDataService.shared.category
             self.weatherImageView.image = UIImage(named: "\(bgImage).png")
-            Outfits.shared.decideTemp()
+            
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)
-
+        
         }
     }
     

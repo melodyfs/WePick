@@ -11,7 +11,7 @@ import Foundation
 class UserTemp {
     
     var userTemp = ""
-    var gender = ""
+    var gender = 0
     var degree = ""
     
     static var shared = UserTemp()
@@ -20,6 +20,9 @@ class UserTemp {
         self.userTemp = userTemp
     }
     
+    func setUserGender(gender: Int) {
+        self.gender = gender
+    }
     
     
 }

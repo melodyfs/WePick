@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSPlacesClient.provideAPIKey("AIzaSyDyCWIAoFRGO6UCSmruWiNisb_TiaRZ68c")
         
-        UINavigationBar.appearance().barTintColor = UIColor(red:0.31, green:0.00, blue:0.48, alpha: 0.10)
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.31, green:0.00, blue:0.48, alpha: 1.0)
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSForegroundColorAttributeName: UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)]
       
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Next", size: 20)!]

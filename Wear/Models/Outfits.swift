@@ -10,8 +10,9 @@ import Foundation
 
 class Outfits {
     
+    
     static var shared = Outfits()
-    var category : Category = .unknown
+    var category : Category = WeatherDataService.shared.category
     var categoryAtm = ""
     
     var temp = WeatherData.shared.temperature
@@ -43,20 +44,24 @@ class Outfits {
             if temp > 70 {
                 temp = 55
             }
-            
         case "middle" :
             if temp < 60 {
-                temp = 75
+                temp = 80
             } else if temp > 70 {
-                temp = 55
+                temp = 70
             }
-        
         case "hot":
-            temp < 60 ? (temp = 75) : (temp = 55)
+            if temp < 80 {
+                temp = 80
+            }
             
+            //temp < 70 ? (temp = 80) : (temp = 55)
         default: break
         
         }
+        
+        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
+        print("weather \(category)")
     }
     
     
@@ -279,9 +284,9 @@ class Outfits {
             if mTop == MClothingItems.Top.mShortSleeveShirt {
                 mTop = MClothingItems.Top.mLongSleeveShirt
             }
-                    case 61...70: break
-        case 71...200:
-            if mTop == MClothingItems.Top.mLongSleeveShirt {
+        case 61...79: break
+        case 80...200:
+            if mTop != MClothingItems.Top.mShortSleeveShirt || mTop != MClothingItems.Top.mShortSleeveShirt1 {
                 mTop = MClothingItems.Top.mShortSleeveShirt
             }
 
@@ -293,14 +298,14 @@ class Outfits {
     
    private func mTempTopAcc() {
         switch temp {
-        case 0...60:
+        case 0...79:
             if mTopAcc == MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.mJacket
             }
 
            
-        case 61...70: break
-        case 71...200:
+        //case 61...79: break
+        case 80...200:
               if mTopAcc != MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.none
             }
@@ -317,8 +322,8 @@ class Outfits {
             if mBottom != MClothingItems.Bottom.mPants {
                 mBottom = MClothingItems.Bottom.mPants
             }
-        case 61...70: break
-        case 71..<200:
+        case 61...79: break
+        case 80..<200:
            
             if mBottom != MClothingItems.Bottom.mShorts {
                 mBottom = MClothingItems.Bottom.mShorts
@@ -462,7 +467,7 @@ class Outfits {
         case .storm: fallthrough
         case .naturalDisaster: fallthrough
         case .rain: fallthrough
-        case .snow: fallthrough
+        case .snow:
            fFootwear = FClothingItems.Footwear.rainBoots
                    // fFootwear = FClothingItems.Footwear.fSnowBoots
         case .hail: fallthrough
@@ -562,9 +567,8 @@ class Outfits {
            if fTop != FClothingItems.Top.fShortSleeveShirt {
                 fTop = FClothingItems.Top.fShortSleeveShirt
             }
-        case 61...70: break
-        case 71...200:
-            
+        case 61...79: break
+        case 80...200:
             if fTop == FClothingItems.Top.fLongSleeveShirt {
                 fTop = FClothingItems.Top.fShortSleeveShirt
             }
@@ -580,8 +584,8 @@ class Outfits {
             if fTopAcc == FClothingItems.TopAcc.none {
                 fTopAcc = FClothingItems.TopAcc.fCoat
             }
-        case 61...70: break
-        case 71...200:
+        case 61...79: break
+        case 80...200:
             if fTopAcc != FClothingItems.TopAcc.none {
                 fTopAcc = FClothingItems.TopAcc.none
             }
@@ -598,8 +602,8 @@ class Outfits {
             if fBottom != FClothingItems.Bottom.fPants {
                 fBottom = FClothingItems.Bottom.fPants
             }
-        case 61...70: break
-        case 71..<200:
+        case 61...79: break
+        case 80..<200:
              if fBottom != FClothingItems.Bottom.fShorts {
                 fBottom = FClothingItems.Bottom.fShorts
             }

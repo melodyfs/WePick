@@ -111,6 +111,7 @@ class WeatherDataService {
         
         for aCategory in iterateEnum(Category.self){
             if dsReformat.contains(aCategory.rawValue){
+                print(" matching category is \(aCategory)")
                 category = aCategory
             }
         }

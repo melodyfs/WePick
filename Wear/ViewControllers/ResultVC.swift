@@ -11,6 +11,8 @@ import UIKit
 
 class ResultVC: UIViewController {
     
+    static var shared = ResultVC()
+    
     //MARK: - Properties
     
     var mHeadImage = "\(Outfits.shared.mHead).png"
@@ -249,7 +251,10 @@ class ResultVC: UIViewController {
     
     @IBAction func genderSelector(_ sender: Any) {
         selectedIndex = (sender as AnyObject).selectedSegmentIndex
-        
+        decideGender()
+    }
+    
+    func decideGender() {
         switch selectedIndex {
         case 0:
             headImageView.image = UIImage(named: mHeadImage)
@@ -273,6 +278,7 @@ class ResultVC: UIViewController {
         default:
             break
         }
+
     }
     
     //MARK: - Override Methods
@@ -287,7 +293,9 @@ class ResultVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        selectedIndex = UserTemp.shared.gender
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
+        
         
         DispatchQueue.main.async {
             Outfits.shared.getClothingCombo(WeatherData.shared)
@@ -295,14 +303,9 @@ class ResultVC: UIViewController {
             
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
+            Outfits.shared.decideTemp()
+            self.decideGender()
 
-            
-            self.headImageView.image = UIImage(named: self.mHeadImage)
-            self.topImageView.image = UIImage(named: self.mTopImage)
-            self.topAccImageView.image = UIImage(named: self.mTopAccImage)
-            self.bottomImageView.image = UIImage(named: self.mBottomImage)
-            self.shoeImageView.image = UIImage(named: self.mFootweaerImage)
-            self.accImageView.image = UIImage(named: self.mAccImage)
         }
         
         self.view.updateConstraintsIfNeeded()
@@ -315,6 +318,8 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         

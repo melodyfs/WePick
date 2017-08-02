@@ -12,6 +12,7 @@ import UIKit
 class UserProfileVC: UIViewController {
     
     static var shared = UserProfileVC()
+    let uDF = UserDefaults.standard
     
     var degree = ""
     
@@ -22,6 +23,8 @@ class UserProfileVC: UIViewController {
     
     @IBOutlet weak var fDegreeButton: UIButton!
     @IBOutlet weak var cDegreeButton: UIButton!
+    @IBOutlet weak var maleButton: CustomButton!
+    @IBOutlet weak var femaleButton: CustomButton!
     
     var userTemp = UserTemp.shared.userTemp
     
@@ -60,6 +63,23 @@ class UserProfileVC: UIViewController {
         if userTemp == "df" {
             dfButton.isSelected = true
         }
+        
+        if UserTemp.shared.degree == "c" {
+            cDegreeButton.isSelected = true
+        }
+        
+        if UserTemp.shared.degree == "f" {
+            fDegreeButton.isSelected = true
+        }
+        
+        if UserTemp.shared.gender == 0 {
+            maleButton.isSelected = true
+        }
+        
+        if UserTemp.shared.gender == 1 {
+            femaleButton.isSelected = true
+        }
+
         
     }
     
@@ -104,24 +124,41 @@ class UserProfileVC: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         if coldButton.isSelected {
-            UserTemp.shared.userTemp = "cold"
+            uDF.set("cold", forKey: userTemp)
         }
         
         if middleButton.isSelected {
-            UserTemp.shared.userTemp = "middle"
+            uDF.set("middle", forKey: userTemp)
+
         }
         
         if hotButton.isSelected {
-            UserTemp.shared.userTemp = "hot"
+            uDF.set("hot", forKey: userTemp)
+        }
+        
+        if dfButton.isSelected {
+            uDF.set("df", forKey: userTemp)
         }
         
         if cDegreeButton.isSelected {
             UserTemp.shared.degree = "c"
-        } else {
+            
+        }
+        
+        if fDegreeButton.isSelected {
             UserTemp.shared.degree = ""
         }
-        //self.navigationController!.popViewController(animated: true)
-        //close()
+        
+        if maleButton.isSelected {
+            uDF.set(0, forKey: "gender")
+            UserTemp.shared.setUserGender(gender: 0)
+        }
+        
+        if femaleButton.isSelected {
+            UserTemp.shared.setUserGender(gender: 1)
+            
+        }
+        
         dismiss(animated: true, completion: nil)
         
         
@@ -144,6 +181,18 @@ class UserProfileVC: UIViewController {
         coldButton.setTitle("18~21", for: .normal)
         middleButton.setTitle("21~24", for: .normal)
         hotButton.setTitle("23~27", for: .normal)
+        
+    }
+    
+    @IBAction func maleButtonTapped(_ sender: CustomButton) {
+        sender.isSelected = true
+        femaleButton.isSelected = false
+        
+    }
+    
+    @IBAction func femaleButtonTapped(_ sender: CustomButton) {
+        sender.isSelected = true
+        maleButton.isSelected = false
         
     }
     
