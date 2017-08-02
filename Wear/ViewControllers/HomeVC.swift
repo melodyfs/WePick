@@ -199,8 +199,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             let bgImage = WeatherDataService.shared.category
             self.weatherImageView.image = UIImage(named: "\(bgImage).png")
             Outfits.shared.decideTemp()
-//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
-//            Outfits.shared.getClothingCombo(WeatherData.shared)
+            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+            Outfits.shared.getClothingCombo(WeatherData.shared)
 
         }
     }

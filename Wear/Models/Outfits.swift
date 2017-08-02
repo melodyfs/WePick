@@ -42,23 +42,18 @@ class Outfits {
         case "cold":
             if temp > 70 {
                 temp = 55
-            } else {
-                break
             }
+            
         case "middle" :
             if temp < 60 {
                 temp = 75
             } else if temp > 70 {
                 temp = 55
-            } else {
-                break
             }
+        
         case "hot":
-            if temp < 60 {
-                temp = 75
-            } else {
-                temp = 55
-            }
+            temp < 60 ? (temp = 75) : (temp = 55)
+            
         default: break
         
         }

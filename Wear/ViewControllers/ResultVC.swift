@@ -91,12 +91,7 @@ class ResultVC: UIViewController {
         headImageView.isUserInteractionEnabled = true
         shoeImageView.isUserInteractionEnabled = true
         
-        bgImage = "resultBG"
-        backgroundImageView.image = UIImage(named: bgImage)
-        
-        if topAccImageView != nil {
-            
-        }
+
         
         if changeTapCount % 2 == 0 {
             topImageView.isUserInteractionEnabled = false
@@ -106,8 +101,8 @@ class ResultVC: UIViewController {
             topAccImageView.isHidden = false
             genderSegmentedControl.isHidden = false
             
-            backgroundImageView.image = UIImage(named: "")
-            sender.title = "Change"
+//            backgroundImageView.image = UIImage(named: "")
+            sender.title = "Change Outfit"
         }
     }
 
@@ -288,31 +283,31 @@ class ResultVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-       self.navigationItem.backBarButtonItem?.title = " "
-
+      
+        self.navigationItem.backBarButtonItem?.title = " "
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Outfits.shared.getClothingCombo(WeatherData.shared)
-        Outfits.shared.printSetting()
-        
-        Outfits.shared.fGetClothingCombo(WeatherData.shared)
-        Outfits.shared.printSetting()
-        
-        
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         
-//        topAccIcon.isHidden = true
-        
-        headImageView.image = UIImage(named: mHeadImage)
-        topImageView.image = UIImage(named: mTopImage)
-        topAccImageView.image = UIImage(named: mTopAccImage)
-        bottomImageView.image = UIImage(named: mBottomImage)
-        shoeImageView.image = UIImage(named: mFootweaerImage)
-        accImageView.image = UIImage(named: mAccImage)
-        backgroundImageView.image = UIImage(named: bgImage)
+        DispatchQueue.main.async {
+            Outfits.shared.getClothingCombo(WeatherData.shared)
+            Outfits.shared.printSetting()
+            
+            Outfits.shared.fGetClothingCombo(WeatherData.shared)
+            Outfits.shared.printSetting()
+
+            
+            self.headImageView.image = UIImage(named: self.mHeadImage)
+            self.topImageView.image = UIImage(named: self.mTopImage)
+            self.topAccImageView.image = UIImage(named: self.mTopAccImage)
+            self.bottomImageView.image = UIImage(named: self.mBottomImage)
+            self.shoeImageView.image = UIImage(named: self.mFootweaerImage)
+            self.accImageView.image = UIImage(named: self.mAccImage)
+            self.backgroundImageView.image = UIImage(named: "resultBG.png")
+        }
         
         self.view.updateConstraintsIfNeeded()
         self.view.layoutIfNeeded()
@@ -320,13 +315,12 @@ class ResultVC: UIViewController {
         print("DF")
         
         tempBGImageView.image = UIImage(named: bgImage)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationItem.backBarButtonItem?.title = " "
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
         topTapRecognizer.numberOfTapsRequired = 1
@@ -351,12 +345,5 @@ class ResultVC: UIViewController {
         shoeTapRecognizer.numberOfTouchesRequired = 1
         shoeImageView.isUserInteractionEnabled = false
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
-
-        Outfits.shared.decideTemp()
-  
-        
-
-        
     }
-    
 }

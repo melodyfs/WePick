@@ -136,7 +136,7 @@ enum FClothingItems {
         case jeans
 //        case fLeggings
         
-        case skirt
+        //case skirt
     }
     
     enum Footwear: String {
