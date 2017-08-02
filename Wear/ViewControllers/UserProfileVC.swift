@@ -45,38 +45,26 @@ class UserProfileVC: UIViewController {
         
         if userTemp == "cold"{
             coldButton.isSelected = true
-            coldButton.layer.cornerRadius = 5
-            coldButton.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
             
         }
         
         if userTemp == "middle"{
             middleButton.isSelected = true
-            middleButton.layer.cornerRadius = 5
-            middleButton.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            
         }
         
         if userTemp == "hot"{
             hotButton.isSelected = true
-            hotButton.layer.cornerRadius = 5
-            hotButton.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            
+           
         }
         
         if userTemp == "df" {
             dfButton.isSelected = true
-            dfButton.layer.cornerRadius = 5
-            dfButton.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            
         }
         
     }
     
     @IBAction func coldButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
-            sender.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            coldButton.layer.cornerRadius = 5
             UserTemp.shared.userTemp = "cold"
             
             middleButton.isSelected = false
@@ -87,8 +75,6 @@ class UserProfileVC: UIViewController {
     
     @IBAction func middleButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
-            sender.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            middleButton.layer.cornerRadius = 5
             UserTemp.shared.userTemp = "middle"
             
             coldButton.isSelected = false
@@ -99,8 +85,6 @@ class UserProfileVC: UIViewController {
     
     @IBAction func hotButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
-            sender.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            hotButton.layer.cornerRadius = 5
             UserTemp.shared.userTemp = "hot"
             
             coldButton.isSelected = false
@@ -110,8 +94,6 @@ class UserProfileVC: UIViewController {
     
     @IBAction func dfButtonTapped(_ sender: UIButton) {
             sender.isSelected = true
-            sender.setBackgroundColor(color: UIColor(red:0.99, green:0.65, blue:0.78, alpha:0.5), forState: .selected)
-            dfButton.layer.cornerRadius = 5
             UserTemp.shared.userTemp = "df"
             
             coldButton.isSelected = false
@@ -147,7 +129,6 @@ class UserProfileVC: UIViewController {
     
     @IBAction func fButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
-        cDegreeButton.layer.cornerRadius = 5
         cDegreeButton.isSelected = false
         
         coldButton.setTitle("65~70", for: .normal)
@@ -159,7 +140,6 @@ class UserProfileVC: UIViewController {
     @IBAction func cButtonTapped(_ sender: UIButton) {
         sender.isSelected = true
         fDegreeButton.isSelected = false
-        fDegreeButton.layer.cornerRadius = 5
         
         coldButton.setTitle("18~21", for: .normal)
         middleButton.setTitle("21~24", for: .normal)

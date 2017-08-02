@@ -66,9 +66,8 @@ class ResultVC: UIViewController {
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var shoeImageView: UIImageView!
     @IBOutlet weak var accImageView: UIImageView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var topAccIcon: UIImageView!
     @IBOutlet weak var tempBGImageView: UIImageView!
+    @IBOutlet weak var roomImageView: UIImageView!
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
@@ -84,14 +83,14 @@ class ResultVC: UIViewController {
     @IBAction func changeItemButtonTapped(_ sender: UITabBarItem) {
         changeTapCount += 1
         sender.title = "Done"
-        //      topAccIcon.isHidden = false
+        
         genderSegmentedControl.isHidden = true
         topImageView.isUserInteractionEnabled = true
         bottomImageView.isUserInteractionEnabled = true
         headImageView.isUserInteractionEnabled = true
         shoeImageView.isUserInteractionEnabled = true
         
-
+        roomImageView.image = UIImage(named: "resultBG.png")
         
         if changeTapCount % 2 == 0 {
             topImageView.isUserInteractionEnabled = false
@@ -101,7 +100,8 @@ class ResultVC: UIViewController {
             topAccImageView.isHidden = false
             genderSegmentedControl.isHidden = false
             
-//            backgroundImageView.image = UIImage(named: "")
+            roomImageView.image = UIImage(named: "roomBG.png")
+            
             sender.title = "Change Outfit"
         }
     }
@@ -268,9 +268,6 @@ class ResultVC: UIViewController {
             shoeImageView.image = UIImage(named: fFootweaerImage)
             accImageView.image = UIImage(named: fAccImage)
             
-//            Outfits.shared.fGetClothingCombo(WeatherData.shared)
-//            Outfits.shared.fPrintSetting()
-            
             print("Female")
             print("-----")
         default:
@@ -306,14 +303,13 @@ class ResultVC: UIViewController {
             self.bottomImageView.image = UIImage(named: self.mBottomImage)
             self.shoeImageView.image = UIImage(named: self.mFootweaerImage)
             self.accImageView.image = UIImage(named: self.mAccImage)
-            self.backgroundImageView.image = UIImage(named: "resultBG.png")
         }
         
         self.view.updateConstraintsIfNeeded()
         self.view.layoutIfNeeded()
         
         print("DF")
-        
+        roomImageView.image = UIImage(named: "roomBG.png")
         tempBGImageView.image = UIImage(named: bgImage)
     }
     
