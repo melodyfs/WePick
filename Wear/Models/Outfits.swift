@@ -564,8 +564,8 @@ class Outfits {
     private func fTempTop() {
         switch temp {
         case 0...60:
-           if fTop != FClothingItems.Top.fShortSleeveShirt {
-                fTop = FClothingItems.Top.fShortSleeveShirt
+           if fTop != FClothingItems.Top.fLongSleeveShirt {
+                fTop = FClothingItems.Top.fLongSleeveShirt
             }
         case 61...79: break
         case 80...200:
