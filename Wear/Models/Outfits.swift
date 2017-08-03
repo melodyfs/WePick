@@ -298,13 +298,13 @@ class Outfits {
     
    private func mTempTopAcc() {
         switch temp {
-        case 0...79:
+        case 0...60:
             if mTopAcc == MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.mJacket
             }
 
            
-        //case 61...79: break
+        case 61...79: break
         case 80...200:
               if mTopAcc != MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.none

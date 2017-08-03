@@ -20,8 +20,23 @@ class CustomButton: UIButton {
         clipsToBounds = true
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         setBackgroundColor(color: UIColor(red:0.55, green:0.29, blue:0.71, alpha:1.0), forState: .selected)
-        setTitleColor(UIColor.black, for: .selected)
+        setTitleColor(UIColor.white, for: .selected)
         
     
+    }
+}
+
+class CustomSegmentedControl: UISegmentedControl {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.cornerRadius = 4
+        let mask = CAShapeLayer()
+        //mask.frame = CGRect(0, 0, width-1, height);
+        let maskPath = UIBezierPath(roundedRect: mask.frame,
+                                    byRoundingCorners: [.bottomLeft, .bottomRight, .topLeft, .topRight],
+                                    cornerRadii: CGSize(width: 4.0, height: 4.0))
+        mask.path = maskPath.cgPath
+        layer.mask = mask
     }
 }

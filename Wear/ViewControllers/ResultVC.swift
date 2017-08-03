@@ -287,15 +287,22 @@ class ResultVC: UIViewController {
         super.viewDidAppear(animated)
         
       
-        self.navigationItem.backBarButtonItem?.title = " "
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         selectedIndex = UserTemp.shared.gender
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
-        
+        genderSegmentedControl.layer.cornerRadius = 4
+        let mask = CAShapeLayer()
+        mask.frame = CGRect(x: 0, y: 0, width: genderSegmentedControl.bounds.width-1 , height: genderSegmentedControl.bounds.size.height);
+        let maskPath = UIBezierPath(roundedRect: mask.frame,
+                                    byRoundingCorners: [.bottomLeft, .bottomRight, .topLeft, .topRight],
+                                    cornerRadii: CGSize(width: 4.0, height: 4.0))
+        mask.path = maskPath.cgPath
         
         DispatchQueue.main.async {
             Outfits.shared.getClothingCombo(WeatherData.shared)
@@ -303,7 +310,7 @@ class ResultVC: UIViewController {
             
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
-            Outfits.shared.decideTemp()
+            //Outfits.shared.decideTemp()
             self.decideGender()
 
         }
@@ -320,6 +327,7 @@ class ResultVC: UIViewController {
         super.viewDidLoad()
         
         WeatherDataService.shared.compareEnumValues(WeatherData.shared)
+        
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         

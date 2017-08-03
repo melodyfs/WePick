@@ -358,7 +358,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oli-7C-JWV">
                                 <rect key="frame" x="57" y="453.66666666666663" width="300" height="72.999999999999886"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-Ap-TtS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-Ap-TtS">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="34.666666666666629"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="37"/>
                                         <color key="textColor" red="0.33385865129999998" green="0.33385865129999998" blue="0.33385865129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -386,7 +386,7 @@
                                 <color key="textColor" red="0.33385865126286196" green="0.33385865126286196" blue="0.33385865126286196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="LOm-Wk-vCx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="LOm-Wk-vCx">
                                 <rect key="frame" x="12" y="114" width="390" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ogl-2i-O0E"/>
@@ -664,7 +664,7 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEu-0B-peI">
-                                <rect key="frame" x="122" y="220" width="171" height="167"/>
+                                <rect key="frame" x="122" y="214" width="171" height="167"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="171" id="FH2-6o-wzo"/>
@@ -681,7 +681,10 @@
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
-                                <color key="tintColor" red="0.31146520752162132" green="0.0" blue="0.47883821321321318" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.30980392156862746" green="0.0" blue="0.47843137254901957" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="segment.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="genderSelector:" destination="tIJ-LN-KCI" eventType="valueChanged" id="eld-eD-SQo"/>
                                 </connections>
@@ -712,7 +715,7 @@
                             <constraint firstItem="Yyh-wl-Lrl" firstAttribute="trailing" secondItem="pzi-VV-zev" secondAttribute="trailing" id="5Tz-tt-Kdf"/>
                             <constraint firstItem="cEu-0B-peI" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="6kY-O8-h8k"/>
                             <constraint firstItem="PtM-py-1A5" firstAttribute="leading" secondItem="HbZ-Ki-Je2" secondAttribute="trailing" constant="147" id="6vp-RF-36g"/>
-                            <constraint firstItem="cEu-0B-peI" firstAttribute="centerY" secondItem="mg3-0n-0Ct" secondAttribute="centerY" constant="-65" id="9ej-mg-eYr"/>
+                            <constraint firstItem="cEu-0B-peI" firstAttribute="centerY" secondItem="mg3-0n-0Ct" secondAttribute="centerY" constant="-70.5" id="9ej-mg-eYr"/>
                             <constraint firstItem="Kwd-Cu-yCc" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="D6x-7j-Rgy"/>
                             <constraint firstItem="Yyh-wl-Lrl" firstAttribute="leading" secondItem="pzi-VV-zev" secondAttribute="leading" id="GJ5-2R-8RO"/>
                             <constraint firstItem="Kwd-Cu-yCc" firstAttribute="centerY" secondItem="mg3-0n-0Ct" secondAttribute="centerY" constant="52.5" id="IcL-bY-lxc"/>

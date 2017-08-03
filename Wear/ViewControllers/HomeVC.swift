@@ -73,6 +73,13 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
+    
+    //MARK: - Functions
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
             if (error != nil) {
@@ -104,7 +111,17 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
                 if CLLocationManager.isRangingAvailable() {
                 }
             }
+        } else {
+            WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
+                return self.updateUI(weather: data)
+            })
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
+            return self.updateUI(weather: data)
+        })
     }
 
     
@@ -133,8 +150,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         autocompleteController.primaryTextColor = UIColor(red:0.69, green:0.68, blue:0.75, alpha:1.0)
         autocompleteController.primaryTextHighlightColor = UIColor(red:0.91, green:0.91, blue:1.00, alpha:1.0)
         autocompleteController.secondaryTextColor = UIColor(red:0.88, green:0.57, blue:0.90, alpha:1.0)
-        
-
+    
         
         present(autocompleteController, animated: true, completion: nil)
     }
@@ -198,6 +214,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             WeatherDataService.shared.compareEnumValues(WeatherData.shared)
             let bgImage = WeatherDataService.shared.category
             self.weatherImageView.image = UIImage(named: "\(bgImage).png")
+            Outfits.shared.decideTemp()
             
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)
