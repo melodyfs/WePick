@@ -304,7 +304,7 @@ class ResultVC: UIViewController {
                                     cornerRadii: CGSize(width: 4.0, height: 4.0))
         mask.path = maskPath.cgPath
         
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async { [unowned self] in
             Outfits.shared.getClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
             
@@ -313,7 +313,7 @@ class ResultVC: UIViewController {
             //Outfits.shared.decideTemp()
             self.decideGender()
 
-        }
+//        }
         
         self.view.updateConstraintsIfNeeded()
         self.view.layoutIfNeeded()
@@ -333,7 +333,7 @@ class ResultVC: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
-       topTapRecognizer.numberOfTapsRequired = 1
+        topTapRecognizer.numberOfTapsRequired = 1
         topTapRecognizer.numberOfTouchesRequired = 1
         topImageView.isUserInteractionEnabled = false
         topImageView.addGestureRecognizer(topTapRecognizer)

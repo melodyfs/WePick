@@ -92,6 +92,8 @@ class SwitchClothesService {
     }
     
     private func mCountHead() {
+        mHeadCount = 0
+        mHeads = []
         for str in WeatherDataService.shared.iterateEnum(MClothingItems.Head.self) {
             mHeadCount += 1
             mHeads.append(str)
@@ -100,6 +102,8 @@ class SwitchClothesService {
     }
     
     private func mCountTop() {
+        mTopCount = 0
+        mTops = []
         for str in WeatherDataService.shared.iterateEnum(MClothingItems.Top.self) {
             mTopCount += 1
             mTops.append(str)
@@ -107,6 +111,8 @@ class SwitchClothesService {
         
     }
     private func mCountTopAcc() {
+        mTopAccCount = 0
+        mTopAccs = []
         for str in WeatherDataService.shared.iterateEnum(MClothingItems.TopAcc.self) {
             mTopAccCount += 1
             mTopAccs.append(str)
@@ -114,6 +120,9 @@ class SwitchClothesService {
     }
     
     private func mCountBottom() {
+        mBottomCount = 0
+        mBottoms = []
+        
         for str in WeatherDataService.shared.iterateEnum(MClothingItems.Bottom.self) {
             mBottomCount += 1
             mBottoms.append(str)
@@ -121,6 +130,8 @@ class SwitchClothesService {
     }
     
     private func mCountFoot() {
+        mFootCount = 0
+        mShoes = []
         for str in WeatherDataService.shared.iterateEnum(MClothingItems.Footwear.self) {
             mFootCount += 1
             mShoes.append(str)
@@ -182,6 +193,8 @@ class SwitchClothesService {
     }
     
     private func fCountHead() {
+        fHeadCount = 0
+        fHeads = []
         for str in WeatherDataService.shared.iterateEnum(FClothingItems.Head.self) {
             fHeadCount += 1
             fHeads.append(str)
@@ -190,6 +203,8 @@ class SwitchClothesService {
     }
     
     private func fCountTop() {
+        fTopCount = 0
+        fTops = []
         for str in WeatherDataService.shared.iterateEnum(FClothingItems.Top.self) {
             fTopCount += 1
             fTops.append(str)
@@ -197,6 +212,8 @@ class SwitchClothesService {
         
     }
     private func fCountTopAcc() {
+        fTopAccCount = 0
+        fTopAccs = []
         for str in WeatherDataService.shared.iterateEnum(FClothingItems.TopAcc.self) {
             fTopAccCount += 1
             fTopAccs.append(str)
@@ -204,6 +221,8 @@ class SwitchClothesService {
     }
     
     private func fCountBottom() {
+        fBottomCount = 0
+        fBottoms = []
         for str in WeatherDataService.shared.iterateEnum(FClothingItems.Bottom.self) {
             fBottomCount += 1
             fBottoms.append(str)
@@ -211,6 +230,8 @@ class SwitchClothesService {
     }
     
     private func fCountFoot() {
+        fFootCount = 0
+        fShoes = []
         for str in WeatherDataService.shared.iterateEnum(FClothingItems.Footwear.self) {
             fFootCount += 1
             fShoes.append(str)
