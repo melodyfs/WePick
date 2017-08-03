@@ -142,11 +142,12 @@ class UserProfileVC: UIViewController {
         
         if cDegreeButton.isSelected {
             UserTemp.shared.degree = "c"
-            
+            uDF.set("c", forKey: degree)
         }
         
         if fDegreeButton.isSelected {
             UserTemp.shared.degree = ""
+            uDF.set(" ", forKey: degree)
         }
         
         if maleButton.isSelected {
@@ -172,18 +173,18 @@ class UserProfileVC: UIViewController {
         middleButton.setTitle("70~75", for: .normal)
         hotButton.setTitle("75~80", for: .normal)
         
-        if hotButton.isSelected {
-            hotButton.isSelected = true
-        }
-        if middleButton.isSelected {
-            middleButton.isSelected = true
-        }
-        if coldButton.isSelected {
-            coldButton.isSelected = true
-        }
-        if dfButton.isSelected {
-            dfButton.isSelected = true
-        }
+//        if hotButton.isSelected {
+//            hotButton.isSelected = true
+//        }
+//        if middleButton.isSelected {
+//            middleButton.isSelected = true
+//        }
+//        if coldButton.isSelected {
+//            coldButton.isSelected = true
+//        }
+//        if dfButton.isSelected {
+//            dfButton.isSelected = true
+//        }
     }
     
     @IBAction func cButtonTapped(_ sender: UIButton) {
@@ -194,19 +195,10 @@ class UserProfileVC: UIViewController {
         middleButton.setTitle("21~24", for: .normal)
         hotButton.setTitle("23~27", for: .normal)
         
-        if hotButton.isSelected {
-            hotButton.isSelected = true
-        }
-        if middleButton.isSelected {
-            middleButton.isSelected = true
-        }
-        if coldButton.isSelected {
-            coldButton.isSelected = true
-        }
-        if dfButton.isSelected {
-            dfButton.isSelected = true
-        }
-
+//        hotButton.isSelected = !hotButton.isSelected
+//        middleButton.isSelected = !middleButton.isSelected
+//        coldButton.isSelected = !coldButton.isSelected
+//        dfButton.isSelected = !dfButton.isSelected
     }
     
     @IBAction func maleButtonTapped(_ sender: CustomButton) {
