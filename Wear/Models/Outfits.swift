@@ -100,7 +100,7 @@ class Outfits {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain: fallthrough
-        case .clouds: fallthrough
+        case .clouds:
             mTop = MClothingItems.Top.mLongSleeveShirt
         case .cold: fallthrough
         case .hail: fallthrough

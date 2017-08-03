@@ -167,6 +167,7 @@ class ResultVC: UIViewController {
     
     @IBAction func bottomImgTapped(_ sender: UITapGestureRecognizer) {
         
+        
         switch selectedIndex {
         case 0:
             mBottomTapCount += 1
@@ -177,7 +178,6 @@ class ResultVC: UIViewController {
             
             mBottomImage = "\(mBottomArr[mBottomTapCount]).png"
             bottomImageView.image = UIImage(named: mBottomImage)
-            
         case 1:
             fBottomTapCount += 1
             
@@ -321,6 +321,7 @@ class ResultVC: UIViewController {
         print("DF")
         roomImageView.image = UIImage(named: "roomBG.png")
         tempBGImageView.image = UIImage(named: bgImage)
+        
     }
     
     override func viewDidLoad() {
@@ -332,7 +333,7 @@ class ResultVC: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let topTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topImgTapped(_:)))
-        topTapRecognizer.numberOfTapsRequired = 1
+       topTapRecognizer.numberOfTapsRequired = 1
         topTapRecognizer.numberOfTouchesRequired = 1
         topImageView.isUserInteractionEnabled = false
         topImageView.addGestureRecognizer(topTapRecognizer)
@@ -355,4 +356,23 @@ class ResultVC: UIViewController {
         shoeImageView.isUserInteractionEnabled = false
         shoeImageView.addGestureRecognizer(shoeTapRecognizer)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.topImageView.gestureRecognizers?.forEach(topImageView.removeGestureRecognizer)
+       // self.bottomImageView.gestureRecognizers?.removeAll()
+       bottomImageView.gestureRecognizers?.forEach(bottomImageView.removeGestureRecognizer)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+//    func tapHandler(sender: UITapGestureRecognizer) {
+//        if sender.state == .ended {
+//           bottomImageView.gestureRecognizers?.removeAll()
+//        }
+//    }
+    
+    
 }
