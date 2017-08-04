@@ -11,6 +11,7 @@
 		6C6E3ADA1F2271FE00D60C7C /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */; };
 		6C6E3ADC1F22B6B100D60C7C /* UserTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E3ADB1F22B6B100D60C7C /* UserTemp.swift */; };
 		6C6E3AE01F2EDF8500D60C7C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E3ADF1F2EDF8500D60C7C /* UserProfileVC.swift */; };
+		6C8308C61F343BE3003D470D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8308C51F343BE3003D470D /* LaunchScreen.storyboard */; };
 		6C95A9B41F32434C009BE2AC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C95A9B31F32434C009BE2AC /* CustomButton.swift */; };
 		6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CABDA071F0C48A400133DBB /* Outfits.swift */; };
 		6CB17C181F02D88C0093791F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C171F02D88C0093791F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpVC.swift; path = ViewControllers/PopUpVC.swift; sourceTree = "<group>"; };
 		6C6E3ADB1F22B6B100D60C7C /* UserTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTemp.swift; path = Models/UserTemp.swift; sourceTree = "<group>"; };
 		6C6E3ADF1F2EDF8500D60C7C /* UserProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileVC.swift; path = ViewControllers/UserProfileVC.swift; sourceTree = "<group>"; };
+		6C8308C51F343BE3003D470D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Supporting/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C95A9B31F32434C009BE2AC /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Supporting/CustomButton.swift; sourceTree = "<group>"; };
 		6CABDA071F0C48A400133DBB /* Outfits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Outfits.swift; path = Models/Outfits.swift; sourceTree = "<group>"; };
 		6CB17BFF1F02D7C40093791F /* Wear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				6CB17C231F02D9F90093791F /* Base.lproj */,
 				6CB17C241F02D9F90093791F /* Info.plist */,
 				6C95A9B31F32434C009BE2AC /* CustomButton.swift */,
+				6C8308C51F343BE3003D470D /* LaunchScreen.storyboard */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				6CB17C181F02D88C0093791F /* Main.storyboard in Resources */,
 				6CB17C271F02D9F90093791F /* Base.lproj in Resources */,
 				6CF987F41F34177100E70B1D /* LaunchScreen1.png in Resources */,
+				6C8308C61F343BE3003D470D /* LaunchScreen.storyboard in Resources */,
 				6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
