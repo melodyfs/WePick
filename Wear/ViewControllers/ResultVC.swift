@@ -304,16 +304,16 @@ class ResultVC: UIViewController {
                                     cornerRadii: CGSize(width: 4.0, height: 4.0))
         mask.path = maskPath.cgPath
         
-//        DispatchQueue.main.async { [unowned self] in
+        DispatchQueue.main.async {
             Outfits.shared.getClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
             
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.printSetting()
-            //Outfits.shared.decideTemp()
+            Outfits.shared.decideTemp()
             self.decideGender()
 
-//        }
+        }
         
         self.view.updateConstraintsIfNeeded()
         self.view.layoutIfNeeded()

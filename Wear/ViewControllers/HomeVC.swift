@@ -177,6 +177,9 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             UserDefaults.standard.set(true, forKey: "launchedBefore")
         }
         
+        if UserTemp.shared.userTemp == "" {
+            UserTemp.shared.userTemp = "df"
+        }
     }
     
     @IBAction func seeSuggestionButtonTapped(_ sender: Any) {

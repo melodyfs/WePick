@@ -113,6 +113,7 @@ class WeatherDataService {
             if dsReformat.contains(aCategory.rawValue){
                 print(" matching category is \(aCategory)")
                 category = aCategory
+                Outfits.shared.category = aCategory
             }
         }
     }

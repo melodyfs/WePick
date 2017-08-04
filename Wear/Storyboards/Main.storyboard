@@ -688,10 +688,11 @@
                                 </connections>
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HbZ-Ki-Je2" userLabel="Head Image View">
-                                <rect key="frame" x="60" y="619" width="90" height="63"/>
+                                <rect key="frame" x="38" y="532" width="90" height="123"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="IRI-J8-lPK"/>
+                                    <constraint firstAttribute="width" constant="90" id="1fg-DI-bI7"/>
+                                    <constraint firstAttribute="height" constant="123" id="IRI-J8-lPK"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="j7F-FU-Jdx" appends="YES" id="4VS-HO-MA2"/>
@@ -712,7 +713,7 @@
                             <constraint firstAttribute="trailing" secondItem="pzi-VV-zev" secondAttribute="trailing" id="5MK-oa-3lT"/>
                             <constraint firstItem="Yyh-wl-Lrl" firstAttribute="trailing" secondItem="pzi-VV-zev" secondAttribute="trailing" id="5Tz-tt-Kdf"/>
                             <constraint firstItem="cEu-0B-peI" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="6kY-O8-h8k"/>
-                            <constraint firstItem="PtM-py-1A5" firstAttribute="leading" secondItem="HbZ-Ki-Je2" secondAttribute="trailing" constant="147" id="6vp-RF-36g"/>
+                            <constraint firstItem="PtM-py-1A5" firstAttribute="leading" secondItem="HbZ-Ki-Je2" secondAttribute="trailing" constant="169" id="6vp-RF-36g"/>
                             <constraint firstItem="cEu-0B-peI" firstAttribute="centerY" secondItem="mg3-0n-0Ct" secondAttribute="centerY" constant="-70.5" id="9ej-mg-eYr"/>
                             <constraint firstItem="Kwd-Cu-yCc" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="D6x-7j-Rgy"/>
                             <constraint firstItem="Yyh-wl-Lrl" firstAttribute="leading" secondItem="pzi-VV-zev" secondAttribute="leading" id="GJ5-2R-8RO"/>
@@ -725,9 +726,9 @@
                             <constraint firstItem="rYM-AS-QEu" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="T97-yU-hbH"/>
                             <constraint firstItem="rYM-AS-QEu" firstAttribute="centerY" secondItem="mg3-0n-0Ct" secondAttribute="centerY" constant="64" id="TUG-PM-cAv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rTg-Zn-I6r" secondAttribute="trailing" constant="56" id="W8U-ex-nhc"/>
-                            <constraint firstItem="Kwd-Cu-yCc" firstAttribute="leading" secondItem="HbZ-Ki-Je2" secondAttribute="trailing" constant="-18" id="XR4-HX-aRT"/>
+                            <constraint firstItem="Kwd-Cu-yCc" firstAttribute="leading" secondItem="HbZ-Ki-Je2" secondAttribute="trailing" constant="4" id="XR4-HX-aRT"/>
                             <constraint firstItem="rYM-AS-QEu" firstAttribute="centerX" secondItem="mg3-0n-0Ct" secondAttribute="centerX" id="XhE-mj-8Nb"/>
-                            <constraint firstItem="HbZ-Ki-Je2" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="40" id="cQh-ik-NJ7"/>
+                            <constraint firstItem="HbZ-Ki-Je2" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leadingMargin" constant="18" id="cQh-ik-NJ7"/>
                             <constraint firstItem="rTg-Zn-I6r" firstAttribute="top" secondItem="3Dy-lA-aHb" secondAttribute="bottom" constant="11" id="gqD-kM-Lh8"/>
                             <constraint firstItem="4qA-Bo-X4E" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leading" id="irh-tz-T48"/>
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="pzi-VV-zev" secondAttribute="bottom" id="nx6-v1-tqG"/>
@@ -736,7 +737,7 @@
                             <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="PtM-py-1A5" secondAttribute="bottom" constant="54" id="sSC-dg-3Ib"/>
                             <constraint firstItem="4qA-Bo-X4E" firstAttribute="leading" secondItem="mg3-0n-0Ct" secondAttribute="leading" id="toK-6f-e2P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PtM-py-1A5" secondAttribute="trailing" constant="22" id="wrp-RV-A1f"/>
-                            <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="HbZ-Ki-Je2" secondAttribute="bottom" constant="54" id="xMF-cx-Mel"/>
+                            <constraint firstItem="dKD-XQ-Jq9" firstAttribute="top" secondItem="HbZ-Ki-Je2" secondAttribute="bottom" constant="81" id="xMF-cx-Mel"/>
                             <constraint firstAttribute="trailing" secondItem="4qA-Bo-X4E" secondAttribute="trailing" id="xXg-5F-v5W"/>
                             <constraint firstItem="4qA-Bo-X4E" firstAttribute="top" secondItem="mg3-0n-0Ct" secondAttribute="top" constant="50" id="xo3-8M-QZX"/>
                         </constraints>

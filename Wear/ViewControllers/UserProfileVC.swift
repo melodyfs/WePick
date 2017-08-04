@@ -162,6 +162,8 @@ class UserProfileVC: UIViewController {
         
         dismiss(animated: true, completion: nil)
         
+        print(UserTemp.shared.userTemp)
+        
         
     }
     

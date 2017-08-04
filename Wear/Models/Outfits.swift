@@ -12,7 +12,7 @@ class Outfits {
     
     
     static var shared = Outfits()
-    var category : Category = WeatherDataService.shared.category
+    var category : Category = .unknown
     var categoryAtm = ""
     
     var temp = WeatherData.shared.temperature
@@ -42,13 +42,13 @@ class Outfits {
         switch uTemp {
         case "cold":
             if temp > 70 {
-                temp = 55
+                temp = 85
             }
         case "middle" :
             if temp < 60 {
                 temp = 80
-            } else if temp > 70 {
-                temp = 70
+            } else if temp > 80 {
+                temp = 55
             }
         case "hot":
             if temp < 80 {
@@ -60,7 +60,7 @@ class Outfits {
         
         }
         
-        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
+//        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
         print("weather \(category)")
     }
     
@@ -281,7 +281,7 @@ class Outfits {
    private func mTempTop() {
         switch temp {
         case 0...60:
-            if mTop == MClothingItems.Top.mShortSleeveShirt {
+            if mTop != MClothingItems.Top.mLongSleeveShirt {
                 mTop = MClothingItems.Top.mLongSleeveShirt
             }
         case 61...79: break
@@ -302,7 +302,6 @@ class Outfits {
             if mTopAcc == MClothingItems.TopAcc.none {
                 mTopAcc = MClothingItems.TopAcc.mJacket
             }
-
            
         case 61...79: break
         case 80...200:
