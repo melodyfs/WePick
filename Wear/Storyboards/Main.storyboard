@@ -157,7 +157,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="coldButtonTapped:" destination="eO8-0B-beK" eventType="touchUpInside" id="qeR-mg-lnU"/>
                                                             <action selector="fButtonTapped:" destination="eO8-0B-beK" eventType="touchUpInside" id="N6k-kC-Gc8"/>
                                                         </connections>
                                                     </button>
@@ -178,7 +177,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="cButtonTapped:" destination="eO8-0B-beK" eventType="touchUpInside" id="Lmr-cJ-Iy3"/>
-                                                            <action selector="middleButtonTapped:" destination="eO8-0B-beK" eventType="touchUpInside" id="u9v-hw-tCS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

@@ -173,18 +173,18 @@ class UserProfileVC: UIViewController {
         middleButton.setTitle("70~75", for: .normal)
         hotButton.setTitle("75~80", for: .normal)
         
-//        if hotButton.isSelected {
-//            hotButton.isSelected = true
-//        }
-//        if middleButton.isSelected {
-//            middleButton.isSelected = true
-//        }
-//        if coldButton.isSelected {
-//            coldButton.isSelected = true
-//        }
-//        if dfButton.isSelected {
-//            dfButton.isSelected = true
-//        }
+        if hotButton.isSelected {
+            hotButton.isSelected = true
+        }
+        if middleButton.isSelected {
+            middleButton.isSelected = true
+        }
+        if coldButton.isSelected {
+            coldButton.isSelected = true
+        }
+        if dfButton.isSelected {
+            dfButton.isSelected = true
+        }
     }
     
     @IBAction func cButtonTapped(_ sender: UIButton) {
@@ -195,10 +195,19 @@ class UserProfileVC: UIViewController {
         middleButton.setTitle("21~24", for: .normal)
         hotButton.setTitle("23~27", for: .normal)
         
-//        hotButton.isSelected = !hotButton.isSelected
-//        middleButton.isSelected = !middleButton.isSelected
-//        coldButton.isSelected = !coldButton.isSelected
-//        dfButton.isSelected = !dfButton.isSelected
+        if hotButton.isSelected {
+            hotButton.isSelected = true
+        }
+        if middleButton.isSelected {
+            middleButton.isSelected = true
+        }
+        if coldButton.isSelected {
+            coldButton.isSelected = true
+        }
+        if dfButton.isSelected {
+            dfButton.isSelected = true
+        }
+
     }
     
     @IBAction func maleButtonTapped(_ sender: CustomButton) {
