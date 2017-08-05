@@ -53,7 +53,7 @@ class WeatherAPI {
         
     }
     
-    class func getWeatherCity(from cityName: String, completion: @escaping Completion) {
+    class func getWeatherCity(from cityName: String, completion: @escaping Completion, failedCompletion: @escaping () -> Void) {
         
         let session = URLSession.shared
         let urlCity = URL(string: "\(cityURL)\(cityName)&APPID=\(key)")
@@ -74,12 +74,19 @@ class WeatherAPI {
                     print("data couldn't be downloaded")
                     return
                 }
-               
+                
                 //completion closure is passed to then call it after parsing the data
                 JSONParser.parse(data: data!, completion: completion)
             }
             
+            
+            
             task.resume()
+            
+        } else {
+            failedCompletion()
+            print("Failed to load weather data.")
+            //Run the closure when the url city fails to get from API
         }
     }
     

@@ -19,8 +19,10 @@ class CustomButton: UIButton {
         layer.borderColor = UIColor(red:0.31, green:0.00, blue:0.48, alpha: 0.10).cgColor
         clipsToBounds = true
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        setBackgroundColor(color: UIColor(red:0.55, green:0.29, blue:0.71, alpha:1.0), forState: .selected)
-        setTitleColor(UIColor.white, for: .selected)
+        setBackgroundColor(color: UIColor(red:0.55, green:0.29, blue:0.71, alpha:1.0), forState: .normal)
+        setBackgroundColor(color: UIColor.white, forState: .selected)
+        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(UIColor.black, for: .selected)
         
     
     }

@@ -20,8 +20,8 @@
 		6CB17C251F02D9F90093791F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB17C211F02D9F90093791F /* AppDelegate.swift */; };
 		6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C221F02D9F90093791F /* Assets.xcassets */; };
 		6CB17C271F02D9F90093791F /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C231F02D9F90093791F /* Base.lproj */; };
+		6CCB64AC1F353B2600DE961E /* AlertPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB64AB1F353B2600DE961E /* AlertPopUpVC.swift */; };
 		6CCEABFB1F20047100850970 /* SwitchClothesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEABFA1F20047100850970 /* SwitchClothesService.swift */; };
-		6CF987F41F34177100E70B1D /* LaunchScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF987F31F34177100E70B1D /* LaunchScreen1.png */; };
 		6CFF83951F02E26300255329 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83941F02E26300255329 /* WeatherAPI.swift */; };
 		6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83961F02FDCA00255329 /* JSONParser.swift */; };
 		6CFF839B1F031E3D00255329 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF839A1F031E3D00255329 /* WeatherData.swift */; };
@@ -47,8 +47,8 @@
 		6CB17C221F02D9F90093791F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Supporting/Assets.xcassets; sourceTree = "<group>"; };
 		6CB17C231F02D9F90093791F /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = Supporting/Base.lproj; sourceTree = "<group>"; };
 		6CB17C241F02D9F90093791F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
+		6CCB64AB1F353B2600DE961E /* AlertPopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertPopUpVC.swift; path = ViewControllers/AlertPopUpVC.swift; sourceTree = "<group>"; };
 		6CCEABFA1F20047100850970 /* SwitchClothesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchClothesService.swift; path = Services/SwitchClothesService.swift; sourceTree = "<group>"; };
-		6CF987F31F34177100E70B1D /* LaunchScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen1.png; sourceTree = "<group>"; };
 		6CFF83941F02E26300255329 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPI.swift; path = API/WeatherAPI.swift; sourceTree = "<group>"; };
 		6CFF83961F02FDCA00255329 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = API/JSONParser.swift; sourceTree = "<group>"; };
 		6CFF839A1F031E3D00255329 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = Models/WeatherData.swift; sourceTree = "<group>"; };
@@ -145,6 +145,7 @@
 				6CB17C1A1F02D8A40093791F /* ResultVC.swift */,
 				6C6E3AD91F2271FE00D60C7C /* PopUpVC.swift */,
 				6C6E3ADF1F2EDF8500D60C7C /* UserProfileVC.swift */,
+				6CCB64AB1F353B2600DE961E /* AlertPopUpVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -161,7 +162,6 @@
 		6CB17C201F02D9E50093791F /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				6CF987F31F34177100E70B1D /* LaunchScreen1.png */,
 				6CB17C211F02D9F90093791F /* AppDelegate.swift */,
 				6CB17C221F02D9F90093791F /* Assets.xcassets */,
 				6CB17C231F02D9F90093791F /* Base.lproj */,
@@ -263,7 +263,6 @@
 			files = (
 				6CB17C181F02D88C0093791F /* Main.storyboard in Resources */,
 				6CB17C271F02D9F90093791F /* Base.lproj in Resources */,
-				6CF987F41F34177100E70B1D /* LaunchScreen1.png in Resources */,
 				6C8308C61F343BE3003D470D /* LaunchScreen.storyboard in Resources */,
 				6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */,
 			);
@@ -328,6 +327,7 @@
 				6C6E3ADA1F2271FE00D60C7C /* PopUpVC.swift in Sources */,
 				6C6E3AE01F2EDF8500D60C7C /* UserProfileVC.swift in Sources */,
 				6CB17C1C1F02D8A40093791F /* ResultVC.swift in Sources */,
+				6CCB64AC1F353B2600DE961E /* AlertPopUpVC.swift in Sources */,
 				6CABDA081F0C48A400133DBB /* Outfits.swift in Sources */,
 				6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */,
 				6CFF83A21F06FDBC00255329 /* WeatherDataService.swift in Sources */,

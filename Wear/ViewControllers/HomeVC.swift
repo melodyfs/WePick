@@ -28,6 +28,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     var resultView: UITextView?
     
     var city = ""
+    var preCity = ""
     
     
     
@@ -39,6 +40,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var currentWeatherState: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var degreeSign: UILabel!
+    @IBOutlet weak var searchButton: UIBarButtonItem!
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -64,7 +66,22 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             currentTemperatureLabel.text = String(WeatherData.shared.temperature)
             degreeSign.text = "ºF"
         }
-
+        
+        Outfits.shared.decideTemp()
+        
+        Outfits.shared.fGetClothingCombo(WeatherData.shared)
+        Outfits.shared.getClothingCombo(WeatherData.shared)
+        
+        if city != currentLocationLabel.text! {
+//                let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertPopUp") as! AlertPopUpVC
+//                self.addChildViewController(popOverVC)
+//                popOverVC.view.frame = self.view.frame
+//                self.view.addSubview(popOverVC.view)
+//                popOverVC.didMove(toParentViewController: self)
+            
+        }
+        
+       
 
     }
     
@@ -74,9 +91,16 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+//        if let destinationVC = segue.destination as? ResultVC {
+//            if UserTemp.shared.gender == 0 {
+//               destinationVC.headImageView.image = UIImage(named: destinationVC.mHeadImage)
+//                destinationVC.topImageView.image = UIImage(named: destinationVC.mTopImage)
+//                destinationVC.topAccImageView.image = UIImage(named: destinationVC.mTopAccImage)
+//                destinationVC.bottomImageView.image = UIImage(named: destinationVC.mBottomImage)
+//                destinationVC.shoeImageView.image = UIImage(named: destinationVC.mFootweaerImage)
+//                destinationVC.accImageView.image = UIImage(named: destinationVC.mAccImage)
+//            }
+//        }
     }
     
     //MARK: - Functions
@@ -112,16 +136,18 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
                 }
             }
         } else {
-            WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
-                return self.updateUI(weather: data)
-            })
+           currentLocationLabel.text = "Location unavailable"
+           currentTemperatureLabel.text = "--"
+            currentWeatherState.text = "--"
+            currentWeatherDescriptionLabel.text = "--"
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        WeatherAPI.getWeather(fromZipcode: "94103", completion: { data in
-            return self.updateUI(weather: data)
-        })
+        currentLocationLabel.text = "Location unavailable"
+        currentTemperatureLabel.text = "--"
+        currentWeatherState.text = "--"
+        currentWeatherDescriptionLabel.text = "--"
     }
 
     
@@ -221,6 +247,8 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)
+            
+//            ResultVC.shared.decideGender()
         
         }
     }
@@ -245,15 +273,26 @@ extension HomeVC: GMSAutocompleteViewControllerDelegate {
         
         func getCityName() {
             self.city = place.name
+            //preCity = currentLocationLabel.text!
         }
         getCityName()
         
         print("Place name: \(city)")
         
         WeatherAPI.getWeatherCity(from: city, completion: { data in
-            
+            print(self.city)
             return self.updateUI(weather: data)
+            
+        }, failedCompletion: { _ in
+            
+            let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertPopUp") as! AlertPopUpVC
+            self.addChildViewController(popOverVC)
+            popOverVC.view.frame = self.view.frame
+            self.view.addSubview(popOverVC.view)
+            popOverVC.didMove(toParentViewController: self)
+
         })
+        
 
         dismiss(animated: true, completion: nil)
         

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9NV-ki-ItS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-Is-u5b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-Is-u5b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E20-uH-LdH" firstAttribute="top" secondItem="5zB-Is-u5b" secondAttribute="bottom" id="BOR-qL-zjE"/>
-                            <constraint firstItem="5zB-Is-u5b" firstAttribute="top" secondItem="us1-yc-MXH" secondAttribute="bottom" constant="-20" id="TBD-NZ-BU1"/>
-                            <constraint firstItem="5zB-Is-u5b" firstAttribute="leading" secondItem="mR9-Aw-1bI" secondAttribute="leadingMargin" constant="-16" id="pIg-A6-KcC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5zB-Is-u5b" secondAttribute="trailing" constant="-16" id="vEW-6i-Qh2"/>
+                            <constraint firstItem="E20-uH-LdH" firstAttribute="top" secondItem="5zB-Is-u5b" secondAttribute="bottom" id="5xO-yR-dxi"/>
+                            <constraint firstItem="5zB-Is-u5b" firstAttribute="top" secondItem="mR9-Aw-1bI" secondAttribute="top" id="6ml-jt-b4n"/>
+                            <constraint firstItem="5zB-Is-u5b" firstAttribute="leading" secondItem="mR9-Aw-1bI" secondAttribute="leading" id="N8o-AZ-xkN"/>
+                            <constraint firstAttribute="trailing" secondItem="5zB-Is-u5b" secondAttribute="trailing" id="dgu-3j-nAM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,7 +39,4 @@
             <point key="canvasLocation" x="152.80000000000001" y="-443.02848575712147"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LaunchScreen1.png" width="3738" height="6612"/>
-    </resources>
 </document>

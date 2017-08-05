@@ -283,18 +283,39 @@ class ResultVC: UIViewController {
     
     //MARK: - Override Methods
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-      
-        
-    }
-    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        
+//        Outfits.shared.getClothingCombo(WeatherData.shared)
+//        Outfits.shared.printSetting()
+//        
+//        Outfits.shared.fGetClothingCombo(WeatherData.shared)
+//        Outfits.shared.printSetting()
+//        Outfits.shared.decideTemp()
+//        self.decideGender()
+//        
+//
+//        
+//    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         selectedIndex = UserTemp.shared.gender
+        
+        Outfits.shared.getClothingCombo(WeatherData.shared)
+        Outfits.shared.printSetting()
+        
+        Outfits.shared.fGetClothingCombo(WeatherData.shared)
+        Outfits.shared.printSetting()
+        Outfits.shared.decideTemp()
+        self.decideGender()
+        
+
+        
+        
         genderSegmentedControl.selectedSegmentIndex = selectedIndex
         genderSegmentedControl.layer.cornerRadius = 4
         let mask = CAShapeLayer()
@@ -303,17 +324,6 @@ class ResultVC: UIViewController {
                                     byRoundingCorners: [.bottomLeft, .bottomRight, .topLeft, .topRight],
                                     cornerRadii: CGSize(width: 4.0, height: 4.0))
         mask.path = maskPath.cgPath
-        
-        DispatchQueue.main.async {
-            Outfits.shared.getClothingCombo(WeatherData.shared)
-            Outfits.shared.printSetting()
-            
-            Outfits.shared.fGetClothingCombo(WeatherData.shared)
-            Outfits.shared.printSetting()
-            Outfits.shared.decideTemp()
-            self.decideGender()
-
-        }
         
         self.view.updateConstraintsIfNeeded()
         self.view.layoutIfNeeded()
@@ -326,9 +336,6 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
-        
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -359,20 +366,16 @@ class ResultVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.topImageView.gestureRecognizers?.forEach(topImageView.removeGestureRecognizer)
+        //self.topImageView.gestureRecognizers?.forEach(topImageView.removeGestureRecognizer)
        // self.bottomImageView.gestureRecognizers?.removeAll()
-       bottomImageView.gestureRecognizers?.forEach(bottomImageView.removeGestureRecognizer)
+       //bottomImageView.gestureRecognizers?.forEach(bottomImageView.removeGestureRecognizer)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
     }
     
-//    func tapHandler(sender: UITapGestureRecognizer) {
-//        if sender.state == .ended {
-//           bottomImageView.gestureRecognizers?.removeAll()
-//        }
-//    }
-    
+
     
 }

@@ -68,7 +68,7 @@ class UserProfileVC: UIViewController {
             cDegreeButton.isSelected = true
         }
         
-        if UserTemp.shared.degree == "f" {
+        if UserTemp.shared.degree == "" {
             fDegreeButton.isSelected = true
         }
         
@@ -141,29 +141,26 @@ class UserProfileVC: UIViewController {
         }
         
         if cDegreeButton.isSelected {
-            UserTemp.shared.degree = "c"
             uDF.set("c", forKey: degree)
         }
         
         if fDegreeButton.isSelected {
-            UserTemp.shared.degree = ""
-            uDF.set(" ", forKey: degree)
+            uDF.set("", forKey: degree)
         }
         
         if maleButton.isSelected {
             uDF.set(0, forKey: "gender")
-            UserTemp.shared.setUserGender(gender: 0)
         }
         
         if femaleButton.isSelected {
-            UserTemp.shared.setUserGender(gender: 1)
-            
+            uDF.set(1, forKey: "gender")
+                    
         }
         
         dismiss(animated: true, completion: nil)
+        Outfits.shared.decideTemp()
         
         print(UserTemp.shared.userTemp)
-        
         
     }
     

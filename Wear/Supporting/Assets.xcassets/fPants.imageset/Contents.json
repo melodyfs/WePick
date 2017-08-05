@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fPants.png",
+      "filename" : "pant2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fPants@2x.png",
+      "filename" : "pant2@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fPants@3x.png",
+      "filename" : "pant2@3x.png",
       "scale" : "3x"
     }
   ],

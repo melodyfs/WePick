@@ -346,7 +346,7 @@
                                     <constraint firstAttribute="height" constant="83" id="NP5-IC-mIr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
-                                <state key="normal" title="See My Outfit">
+                                <state key="normal" title="See My Suggested Outfit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -358,7 +358,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-Ap-TtS">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="34.666666666666629"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.33385865129999998" green="0.33385865129999998" blue="0.33385865129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="3"/>
@@ -445,6 +445,7 @@
                         <outlet property="currentWeatherDescriptionLabel" destination="K5i-HR-f6S" id="9Ed-Kw-a3d"/>
                         <outlet property="currentWeatherState" destination="zVw-Ap-TtS" id="oLt-ce-zzf"/>
                         <outlet property="degreeSign" destination="JOJ-CB-ub6" id="Yw0-Lf-TCj"/>
+                        <outlet property="searchButton" destination="gzD-rC-Hua" id="LHz-6m-M9B"/>
                         <outlet property="startButton" destination="fcp-HZ-HrM" id="6DM-1Q-NJZ"/>
                         <outlet property="weatherImageView" destination="Wee-Pf-jww" id="3Ud-dt-s4c"/>
                     </connections>
@@ -564,7 +565,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36782008409500122" green="0.082289285957813263" blue="0.50562012195587158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4wV-I1-5ls" firstAttribute="centerY" secondItem="GrJ-TO-Xqm" secondAttribute="centerY" constant="-2" id="oo4-WJ-J4i"/>
                             <constraint firstItem="4wV-I1-5ls" firstAttribute="centerX" secondItem="GrJ-TO-Xqm" secondAttribute="centerX" id="ypq-1q-RDE"/>
@@ -580,6 +581,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWa-A5-gir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1852" y="-535.68215892053979"/>
+        </scene>
+        <!--Alert Pop UpVC-->
+        <scene sceneID="ufO-GM-udb">
+            <objects>
+                <viewController storyboardIdentifier="alertPopUp" id="tQ7-Xg-Vrj" customClass="AlertPopUpVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DjZ-TK-71F"/>
+                        <viewControllerLayoutGuide type="bottom" id="3vH-G9-1OE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gWC-CT-tQd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R56-Pj-qjd">
+                                <rect key="frame" x="87" y="242" width="247" height="220"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-Mi-PQl">
+                                        <rect key="frame" x="0.0" y="170" width="247" height="50"/>
+                                        <color key="backgroundColor" red="0.45089036226272583" green="0.149009108543396" blue="0.54462730884552002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UTN-2b-YCj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Got It">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gotItButtonTapped:" destination="tQ7-Xg-Vrj" eventType="touchUpInside" id="TDk-hQ-RwU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This city is currenlty not available." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h67-aO-Zoy">
+                                        <rect key="frame" x="0.0" y="34" width="247" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="106" id="soK-kS-Wjv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3085208237" green="0.0" blue="0.47829324010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ljY-Mi-PQl" firstAttribute="leading" secondItem="R56-Pj-qjd" secondAttribute="leading" id="Ct9-jY-QrY"/>
+                                    <constraint firstItem="ljY-Mi-PQl" firstAttribute="top" secondItem="h67-aO-Zoy" secondAttribute="bottom" constant="30" id="QmG-ve-bpO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljY-Mi-PQl" secondAttribute="trailing" id="S2z-YS-ax1"/>
+                                    <constraint firstItem="ljY-Mi-PQl" firstAttribute="leading" secondItem="h67-aO-Zoy" secondAttribute="leading" id="g85-9I-wxc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ljY-Mi-PQl" secondAttribute="bottom" id="vhP-YL-Q6v"/>
+                                    <constraint firstItem="ljY-Mi-PQl" firstAttribute="trailing" secondItem="h67-aO-Zoy" secondAttribute="trailing" id="wfQ-Rw-4EY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R56-Pj-qjd" firstAttribute="leading" secondItem="gWC-CT-tQd" secondAttribute="leadingMargin" constant="67" id="2da-GX-dtj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R56-Pj-qjd" secondAttribute="trailing" constant="60" id="Mlv-yZ-Wxd"/>
+                            <constraint firstItem="3vH-G9-1OE" firstAttribute="top" secondItem="R56-Pj-qjd" secondAttribute="bottom" constant="274" id="dEP-e2-nCw"/>
+                            <constraint firstItem="R56-Pj-qjd" firstAttribute="top" secondItem="DjZ-TK-71F" secondAttribute="bottom" constant="222" id="hPx-fg-Yf9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gotItButton" destination="ljY-Mi-PQl" id="ibh-h9-eGW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzE-HY-Efw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850.7246376811595" y="124.72826086956523"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="eyR-8R-Njc">
@@ -795,6 +863,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mL4-sW-IMz" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="736"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QWh-BQ-1Oy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

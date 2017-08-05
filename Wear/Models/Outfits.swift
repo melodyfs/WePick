@@ -37,7 +37,7 @@ class Outfits {
     var fAccessory = FClothingItems.Accessories.none
     
     func decideTemp() {
-        let uTemp = UserTemp.shared.userTemp
+        var uTemp = UserTemp.shared.userTemp
         
         switch uTemp {
         case "cold":
@@ -49,19 +49,21 @@ class Outfits {
                 temp = 80
             } else if temp > 80 {
                 temp = 55
+            } else {
             }
         case "hot":
             if temp < 80 {
-                temp = 80
+                temp = 55
             }
             
             //temp < 70 ? (temp = 80) : (temp = 55)
-        default: break
-        
+        default:
+            temp = WeatherData.shared.temperature
         }
         
 //        WeatherDataService.shared.compareEnumValues(WeatherData.shared)
         print("weather \(category)")
+        print("temp after user's input: \(temp)")
     }
     
     
@@ -568,7 +570,7 @@ class Outfits {
             }
         case 61...79: break
         case 80...200:
-            if fTop == FClothingItems.Top.fLongSleeveShirt {
+            if fTop != FClothingItems.Top.fShortSleeveShirt {
                 fTop = FClothingItems.Top.fShortSleeveShirt
             }
         default:
