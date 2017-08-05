@@ -148,13 +148,15 @@ class UserProfileVC: UIViewController {
             uDF.set("", forKey: degree)
         }
         
+        
         if maleButton.isSelected {
             uDF.set(0, forKey: "gender")
+            UserTemp.shared.setUserGender(gender: 0)
         }
         
         if femaleButton.isSelected {
-            uDF.set(1, forKey: "gender")
-                    
+            UserTemp.shared.setUserGender(gender: 1)
+            
         }
         
         dismiss(animated: true, completion: nil)

@@ -226,7 +226,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
             Outfits.shared.fGetClothingCombo(WeatherData.shared)
             Outfits.shared.getClothingCombo(WeatherData.shared)
             
-//            ResultVC.shared.decideGender()
+          //  ResultVC.shared.decideGender()
         
         }
     }
