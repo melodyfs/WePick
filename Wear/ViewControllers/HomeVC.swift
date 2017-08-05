@@ -28,8 +28,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     var resultView: UITextView?
     
     var city = ""
-    var preCity = ""
-    
     
     
     //MARK: - Outlets
@@ -72,17 +70,6 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         Outfits.shared.fGetClothingCombo(WeatherData.shared)
         Outfits.shared.getClothingCombo(WeatherData.shared)
         
-        if city != currentLocationLabel.text! {
-//                let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertPopUp") as! AlertPopUpVC
-//                self.addChildViewController(popOverVC)
-//                popOverVC.view.frame = self.view.frame
-//                self.view.addSubview(popOverVC.view)
-//                popOverVC.didMove(toParentViewController: self)
-            
-        }
-        
-       
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,16 +78,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destinationVC = segue.destination as? ResultVC {
-//            if UserTemp.shared.gender == 0 {
-//               destinationVC.headImageView.image = UIImage(named: destinationVC.mHeadImage)
-//                destinationVC.topImageView.image = UIImage(named: destinationVC.mTopImage)
-//                destinationVC.topAccImageView.image = UIImage(named: destinationVC.mTopAccImage)
-//                destinationVC.bottomImageView.image = UIImage(named: destinationVC.mBottomImage)
-//                destinationVC.shoeImageView.image = UIImage(named: destinationVC.mFootweaerImage)
-//                destinationVC.accImageView.image = UIImage(named: destinationVC.mAccImage)
-//            }
-//        }
+        
     }
     
     //MARK: - Functions

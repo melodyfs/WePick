@@ -21,6 +21,7 @@
 		6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C221F02D9F90093791F /* Assets.xcassets */; };
 		6CB17C271F02D9F90093791F /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6CB17C231F02D9F90093791F /* Base.lproj */; };
 		6CCB64AC1F353B2600DE961E /* AlertPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB64AB1F353B2600DE961E /* AlertPopUpVC.swift */; };
+		6CCB64AE1F3585A800DE961E /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB64AD1F3585A800DE961E /* LaunchScreen.png */; };
 		6CCEABFB1F20047100850970 /* SwitchClothesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEABFA1F20047100850970 /* SwitchClothesService.swift */; };
 		6CFF83951F02E26300255329 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83941F02E26300255329 /* WeatherAPI.swift */; };
 		6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83961F02FDCA00255329 /* JSONParser.swift */; };
@@ -48,6 +49,7 @@
 		6CB17C231F02D9F90093791F /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = Supporting/Base.lproj; sourceTree = "<group>"; };
 		6CB17C241F02D9F90093791F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
 		6CCB64AB1F353B2600DE961E /* AlertPopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertPopUpVC.swift; path = ViewControllers/AlertPopUpVC.swift; sourceTree = "<group>"; };
+		6CCB64AD1F3585A800DE961E /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		6CCEABFA1F20047100850970 /* SwitchClothesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchClothesService.swift; path = Services/SwitchClothesService.swift; sourceTree = "<group>"; };
 		6CFF83941F02E26300255329 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPI.swift; path = API/WeatherAPI.swift; sourceTree = "<group>"; };
 		6CFF83961F02FDCA00255329 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = API/JSONParser.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				6CB17C241F02D9F90093791F /* Info.plist */,
 				6C95A9B31F32434C009BE2AC /* CustomButton.swift */,
 				6C8308C51F343BE3003D470D /* LaunchScreen.storyboard */,
+				6CCB64AD1F3585A800DE961E /* LaunchScreen.png */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				6CB17C181F02D88C0093791F /* Main.storyboard in Resources */,
 				6CB17C271F02D9F90093791F /* Base.lproj in Resources */,
+				6CCB64AE1F3585A800DE961E /* LaunchScreen.png in Resources */,
 				6C8308C61F343BE3003D470D /* LaunchScreen.storyboard in Resources */,
 				6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */,
 			);
