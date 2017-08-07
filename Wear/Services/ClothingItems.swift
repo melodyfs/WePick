@@ -20,7 +20,15 @@ enum MClothingItems {
         case knitHat
         //case sunglasses
         
+        static func randomHat() -> String {
+            let itemsToGetRandomly = [hat, cap, knitHat]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
+    
+    
     
     enum Top: String {
         case none
@@ -31,7 +39,19 @@ enum MClothingItems {
         case mShortSleeveShirt
         case mShortSleeveShirt1
         
+        static func randomLong() -> String {
+            let itemsToGetRandomly = [mLongSleeveShirt, mLongSleeveShirt1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
 
+        static func randomShort() -> String {
+            let itemsToGetRandomly = [mShortSleeveShirt, mShortSleeveShirt1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
         
         
     }
@@ -46,6 +66,13 @@ enum MClothingItems {
 //        case mVest
 //        case mBlazer
         case mCoat
+        
+        static func random() -> String {
+            let itemsToGetRandomly = [mJacket, mCoat]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     //feature
@@ -60,7 +87,13 @@ enum MClothingItems {
         case mPants
         case mShorts
         case jeans
-    
+        
+        static func randomPants() -> String {
+            let itemsToGetRandomly = [mPants, jeans]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     enum Footwear: String {
@@ -73,7 +106,13 @@ enum MClothingItems {
         //case mSnowBoots
         
         //case socks
-    
+        
+        static func randomShoe() -> String {
+            let itemsToGetRandomly = [sneakers, sneakers1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     enum Accessories: String {
@@ -100,6 +139,12 @@ enum FClothingItems {
         case knitHat
         case sunglasses
         
+        static func randomHat() -> String {
+            let itemsToGetRandomly = [hat, cap, knitHat]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     enum Top: String {
@@ -108,6 +153,21 @@ enum FClothingItems {
         case fLongSleeveShirt1
         case fShortSleeveShirt
         case fShortSleeveShirt1
+        
+        static func randomLong() -> String {
+            let itemsToGetRandomly = [fLongSleeveShirt, fLongSleeveShirt1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomShort() -> String {
+            let itemsToGetRandomly = [fShortSleeveShirt, fShortSleeveShirt1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+
     }
     
     enum TopAcc : String {
@@ -120,6 +180,13 @@ enum FClothingItems {
 //        case fVest
 //        case fBlazer
         case fCoat
+        
+        static func random() -> String {
+            let itemsToGetRandomly = [fJacket, fCoat]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     //feature
@@ -137,6 +204,13 @@ enum FClothingItems {
 //        case fLeggings
         
         //case skirt
+        
+        static func randomPants() -> String {
+            let itemsToGetRandomly = [fPants, jeans]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
     }
     
     enum Footwear: String {
@@ -149,6 +223,13 @@ enum FClothingItems {
 //        case fSnowBoots
 //        
 //        case socks
+        
+        static func randomShoe() -> String {
+            let itemsToGetRandomly = [sneakers, sneakers1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
         
     }
     
