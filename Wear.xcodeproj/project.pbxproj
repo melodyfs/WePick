@@ -28,6 +28,7 @@
 		6CF80EFC1F38FED900900A7C /* Wardrobe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF80EFB1F38FED900900A7C /* Wardrobe.storyboard */; };
 		6CF80EFE1F38FEF500900A7C /* WardrobeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF80EFD1F38FEF500900A7C /* WardrobeVC.swift */; };
 		6CF80F001F39062000900A7C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF80EFF1F39062000900A7C /* ItemCell.swift */; };
+		6CF80F021F391BF700900A7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF80F011F391BF700900A7C /* GoogleService-Info.plist */; };
 		6CFF83951F02E26300255329 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83941F02E26300255329 /* WeatherAPI.swift */; };
 		6CFF83971F02FDCA00255329 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF83961F02FDCA00255329 /* JSONParser.swift */; };
 		6CFF839B1F031E3D00255329 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF839A1F031E3D00255329 /* WeatherData.swift */; };
@@ -61,6 +62,7 @@
 		6CF80EFB1F38FED900900A7C /* Wardrobe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wardrobe.storyboard; sourceTree = "<group>"; };
 		6CF80EFD1F38FEF500900A7C /* WardrobeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeVC.swift; sourceTree = "<group>"; };
 		6CF80EFF1F39062000900A7C /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		6CF80F011F391BF700900A7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CFF83941F02E26300255329 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPI.swift; path = API/WeatherAPI.swift; sourceTree = "<group>"; };
 		6CFF83961F02FDCA00255329 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = API/JSONParser.swift; sourceTree = "<group>"; };
 		6CFF839A1F031E3D00255329 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = Models/WeatherData.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				6CB17C221F02D9F90093791F /* Assets.xcassets */,
 				6CB17C231F02D9F90093791F /* Base.lproj */,
 				6CB17C241F02D9F90093791F /* Info.plist */,
+				6CF80F011F391BF700900A7C /* GoogleService-Info.plist */,
 				6C95A9B31F32434C009BE2AC /* CustomButton.swift */,
 				6C8308C51F343BE3003D470D /* LaunchScreen.storyboard */,
 				6CCB64AD1F3585A800DE961E /* LaunchScreen.png */,
@@ -282,6 +285,7 @@
 				6CB17C181F02D88C0093791F /* Main.storyboard in Resources */,
 				6CB17C271F02D9F90093791F /* Base.lproj in Resources */,
 				6CCB64AE1F3585A800DE961E /* LaunchScreen.png in Resources */,
+				6CF80F021F391BF700900A7C /* GoogleService-Info.plist in Resources */,
 				6C8308C61F343BE3003D470D /* LaunchScreen.storyboard in Resources */,
 				6CF80EFC1F38FED900900A7C /* Wardrobe.storyboard in Resources */,
 				6CB17C261F02D9F90093791F /* Assets.xcassets in Resources */,

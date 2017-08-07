@@ -9,6 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="wHx-yT-wj1">
+            <objects>
+                <viewController id="oFO-K0-kO1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kBx-zJ-4BA"/>
+                        <viewControllerLayoutGuide type="bottom" id="yLE-kz-oFl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xwx-xX-T8e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFe-Ft-nCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="525"/>
+        </scene>
         <!--WardrobeVC-->
         <scene sceneID="CBt-LD-qXQ">
             <objects>
@@ -87,7 +105,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2X-fn-Pb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303.19999999999999" y="524.8875562218891"/>
+            <point key="canvasLocation" x="1934" y="525"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OtQ-XY-zhC">
+            <objects>
+                <viewController id="79J-LP-bPa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D9F-Rj-39r"/>
+                        <viewControllerLayoutGuide type="bottom" id="g89-eg-GvQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k8e-1W-LHc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mke-Oj-bdP">
+                                <rect key="frame" x="186" y="206" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zw-Mr-c0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="524.8875562218891"/>
         </scene>
         <!--My Collection-->
         <scene sceneID="udd-dF-po9">
@@ -102,7 +147,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tqH-n2-bCU" kind="relationship" relationship="rootViewController" id="fxl-rZ-Xcl"/>
+                        <segue destination="79J-LP-bPa" kind="show" id="e7e-Bw-pSd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqO-2A-4lD" userLabel="First Responder" sceneMemberID="firstResponder"/>

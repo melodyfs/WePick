@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import GooglePlaces
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var vc: UIViewController = HomeVC()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
         
         GMSPlacesClient.provideAPIKey("AIzaSyDyCWIAoFRGO6UCSmruWiNisb_TiaRZ68c")
         
