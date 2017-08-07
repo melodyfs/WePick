@@ -90,7 +90,7 @@ class Outfits {
         case .calm: fallthrough
         case .storm: fallthrough
         default:
-            mHead = MClothingItems.Head.none
+            mHead = MClothingItems.Head(rawValue: MClothingItems.Head.randomHat())!
         }
         
         mTempHead()
@@ -102,21 +102,21 @@ class Outfits {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain: fallthrough
-        case .clouds:
-            mTop = MClothingItems.Top.mLongSleeveShirt
+        case .clouds: fallthrough
         case .cold: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         case .snow: fallthrough
         case .mist:
-            mTop = MClothingItems.Top.mLongSleeveShirt1
+            mTop = MClothingItems.Top(rawValue: MClothingItems.Top.randomLong())!
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .hot: fallthrough
         case .calm: fallthrough
         default:
-            mTop = MClothingItems.Top.mShortSleeveShirt1
+             mTop = MClothingItems.Top(rawValue: MClothingItems.Top.randomShort())!
+            //mTop = MClothingItems.Top.mShortSleeveShirt1
 
         }
         
@@ -161,7 +161,7 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist:
-            mBottom = MClothingItems.Bottom.mPants
+            mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomPants())!
         case .sand:
             mBottom = MClothingItems.Bottom.mShorts
         case .naturalDisaster: fallthrough
@@ -199,7 +199,7 @@ class Outfits {
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            mFootwear = MClothingItems.Footwear.sneakers
+            mFootwear = MClothingItems.Footwear(rawValue: MClothingItems.Footwear.randomShoe())!
         }
         
     }
@@ -382,8 +382,7 @@ class Outfits {
         switch category {
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
-        case .rain:
-            fTop = FClothingItems.Top.fLongSleeveShirt
+        case .rain: fallthrough
         case .clouds: fallthrough
         case .cold: fallthrough
         case .hail: fallthrough
@@ -391,13 +390,13 @@ class Outfits {
         case .storm: fallthrough
         case .snow: fallthrough
         case .mist:
-            fTop = FClothingItems.Top.fLongSleeveShirt1
+            fTop = FClothingItems.Top(rawValue: FClothingItems.Top.randomLong())!
         case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .hot: fallthrough
         case .calm: fallthrough
         default:
-            fTop = FClothingItems.Top.fShortSleeveShirt
+            fTop = FClothingItems.Top(rawValue: FClothingItems.Top.randomShort())!
             
         }
         
@@ -442,7 +441,7 @@ class Outfits {
         case .snow: fallthrough
         case .clouds: fallthrough
         case .mist:
-            fBottom = FClothingItems.Bottom.fPants
+            fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomPants())!
         case .sand:
             fBottom = FClothingItems.Bottom.fShorts
         case .naturalDisaster: fallthrough
@@ -454,7 +453,7 @@ class Outfits {
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         default:
-            fBottom = FClothingItems.Bottom.jeans
+            fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomPants())!
         }
         
         fTempBottom()
@@ -480,7 +479,7 @@ class Outfits {
         case .sand: fallthrough
         case .calm: fallthrough
         default:
-            fFootwear = FClothingItems.Footwear.sneakers1
+            fFootwear = FClothingItems.Footwear(rawValue: FClothingItems.Footwear.randomShoe())!
         }
         
     }

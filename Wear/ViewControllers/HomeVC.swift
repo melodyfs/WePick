@@ -51,7 +51,7 @@ class HomeVC: UIViewController, CLLocationManagerDelegate  {
         locationManager.startUpdatingLocation()
         
         currentWeatherDescriptionLabel.isHidden = true
-    
+            
     }
     
     override func viewWillAppear(_ animated: Bool) {
