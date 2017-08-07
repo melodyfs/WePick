@@ -142,10 +142,12 @@ class UserProfileVC: UIViewController {
         
         if cDegreeButton.isSelected {
             uDF.set("c", forKey: degree)
+            UserTemp.shared.degree = "c"
         }
         
         if fDegreeButton.isSelected {
             uDF.set("", forKey: degree)
+            UserTemp.shared.degree = ""
         }
         
         
