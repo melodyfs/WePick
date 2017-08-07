@@ -37,7 +37,7 @@ class Outfits {
     var fAccessory = FClothingItems.Accessories.none
     
     func decideTemp() {
-        var uTemp = UserTemp.shared.userTemp
+        let uTemp = UserTemp.shared.userTemp
         
         switch uTemp {
         case "cold":

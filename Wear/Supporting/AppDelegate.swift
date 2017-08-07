@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 20)!], for: .normal)
         UINavigationBar.appearance().tintColor = UIColor.white
        
+//        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier :"secondViewController") as! SelectionTBC
+//        self.present(viewController, animated: true)
         
         
         return true

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mL4-sW-IMz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ChA-Ry-mBu">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -323,7 +323,7 @@
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -333,14 +333,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wee-Pf-jww">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-dp-wIK" userLabel="White ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="0.56020057624113473" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-HZ-HrM">
-                                <rect key="frame" x="0.0" y="653" width="414" height="83"/>
+                                <rect key="frame" x="0.0" y="604" width="414" height="83"/>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.0" blue="0.47843137254901957" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="NP5-IC-mIr"/>
@@ -859,10 +859,39 @@
             </objects>
             <point key="canvasLocation" x="2592.753623188406" y="-547.01086956521749"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Wardrobe-->
+        <scene sceneID="bAD-se-A54">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Wardrobe" id="fRd-ZO-HQM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4A1-Si-6Pa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJd-FB-EJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1162" y="-495"/>
+        </scene>
+        <!--TBC-->
+        <scene sceneID="a3C-es-pUz">
+            <objects>
+                <tabBarController id="ChA-Ry-mBu" customClass="TBC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uMN-Mc-bhP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mL4-sW-IMz" kind="relationship" relationship="viewControllers" id="UEE-g9-60P"/>
+                        <segue destination="fRd-ZO-HQM" kind="relationship" relationship="viewControllers" id="7a3-yc-4s4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrg-x4-XSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114" y="-988"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="6bE-cO-fhB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mL4-sW-IMz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="VVe-54-qk5"/>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>

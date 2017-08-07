@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WardrobeVC.swift">
+   </FileRef>
+   <FileRef
       location = "group:Wear.xcodeproj">
    </FileRef>
    <FileRef
