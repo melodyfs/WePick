@@ -18,7 +18,7 @@ enum MClothingItems {
         case hat
         case cap
         case knitHat
-        //case sunglasses
+        case sunglasses
         
         static func randomHat() -> String {
             let itemsToGetRandomly = [hat, cap, knitHat]
@@ -58,17 +58,27 @@ enum MClothingItems {
     
     enum TopAcc : String {
         case none
-        case mJacket
+        case jacket
+        case jacket1
+        case jacket2
 //        case mSweater
-        case mTrenchCoat
+       // case mTrenchCoat
 //        case rainCoat
 //        
 //        case mVest
 //        case mBlazer
         case mCoat
+        case mCoat1
         
-        static func random() -> String {
-            let itemsToGetRandomly = [mJacket, mCoat]
+        static func randomJacket() -> String {
+            let itemsToGetRandomly = [jacket, jacket1, jacket2]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomCoat() -> String {
+            let itemsToGetRandomly = [mCoat, mCoat1]
             let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
             let i = itemsToGetRandomly[index].rawValue
             return i
@@ -86,10 +96,26 @@ enum MClothingItems {
         //thick pants (for winter/cold)
         case mPants
         case mShorts
+        case mShorts1
         case jeans
+        case jeans1
         
         static func randomPants() -> String {
-            let itemsToGetRandomly = [mPants, jeans]
+            let itemsToGetRandomly = [mPants]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomJeans() -> String {
+            let itemsToGetRandomly = [jeans, jeans1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomShorts() -> String {
+            let itemsToGetRandomly = [mShorts, mShorts1]
             let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
             let i = itemsToGetRandomly[index].rawValue
             return i
@@ -172,17 +198,27 @@ enum FClothingItems {
     
     enum TopAcc : String {
         case none
-        case fJacket
+        case jacket
 //        case fSweater
-        case fTrenchCoat
-        case fRainCoat
+        case jacket1
+        case jacket2
+        //case fTrenchCoat
+       // case fRainCoat
         
 //        case fVest
 //        case fBlazer
         case fCoat
+        case fCoat1
         
-        static func random() -> String {
-            let itemsToGetRandomly = [fJacket, fCoat]
+        static func randomJacket() -> String {
+            let itemsToGetRandomly = [jacket, jacket1, jacket2]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomCoat() -> String {
+            let itemsToGetRandomly = [fCoat, fCoat1]
             let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
             let i = itemsToGetRandomly[index].rawValue
             return i
@@ -200,13 +236,29 @@ enum FClothingItems {
         //thick pants (for winter/cold)
         case fPants
         case fShorts
+        case fShorts1
         case jeans
+        case jeans1
 //        case fLeggings
         
         //case skirt
         
         static func randomPants() -> String {
-            let itemsToGetRandomly = [fPants, jeans]
+            let itemsToGetRandomly = [fPants]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomJeans() -> String {
+            let itemsToGetRandomly = [jeans, jeans1]
+            let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
+            let i = itemsToGetRandomly[index].rawValue
+            return i
+        }
+        
+        static func randomShorts() -> String {
+            let itemsToGetRandomly = [fShorts, fShorts1]
             let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
             let i = itemsToGetRandomly[index].rawValue
             return i

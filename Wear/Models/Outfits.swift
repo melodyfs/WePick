@@ -37,7 +37,7 @@ class Outfits {
     var fAccessory = FClothingItems.Accessories.none
     
     func decideTemp() {
-        var uTemp = UserTemp.shared.userTemp
+        let uTemp = UserTemp.shared.userTemp
         
         switch uTemp {
         case "cold":
@@ -72,8 +72,10 @@ class Outfits {
     private func mForHead() {
 
         switch category {
+        case .sand: fallthrough
+        case .naturalDisaster: fallthrough
         case .hot:
-            mHead = MClothingItems.Head.hat
+            mHead = MClothingItems.Head.sunglasses
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain:
@@ -85,8 +87,6 @@ class Outfits {
             mHead = MClothingItems.Head.knitHat
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .sand: fallthrough
-        case .naturalDisaster: fallthrough
         case .calm: fallthrough
         case .storm: fallthrough
         default:
@@ -132,18 +132,17 @@ class Outfits {
         case .cold: fallthrough
         case .drizzle: fallthrough
         case .clouds:
-            mTopAcc = MClothingItems.TopAcc.mJacket
+            mTopAcc = MClothingItems.TopAcc(rawValue: MClothingItems.TopAcc.randomJacket())!
         case .snow: fallthrough
         case .storm: fallthrough
-        case .mist:
-            mTopAcc = MClothingItems.TopAcc.mCoat
-        case .sand: fallthrough
+        case .mist: fallthrough
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .naturalDisaster:
-            mTopAcc = MClothingItems.TopAcc.mTrenchCoat
+            mTopAcc = MClothingItems.TopAcc(rawValue: MClothingItems.TopAcc.randomCoat())!
         case .hot: fallthrough
         case .calm: fallthrough
+        case .sand: fallthrough
         default:
             mTopAcc = MClothingItems.TopAcc.none
         }
@@ -162,18 +161,17 @@ class Outfits {
         case .clouds: fallthrough
         case .mist:
             mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomPants())!
-        case .sand:
-            mBottom = MClothingItems.Bottom.mShorts
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .cold: fallthrough
         case .hot:
-            mBottom = MClothingItems.Bottom.mShorts
+            mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomShorts())!
         case .hail: fallthrough
         case .calm: fallthrough
         case .strongBreeze: fallthrough
         case .storm: fallthrough
         default:
-            mBottom = MClothingItems.Bottom.jeans
+            mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomJeans())!
         }
         
         mTempBottom()
@@ -283,13 +281,13 @@ class Outfits {
    private func mTempTop() {
         switch temp {
         case 0...60:
-            if mTop != MClothingItems.Top.mLongSleeveShirt {
-                mTop = MClothingItems.Top.mLongSleeveShirt
+            if mTop != MClothingItems.Top.mLongSleeveShirt1 || mTop != MClothingItems.Top.mLongSleeveShirt {
+                mTop = MClothingItems.Top(rawValue: MClothingItems.Top.randomLong())!
             }
         case 61...79: break
         case 80...200:
             if mTop != MClothingItems.Top.mShortSleeveShirt || mTop != MClothingItems.Top.mShortSleeveShirt1 {
-                mTop = MClothingItems.Top.mShortSleeveShirt
+                mTop = MClothingItems.Top(rawValue: MClothingItems.Top.randomShort())!
             }
 
         default:
@@ -302,7 +300,7 @@ class Outfits {
         switch temp {
         case 0...60:
             if mTopAcc == MClothingItems.TopAcc.none {
-                mTopAcc = MClothingItems.TopAcc.mJacket
+                mTopAcc = MClothingItems.TopAcc(rawValue: MClothingItems.TopAcc.randomJacket())!
             }
            
         case 61...79: break
@@ -321,13 +319,13 @@ class Outfits {
         switch temp {
         case 0...60:
             if mBottom != MClothingItems.Bottom.mPants {
-                mBottom = MClothingItems.Bottom.mPants
+                mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomPants())!
             }
         case 61...79: break
         case 80..<200:
            
-            if mBottom != MClothingItems.Bottom.mShorts {
-                mBottom = MClothingItems.Bottom.mShorts
+            if mBottom != MClothingItems.Bottom.mShorts || mBottom != MClothingItems.Bottom.mShorts1{
+                mBottom = MClothingItems.Bottom(rawValue: MClothingItems.Bottom.randomShorts())!
             }
         default:
             mForBottom()
@@ -353,8 +351,10 @@ class Outfits {
     private func fForHead() {
         
         switch category {
+        case .sand: fallthrough
+        case .calm: fallthrough
         case .hot:
-            fHead = FClothingItems.Head.hat
+            fHead = FClothingItems.Head.sunglasses
         case .thunderstorm: fallthrough
         case .drizzle: fallthrough
         case .rain:
@@ -366,12 +366,10 @@ class Outfits {
             fHead = FClothingItems.Head.knitHat
         case .clouds: fallthrough
         case .mist: fallthrough
-        case .sand: fallthrough
         case .naturalDisaster: fallthrough
-        case .calm: fallthrough
         case .storm: fallthrough
         default:
-            fHead = FClothingItems.Head.none
+            fHead = FClothingItems.Head(rawValue: FClothingItems.Head.randomHat())!
         }
         
         fTempHead()
@@ -411,19 +409,18 @@ class Outfits {
 //            fTopAcc = FClothingItems.TopAcc.fRainCoat
         case .cold: fallthrough
         case .drizzle: fallthrough
-        case .clouds:
-            fTopAcc = FClothingItems.TopAcc.fCoat
         case .snow: fallthrough
         case .storm: fallthrough
         case .mist:
-            fTopAcc = FClothingItems.TopAcc.fJacket
-        case .sand: fallthrough
+            fTopAcc = FClothingItems.TopAcc(rawValue: FClothingItems.TopAcc.randomJacket())!
         case .hail: fallthrough
         case .strongBreeze: fallthrough
+        case .clouds: fallthrough
         case .naturalDisaster:
-            fTopAcc = FClothingItems.TopAcc.fTrenchCoat
+            fTopAcc = FClothingItems.TopAcc(rawValue: FClothingItems.TopAcc.randomCoat())!
         case .hot: fallthrough
         case .calm: fallthrough
+        case .sand: fallthrough
         default:
             fTopAcc = FClothingItems.TopAcc.none
         }
@@ -442,12 +439,11 @@ class Outfits {
         case .clouds: fallthrough
         case .mist:
             fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomPants())!
-        case .sand:
-            fBottom = FClothingItems.Bottom.fShorts
+        case .sand: fallthrough
         case .naturalDisaster: fallthrough
         case .cold: fallthrough
         case .hot:
-            fBottom = FClothingItems.Bottom.fShorts
+            fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomShorts())!
         case .hail: fallthrough
         case .calm: fallthrough
         case .strongBreeze: fallthrough
@@ -564,13 +560,13 @@ class Outfits {
     private func fTempTop() {
         switch temp {
         case 0...60:
-           if fTop != FClothingItems.Top.fLongSleeveShirt {
-                fTop = FClothingItems.Top.fLongSleeveShirt
+           if fTop != FClothingItems.Top.fLongSleeveShirt || fTop != FClothingItems.Top.fLongSleeveShirt1 {
+                fTop = FClothingItems.Top(rawValue: FClothingItems.Top.randomLong())!
             }
         case 61...79: break
         case 80...200:
-            if fTop != FClothingItems.Top.fShortSleeveShirt {
-                fTop = FClothingItems.Top.fShortSleeveShirt
+            if fTop != FClothingItems.Top.fShortSleeveShirt || fTop != FClothingItems.Top.fShortSleeveShirt1 {
+                fTop = FClothingItems.Top(rawValue: FClothingItems.Top.randomShort())!
             }
         default:
             fForTop()
@@ -582,7 +578,7 @@ class Outfits {
         switch temp {
         case 0...60:
             if fTopAcc == FClothingItems.TopAcc.none {
-                fTopAcc = FClothingItems.TopAcc.fCoat
+                fTopAcc = FClothingItems.TopAcc(rawValue: FClothingItems.TopAcc.randomJacket())!
             }
         case 61...79: break
         case 80...200:
@@ -600,12 +596,12 @@ class Outfits {
         switch temp {
         case 0...60:
             if fBottom != FClothingItems.Bottom.fPants {
-                fBottom = FClothingItems.Bottom.fPants
+                fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomPants())!
             }
         case 61...79: break
         case 80..<200:
-             if fBottom != FClothingItems.Bottom.fShorts {
-                fBottom = FClothingItems.Bottom.fShorts
+             if fBottom != FClothingItems.Bottom.fShorts || fBottom != FClothingItems.Bottom.fShorts1 {
+                fBottom = FClothingItems.Bottom(rawValue: FClothingItems.Bottom.randomShorts())!
             }
         default:
             fForBottom()
