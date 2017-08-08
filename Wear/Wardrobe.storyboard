@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1934" y="525"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="OtQ-XY-zhC">
             <objects>
-                <viewController id="79J-LP-bPa" sceneMemberID="viewController">
+                <viewController id="79J-LP-bPa" customClass="LoginVC" customModule="Wear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D9F-Rj-39r"/>
                         <viewControllerLayoutGuide type="bottom" id="g89-eg-GvQ"/>
@@ -126,6 +126,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGL-gz-jPX">
+                                <rect key="frame" x="80" y="368" width="213" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up / Login"/>
+                                <connections>
+                                    <action selector="LoginButtonTapped:" destination="79J-LP-bPa" eventType="touchUpInside" id="mml-Km-hCH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
