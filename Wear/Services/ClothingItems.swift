@@ -270,14 +270,14 @@ enum FClothingItems {
         case sneakers
         case sneakers1
         case fBoots
-        //case fSandals
+        case fSandals
         case rainBoots
 //        case fSnowBoots
 //        
 //        case socks
         
         static func randomShoe() -> String {
-            let itemsToGetRandomly = [sneakers, sneakers1]
+            let itemsToGetRandomly = [sneakers, sneakers1, fSandals]
             let index = Int(arc4random_uniform(UInt32(itemsToGetRandomly.count)))
             let i = itemsToGetRandomly[index].rawValue
             return i

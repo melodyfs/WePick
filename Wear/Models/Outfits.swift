@@ -465,7 +465,6 @@ class Outfits {
         case .rain: fallthrough
         case .snow:
            fFootwear = FClothingItems.Footwear.rainBoots
-                   // fFootwear = FClothingItems.Footwear.fSnowBoots
         case .hail: fallthrough
         case .strongBreeze: fallthrough
         case .mist: fallthrough
