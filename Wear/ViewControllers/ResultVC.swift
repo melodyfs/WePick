@@ -345,6 +345,12 @@ class ResultVC: UIViewController {
         topImageView.isUserInteractionEnabled = false
         topImageView.addGestureRecognizer(topTapRecognizer)
         
+        let topAccTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.topAccImgTapped(_:)))
+        topAccTapRecognizer.numberOfTapsRequired = 1
+        topAccTapRecognizer.numberOfTouchesRequired = 1
+        topAccImageView.isUserInteractionEnabled = false
+        topAccImageView.addGestureRecognizer(topAccTapRecognizer)
+        
         let bottomTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResultVC.bottomImgTapped(_:)))
         bottomTapRecognizer.numberOfTapsRequired = 1
         bottomTapRecognizer.numberOfTouchesRequired = 1
