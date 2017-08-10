@@ -149,7 +149,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="My Collection" id="s00-l2-7Kc"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CHb-ST-dR1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CHb-ST-dR1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

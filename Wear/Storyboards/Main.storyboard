@@ -565,7 +565,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.36782008409500122" green="0.082289285957813263" blue="0.50562012195587158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36862745098039218" green="0.082352941176470587" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4wV-I1-5ls" firstAttribute="centerY" secondItem="GrJ-TO-Xqm" secondAttribute="centerY" constant="-2" id="oo4-WJ-J4i"/>
                             <constraint firstItem="4wV-I1-5ls" firstAttribute="centerX" secondItem="GrJ-TO-Xqm" secondAttribute="centerX" id="ypq-1q-RDE"/>
@@ -895,7 +895,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QWh-BQ-1Oy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QWh-BQ-1Oy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

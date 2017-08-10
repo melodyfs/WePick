@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseAuthUI
+import FirebaseDatabase
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -29,12 +30,14 @@ class LoginVC: UIViewController {
         guard let authUI = FUIAuth.defaultAuthUI()
             else { return }
         
-        authUI.delegate = self as? FUIAuthDelegate
+        authUI.delegate = self
+        
+        
         
         // add google provider
-        let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
-        authUI.providers = providers
-        
+      //  let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
+//        authUI.providers = providers
+//        
         let authViewController = authUI.authViewController()
         present(authViewController, animated: true)
         
@@ -52,5 +55,7 @@ extension LoginVC: FUIAuthDelegate {
         }
         
         print("handle user signup / login")
+        
+        
     }
 }
