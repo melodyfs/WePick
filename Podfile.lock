@@ -9,20 +9,17 @@ PODS:
     - GooglePlaces (= 2.3.1)
   - GooglePlaces (2.3.1):
     - GoogleMaps/Base (= 2.3.1)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
-  - SwiftyJSON (>= 3.0.0)
 
 SPEC CHECKSUMS:
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlacePicker: fc3564ac7a2ce314e78e42bfc1e16822ad1e5488
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4c17b5e18f5af2521fa41d3178cde000cf9b8969
+PODFILE CHECKSUM: 27078de82707b78a227b59aade0b82746e4c5495
 
 COCOAPODS: 1.2.1
