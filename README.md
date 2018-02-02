@@ -6,6 +6,15 @@ An iOS app that gives you recommendations on what to wear based on your comforta
 - The app detects your location automatically or you can search for your places
 - Then it gives recommendations on what you should wear!
 
+## Usage
+### What you need
+- Xcode 9, Swift 4
+- iOS 10.0+ / macOS 10.10+
+- Cocoapods
+
+### Installation
+run `pod install`
+
 ## Technologies Used
 - OpenWeather API
 - Google Places API
